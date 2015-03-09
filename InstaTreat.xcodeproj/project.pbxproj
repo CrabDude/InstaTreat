@@ -14,6 +14,7 @@
 		58B9C8581AA80ED500B28BC0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58B9C8561AA80ED500B28BC0 /* LaunchScreen.xib */; };
 		58B9C8641AA80ED500B28BC0 /* InstaTreatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B9C8631AA80ED500B28BC0 /* InstaTreatTests.swift */; };
 		58B9C86E1AA80EED00B28BC0 /* DataSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B9C86D1AA80EED00B28BC0 /* DataSchema.swift */; };
+		9521B2CD1AAE02910076ECB8 /* BakerPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521B2CC1AAE02910076ECB8 /* BakerPostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		58B9C8621AA80ED500B28BC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58B9C8631AA80ED500B28BC0 /* InstaTreatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaTreatTests.swift; sourceTree = "<group>"; };
 		58B9C86D1AA80EED00B28BC0 /* DataSchema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSchema.swift; sourceTree = "<group>"; };
+		9521B2CC1AAE02910076ECB8 /* BakerPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BakerPostViewController.swift; path = ../BakerPostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				58B9C84D1AA80ED500B28BC0 /* AppDelegate.swift */,
 				58B9C84F1AA80ED500B28BC0 /* ViewController.swift */,
+				9521B2CC1AAE02910076ECB8 /* BakerPostViewController.swift */,
 				58B9C8511AA80ED500B28BC0 /* Main.storyboard */,
 				58B9C8541AA80ED500B28BC0 /* Images.xcassets */,
 				58B9C8561AA80ED500B28BC0 /* LaunchScreen.xib */,
@@ -217,6 +220,7 @@
 			files = (
 				58B9C8501AA80ED500B28BC0 /* ViewController.swift in Sources */,
 				58B9C84E1AA80ED500B28BC0 /* AppDelegate.swift in Sources */,
+				9521B2CD1AAE02910076ECB8 /* BakerPostViewController.swift in Sources */,
 				58B9C86E1AA80EED00B28BC0 /* DataSchema.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +415,7 @@
 				58B9C8691AA80ED500B28BC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		58B9C86A1AA80ED500B28BC0 /* Build configuration list for PBXNativeTarget "InstaTreatTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +424,7 @@
 				58B9C86C1AA80ED500B28BC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
