@@ -10,11 +10,14 @@ import UIKit
 import MobileCoreServices
 
 class BakerPostViewController: UIViewController, UINavigationControllerDelegate,  UIImagePickerControllerDelegate {
-
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
    
     @IBOutlet var CameraImageView: UIImageView!
     
-    var PostItem : Item!
+    var PostItem : Item
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,18 +65,21 @@ class BakerPostViewController: UIViewController, UINavigationControllerDelegate,
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
         println("i've got an image");
         self.CameraImageView.image = image
-        self.PostItem.images = image
+        self.PostItem.images = UIImage(named: "cookie")
     }
 
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    }
-    */
+        println("I got called before leaving");
+        self.PostItem.images = UIImage(named: "cookie")
 
+        if let dc = segue.destinationViewController as? BakerPostDetailsViewController {
+            dc.postItem = self.PostItem!
+        }
+    }
 }
