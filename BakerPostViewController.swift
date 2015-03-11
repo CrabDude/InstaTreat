@@ -17,7 +17,7 @@ class BakerPostViewController: UIViewController, UINavigationControllerDelegate,
    
     @IBOutlet var CameraImageView: UIImageView!
     
-    var PostItem : Item
+    var PostItem : Item!
     
     override func viewDidLoad() {
         super.viewDidLoad()
