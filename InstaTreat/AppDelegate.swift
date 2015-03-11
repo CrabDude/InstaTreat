@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             else {
                 println("this is user not a baker")
-                let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("ItemViewController") as UIViewController
+                let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamViewController") as UIViewController
                 self.window?.rootViewController = vc
             }
         }

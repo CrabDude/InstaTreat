@@ -32,6 +32,8 @@
 		9521B2CD1AAE02910076ECB8 /* BakerPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521B2CC1AAE02910076ECB8 /* BakerPostViewController.swift */; };
 		9F4F68781AAFC22600434D7B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F68771AAFC22600434D7B /* LoginViewController.swift */; };
 		9F4F687B1AAFCA2800434D7B /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F687A1AAFCA2800434D7B /* AppHelper.swift */; };
+		9F4F687D1AAFD69100434D7B /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F687C1AAFD69100434D7B /* StreamViewController.swift */; };
+		9F4F687F1AAFDCAD00434D7B /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F687E1AAFDCAD00434D7B /* ItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		9521B2CC1AAE02910076ECB8 /* BakerPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BakerPostViewController.swift; path = ../BakerPostViewController.swift; sourceTree = "<group>"; };
 		9F4F68771AAFC22600434D7B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9F4F687A1AAFCA2800434D7B /* AppHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
+		9F4F687C1AAFD69100434D7B /* StreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamViewController.swift; sourceTree = "<group>"; };
+		9F4F687E1AAFDCAD00434D7B /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +201,7 @@
 				950352AE1AAFDD7900CBFA13 /* BakerPostFinalViewController.swift */,
 				58B9C84F1AA80ED500B28BC0 /* ViewController.swift */,
 				9F4F68771AAFC22600434D7B /* LoginViewController.swift */,
+				9F4F687C1AAFD69100434D7B /* StreamViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 		9F4F68751AAFC1ED00434D7B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9F4F687E1AAFDCAD00434D7B /* ItemCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -324,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F4F687F1AAFDCAD00434D7B /* ItemCell.swift in Sources */,
 				58B9C8501AA80ED500B28BC0 /* ViewController.swift in Sources */,
 				9F4F687B1AAFCA2800434D7B /* AppHelper.swift in Sources */,
 				950352AF1AAFDD7900CBFA13 /* BakerPostFinalViewController.swift in Sources */,
@@ -332,6 +339,7 @@
 				950352A71AAFD6AF00CBFA13 /* BakerPostDetailsViewController.swift in Sources */,
 				9F4F68781AAFC22600434D7B /* LoginViewController.swift in Sources */,
 				58B9C86E1AA80EED00B28BC0 /* DataSchema.swift in Sources */,
+				9F4F687D1AAFD69100434D7B /* StreamViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

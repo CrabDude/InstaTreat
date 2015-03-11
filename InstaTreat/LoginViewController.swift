@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
                 }
                 else {
                     println("this is a user")
-                    let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("ItemViewController") as UIViewController
+                    let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamViewController") as UIViewController
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
                 
