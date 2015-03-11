@@ -28,6 +28,7 @@
 		9503529F1AAFBEC100CBFA13 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9503529E1AAFBEC100CBFA13 /* libz.dylib */; };
 		950352A11AAFBECE00CBFA13 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 950352A01AAFBECE00CBFA13 /* libsqlite3.dylib */; };
 		9521B2CD1AAE02910076ECB8 /* BakerPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521B2CC1AAE02910076ECB8 /* BakerPostViewController.swift */; };
+		9F4F68781AAFC22600434D7B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F68771AAFC22600434D7B /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		9503529E1AAFBEC100CBFA13 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		950352A01AAFBECE00CBFA13 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		9521B2CC1AAE02910076ECB8 /* BakerPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BakerPostViewController.swift; path = ../BakerPostViewController.swift; sourceTree = "<group>"; };
+		9F4F68771AAFC22600434D7B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,14 +122,14 @@
 		58B9C84A1AA80ED500B28BC0 /* InstaTreat */ = {
 			isa = PBXGroup;
 			children = (
+				9F4F68761AAFC1F400434D7B /* Models */,
+				9F4F68751AAFC1ED00434D7B /* Views */,
+				9F4F68741AAFC1E200434D7B /* Controllers */,
 				58B9C84D1AA80ED500B28BC0 /* AppDelegate.swift */,
-				58B9C84F1AA80ED500B28BC0 /* ViewController.swift */,
-				9521B2CC1AAE02910076ECB8 /* BakerPostViewController.swift */,
 				58B9C8511AA80ED500B28BC0 /* Main.storyboard */,
 				58B9C8541AA80ED500B28BC0 /* Images.xcassets */,
 				58B9C8561AA80ED500B28BC0 /* LaunchScreen.xib */,
 				58B9C84B1AA80ED500B28BC0 /* Supporting Files */,
-				58B9C86D1AA80EED00B28BC0 /* DataSchema.swift */,
 				950352A21AAFBF8D00CBFA13 /* Frameworks */,
 			);
 			path = InstaTreat;
@@ -176,6 +178,31 @@
 				950352891AAFBE1C00CBFA13 /* Parse.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9F4F68741AAFC1E200434D7B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9521B2CC1AAE02910076ECB8 /* BakerPostViewController.swift */,
+				58B9C84F1AA80ED500B28BC0 /* ViewController.swift */,
+				9F4F68771AAFC22600434D7B /* LoginViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		9F4F68751AAFC1ED00434D7B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		9F4F68761AAFC1F400434D7B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				58B9C86D1AA80EED00B28BC0 /* DataSchema.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +308,7 @@
 				58B9C8501AA80ED500B28BC0 /* ViewController.swift in Sources */,
 				58B9C84E1AA80ED500B28BC0 /* AppDelegate.swift in Sources */,
 				9521B2CD1AAE02910076ECB8 /* BakerPostViewController.swift in Sources */,
+				9F4F68781AAFC22600434D7B /* LoginViewController.swift in Sources */,
 				58B9C86E1AA80EED00B28BC0 /* DataSchema.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
