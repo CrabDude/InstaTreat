@@ -391,10 +391,10 @@
             </objects>
             <point key="canvasLocation" x="1896" y="-618"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Baker Post View Controller-->
         <scene sceneID="bcm-oe-Yew">
             <objects>
-                <tabBarController id="raa-kQ-4mI" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="BakerPostViewController" id="raa-kQ-4mI" userLabel="Baker Post View Controller" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="cpJ-J3-rWo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>

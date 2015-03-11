@@ -20,7 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("O9KSrO3dDS9UziYYY225chYXr8HPl8NkFyhUVrSn", clientKey: "C8qHkSAjhdMgYttLiA2OqxSJHAUhe23IvQ4qXxim")
         
         if (PFUser.currentUser() != nil) {
-            let controller = 
+            var isBaker = PFUser.currentUser()["isBaker"] as Bool
+            if isBaker == true {
+                let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("BakerPostViewController") as UITabBarController
+                self.window?.rootViewController = vc
+            }
         }
 //
 //        if let user = AppHelper.defaults.stringForKey("currentUser")
