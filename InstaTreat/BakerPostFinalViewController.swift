@@ -10,6 +10,11 @@ import UIKit
 
 class BakerPostFinalViewController: UIViewController {
 
+    @IBOutlet var glutenFreeState: UISwitch!
+    @IBOutlet var nutFreeState: UISwitch!
+    
+    @IBOutlet var eggFreeState: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +27,8 @@ class BakerPostFinalViewController: UIViewController {
     }
     
 
+    @IBAction func confirmPostPressed(sender: AnyObject) {
+    }
     /*
     // MARK: - Navigation
 

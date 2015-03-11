@@ -10,6 +10,16 @@ import UIKit
 
 class BakerPostDetailsViewController: UIViewController {
 
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
+    @IBOutlet var PriceLabel: UITextField!
+    @IBOutlet var quantityLabel: UITextField!
+    @IBOutlet var descriptionTextView: UITextView!
+    
+    var postItem:Item!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

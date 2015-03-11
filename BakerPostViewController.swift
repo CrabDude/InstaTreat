@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MobileCoreServices
 
-class BakerPostViewController: UIViewController {
+class BakerPostViewController: UIViewController, UINavigationControllerDelegate,  UIImagePickerControllerDelegate {
 
    
     @IBOutlet var CameraImageView: UIImageView!
@@ -40,10 +41,30 @@ class BakerPostViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-   
+
     @IBAction func AddPhotoPressed(sender: AnyObject) {
+        println("Add photo was pressed")
         
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
+            println("Button capture")
+            
+            var imag = UIImagePickerController()
+            imag.delegate = self
+            imag.sourceType = UIImagePickerControllerSourceType.Camera;
+            imag.mediaTypes = [kUTTypeImage]
+            imag.allowsEditing = false
+            
+            self.presentViewController(imag, animated: true, completion: nil)
+        }
     }
+    
+    
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
+        println("i've got an image");
+        self.CameraImageView.image = image
+        self.PostItem.images = image
+    }
+
     
     /*
     // MARK: - Navigation

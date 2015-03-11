@@ -374,8 +374,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="AddAPhotoClicked:" destination="BPH-Qo-ZpT" eventType="touchUpInside" id="BYW-4I-AQ8"/>
-                                    <action selector="AddPhotoPressed:" destination="BPH-Qo-ZpT" eventType="touchUpInside" id="2cX-5H-w8i"/>
+                                    <action selector="AddPhotoPressed:" destination="BPH-Qo-ZpT" eventType="touchUpInside" id="kbH-Fu-gps"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5IQ-FU-H6L">
@@ -478,6 +477,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Details" id="aW9-Nd-Yan"/>
+                    <connections>
+                        <outlet property="PriceLabel" destination="8gp-1A-rh0" id="wu2-D2-zHk"/>
+                        <outlet property="descriptionTextView" destination="kWn-v3-Atk" id="0bz-5D-JBP"/>
+                        <outlet property="quantityLabel" destination="wup-j4-YmZ" id="LmM-dA-ObS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jwv-16-Xtc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -507,10 +511,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ORY-eH-ZN1">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ORY-eH-ZN1">
                                 <rect key="frame" x="250" y="139" width="51" height="31"/>
                             </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zek-zI-ZcO">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zek-zI-ZcO">
                                 <rect key="frame" x="250" y="173" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Egg free" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KR-a1-DTp">
@@ -527,14 +531,22 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="confirmPostPressed:" destination="cJA-zs-uyf" eventType="touchUpInside" id="iWh-Up-co1"/>
+                                </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xdV-6v-VdW">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xdV-6v-VdW">
                                 <rect key="frame" x="250" y="102" width="51" height="31"/>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Optional" id="Um1-iK-aL1"/>
+                    <connections>
+                        <outlet property="eggFreeState" destination="zek-zI-ZcO" id="5wf-XQ-z1l"/>
+                        <outlet property="glutenFreeState" destination="xdV-6v-VdW" id="9Z5-bk-GOt"/>
+                        <outlet property="nutFreeState" destination="ORY-eH-ZN1" id="Zyb-In-hwe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w64-hU-jMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

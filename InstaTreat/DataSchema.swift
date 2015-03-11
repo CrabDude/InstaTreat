@@ -43,7 +43,7 @@ var itemCategories = [
 
 class Item {
     let id: AnyObject!
-    let images: [UIImage]!
+    var images: UIImage!
     let description: String!
     var title: String!
     var rating: Int!
