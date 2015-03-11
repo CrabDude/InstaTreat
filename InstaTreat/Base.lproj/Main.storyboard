@@ -215,7 +215,7 @@
         <!--Post-->
         <scene sceneID="kg6-ex-Ac5">
             <objects>
-                <viewController id="BPH-Qo-ZpT" sceneMemberID="viewController">
+                <viewController id="BPH-Qo-ZpT" customClass="BakerPostViewController" customModule="InstaTreat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6CQ-pe-W9i"/>
                         <viewControllerLayoutGuide type="bottom" id="UF5-uE-kXh"/>
