@@ -31,11 +31,13 @@ class LoginViewController: UIViewController {
                 if isBaker == true {
                     println("baker")
                     let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("BakerPostViewController") as UIViewController
+                    let navController = UINavigationController(rootViewController: vc)
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
                 else {
                     println("this is a user")
                     let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamViewController") as UIViewController
+//                    self.presentViewController(vc, animated: true, completion: nil)
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
                 
