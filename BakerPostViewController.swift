@@ -12,6 +12,7 @@ class BakerPostViewController: UIViewController {
 
    
     @IBOutlet var CameraImageView: UIImageView!
+    
     var PostItem : Item!
     
     override func viewDidLoad() {
