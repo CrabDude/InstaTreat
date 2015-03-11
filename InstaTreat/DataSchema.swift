@@ -23,22 +23,22 @@ var itemCategories = [
     "marshmallows"
 ]
 
-class ItemPost {
-    let id: AnyObject!
-    let quantity: Int
-    let createdAt: NSDate
-    let endDate: NSDate
-    let item: Item
-    let price: String
-    var longitude: Float!
-    var latitude: Float!
-    
-    var options = [String:Bool]()
-    
-    func initWithDictionary(dict: [String: AnyObject]) {
-        
-    }
-}
+//class ItemPost {
+//    let id: AnyObject!
+//    let quantity: Int
+//    let createdAt: NSDate
+//    let endDate: NSDate
+//    let item: Item
+//    let price: String
+//    var longitude: Float!
+//    var latitude: Float!
+//    
+//    var options = [String:Bool]()
+//    
+//    func initWithDictionary(dict: [String: AnyObject]) {
+//        
+//    }
+//}
 
 
 class Item {
