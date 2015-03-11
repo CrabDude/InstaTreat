@@ -44,10 +44,12 @@ var itemCategories = [
 class Item {
     let id: AnyObject!
     var images: UIImage!
-    let description: String!
+    var description: String!
     var title: String!
     var rating: Int!
     var owner: String!
+    var price: Int!
+    var quantity : Int!
     var tags: Array<String>!
     
     init(){
@@ -57,6 +59,8 @@ class Item {
         self.title = ""
         self.rating = 0
         self.owner = ""
+        self.price = 0
+        self.quantity = 0
         self.tags = []
     }
 }

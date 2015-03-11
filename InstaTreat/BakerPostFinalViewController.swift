@@ -15,6 +15,8 @@ class BakerPostFinalViewController: UIViewController {
     
     @IBOutlet var eggFreeState: UISwitch!
     
+    var postItem :Item!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,15 +30,35 @@ class BakerPostFinalViewController: UIViewController {
     
 
     @IBAction func confirmPostPressed(sender: AnyObject) {
+        if glutenFreeState.on{
+            self.postItem.tags.append("Gluten Free")
+        }
+        if nutFreeState.on{
+            self.postItem.tags.append("Nut Free")
+        }
+        if eggFreeState.on{
+            self.postItem.tags.append("Egg Free")
+        }
+        
+        //Create the AlertController
+        let actionSheetController: UIAlertController = UIAlertController(title: "Confirm", message: "Please confirm, Item cannot be changed later", preferredStyle: .Alert)
+        
+        //Create and add the Cancel action
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
+            //Do some stuff
+        }
+        actionSheetController.addAction(cancelAction)
+        //Create and an option action
+        let nextAction: UIAlertAction = UIAlertAction(title: "Post", style: .Default) { action -> Void in
+            //Do some other stuff
+            println("Ready to post")
+            
+            //Post to parse 
+            //Present the Sales view controller 
+        }
+        actionSheetController.addAction(nextAction)
+        
+        //Present the AlertController
+        self.presentViewController(actionSheetController, animated: true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

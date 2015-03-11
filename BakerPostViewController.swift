@@ -75,13 +75,10 @@ class BakerPostViewController: UIViewController, UINavigationControllerDelegate,
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        println("I got called before leaving");
-//        println(UIImage(named: "Cookie"))
         if let img: UIImage = UIImage(named: "Cookie") {
             self.PostItem.images = img
         }
         
-
         if let dc = segue.destinationViewController as? BakerPostDetailsViewController {
             dc.postItem = self.PostItem
         }
