@@ -29,6 +29,7 @@
 		950352A11AAFBECE00CBFA13 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 950352A01AAFBECE00CBFA13 /* libsqlite3.dylib */; };
 		9521B2CD1AAE02910076ECB8 /* BakerPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521B2CC1AAE02910076ECB8 /* BakerPostViewController.swift */; };
 		9F4F68781AAFC22600434D7B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F68771AAFC22600434D7B /* LoginViewController.swift */; };
+		9F4F687B1AAFCA2800434D7B /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F687A1AAFCA2800434D7B /* AppHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		950352A31AAFC09500CBFA13 /* InstaTreat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InstaTreat-Bridging-Header.h"; sourceTree = "<group>"; };
 		9521B2CC1AAE02910076ECB8 /* BakerPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BakerPostViewController.swift; path = ../BakerPostViewController.swift; sourceTree = "<group>"; };
 		9F4F68771AAFC22600434D7B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9F4F687A1AAFCA2800434D7B /* AppHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		58B9C84A1AA80ED500B28BC0 /* InstaTreat */ = {
 			isa = PBXGroup;
 			children = (
+				9F4F68791AAFCA1800434D7B /* helpers */,
 				9F4F68761AAFC1F400434D7B /* Models */,
 				9F4F68751AAFC1ED00434D7B /* Views */,
 				9F4F68741AAFC1E200434D7B /* Controllers */,
@@ -205,6 +208,14 @@
 				58B9C86D1AA80EED00B28BC0 /* DataSchema.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		9F4F68791AAFCA1800434D7B /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9F4F687A1AAFCA2800434D7B /* AppHelper.swift */,
+			);
+			name = helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58B9C8501AA80ED500B28BC0 /* ViewController.swift in Sources */,
+				9F4F687B1AAFCA2800434D7B /* AppHelper.swift in Sources */,
 				58B9C84E1AA80ED500B28BC0 /* AppDelegate.swift in Sources */,
 				9521B2CD1AAE02910076ECB8 /* BakerPostViewController.swift in Sources */,
 				9F4F68781AAFC22600434D7B /* LoginViewController.swift in Sources */,

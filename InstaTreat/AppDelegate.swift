@@ -17,24 +17,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         Parse.enableLocalDatastore()
-        
-        // Initialize Parse.
         Parse.setApplicationId("O9KSrO3dDS9UziYYY225chYXr8HPl8NkFyhUVrSn", clientKey: "C8qHkSAjhdMgYttLiA2OqxSJHAUhe23IvQ4qXxim")
         
-        var gameScore = PFObject(className:"GameScore")
-        gameScore["score"] = 1337
-        gameScore["playerName"] = "Sean Plott"
-        gameScore["cheatMode"] = false
-        gameScore.saveInBackgroundWithBlock {
-            (success: Bool, error: NSError!) -> Void in
-            if (success) {
-                // The object has been saved.
-                println("object saved")
-            } else {
-                // There was a problem, check error.description
-            }
+        if (PFUser.currentUser() != nil) {
+            let controller = 
         }
-
+//
+//        if let user = AppHelper.defaults.stringForKey("currentUser")
+//        {
+//            println("user signed in")
+//            println(user)
+//        }
+//        else {
+//            println("current user not signed in")
+//        }
+        // Initialize Parse.
+        
         return true
     }
 
