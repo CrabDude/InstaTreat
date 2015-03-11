@@ -10,22 +10,26 @@ import UIKit
 
 class BakerPostViewController: UIViewController {
 
+   
+    @IBOutlet var CameraImageView: UIImageView!
+    var PostItem : Item!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         println("baker post view loaded")
         
-        var item = PFObject(className:"Items")
-        item["Title"] = "cookies"
-        item["Price"] = 2
-        item.saveInBackgroundWithBlock {
-            (success: Bool, error: NSError!) -> Void in
-            if (success) {
-                println("item saved")
-                // The object has been saved.
-            } else {
-                // There was a problem, check error.description
-            }
-        }
+//        var item = PFObject(className:"Items")
+//        item["Title"] = "cookies"
+//        item["Price"] = 2
+//        item.saveInBackgroundWithBlock {
+//            (success: Bool, error: NSError!) -> Void in
+//            if (success) {
+//                println("item saved")
+//                // The object has been saved.
+//            } else {
+//                // There was a problem, check error.description
+//            }
+//        }
 
         // Do any additional setup after loading the view.
     }
@@ -35,7 +39,11 @@ class BakerPostViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+   
+    @IBAction func AddPhotoPressed(sender: AnyObject) {
+        
+    }
+    
     /*
     // MARK: - Navigation
 
