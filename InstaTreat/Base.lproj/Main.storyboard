@@ -90,7 +90,7 @@
         <!--Item View Controller-->
         <scene sceneID="dLT-UD-l5W">
             <objects>
-                <viewController id="2Cw-lP-gV0" userLabel="Item View Controller" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ItemViewController" id="2Cw-lP-gV0" userLabel="Item View Controller" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c4b-uF-6r7"/>
                         <viewControllerLayoutGuide type="bottom" id="fYr-hN-0q6"/>

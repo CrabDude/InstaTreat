@@ -27,9 +27,18 @@ class LoginViewController: UIViewController {
     @IBAction func onLoginPressed(sender: UIButton) {
         PFUser.logInWithUsernameInBackground(self.usernameTextField.text, password: self.passwordTextField.text) { (user:PFUser!, error:NSError!) -> Void in
             if user != nil {
-                AppHelper.defaults.setObject(user, forKey: "currentUser")
-                println("user login was successful")
-                println(user["isBaker"])
+                var isBaker = user["isBaker"] as Bool
+                if isBaker == true {
+                    println("baker")
+                    let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("BakerPostViewController") as UIViewController
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+                else {
+                    println("this is a user")
+                    let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("ItemViewController") as UIViewController
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+                
             }
             else {
                 println(error)
