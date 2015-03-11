@@ -49,8 +49,16 @@ class Item {
     var rating: Int!
     var owner: String!
     var tags: Array<String>!
-    var categories = itemCategories
     
+    init(){
+        self.id = ""
+        self.images = UIImage()
+        self.description = ""
+        self.title = ""
+        self.rating = 0
+        self.owner = ""
+        self.tags = []
+    }
 }
 
 class User {
