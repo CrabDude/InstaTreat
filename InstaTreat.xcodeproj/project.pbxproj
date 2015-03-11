@@ -34,6 +34,8 @@
 		9F4F687B1AAFCA2800434D7B /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F687A1AAFCA2800434D7B /* AppHelper.swift */; };
 		9F4F687D1AAFD69100434D7B /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F687C1AAFD69100434D7B /* StreamViewController.swift */; };
 		9F4F687F1AAFDCAD00434D7B /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F687E1AAFDCAD00434D7B /* ItemCell.swift */; };
+		9F4F68811AB002E900434D7B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F68801AB002E900434D7B /* MapViewController.swift */; };
+		9F4F68831AB004A300434D7B /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F68821AB004A300434D7B /* ItemDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		9F4F687A1AAFCA2800434D7B /* AppHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
 		9F4F687C1AAFD69100434D7B /* StreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamViewController.swift; sourceTree = "<group>"; };
 		9F4F687E1AAFDCAD00434D7B /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		9F4F68801AB002E900434D7B /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		9F4F68821AB004A300434D7B /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +206,8 @@
 				58B9C84F1AA80ED500B28BC0 /* ViewController.swift */,
 				9F4F68771AAFC22600434D7B /* LoginViewController.swift */,
 				9F4F687C1AAFD69100434D7B /* StreamViewController.swift */,
+				9F4F68801AB002E900434D7B /* MapViewController.swift */,
+				9F4F68821AB004A300434D7B /* ItemDetailViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -330,7 +336,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F4F68811AB002E900434D7B /* MapViewController.swift in Sources */,
 				9F4F687F1AAFDCAD00434D7B /* ItemCell.swift in Sources */,
+				9F4F68831AB004A300434D7B /* ItemDetailViewController.swift in Sources */,
 				58B9C8501AA80ED500B28BC0 /* ViewController.swift in Sources */,
 				9F4F687B1AAFCA2800434D7B /* AppHelper.swift in Sources */,
 				950352AF1AAFDD7900CBFA13 /* BakerPostFinalViewController.swift in Sources */,
