@@ -22,17 +22,17 @@ Notifications of subscribed baked good categories or bakers. (Treat Connoisseurs
 Treat and baker reviews. (Treat Connoisseurs, Bakers)
 
 
-Buyers:
+##Buyers:
 Adam and Marlene are young, busy tech workers in Silicon Valley. While passively binging on their latest Netflix season, they’re looking for something to satisfy their sweet tooth. They’re binge watching netflix and don’t want to leave to get desserts. Bakeries close early so even if they decided to they couldn’t get anything.
 
 Sophia is a 32, busy mom with 2 kids in suburban san jose. She has a playdate at home for her 3 year old and wants to buy some healthy homemade snacks but does not have the time or skills to do it herself.  Plan ahead 
 
-Sellers:
+##Sellers:
 Jane is a baking hobbyist and just came back from a yoga session. She has an exciting new gluten-free banana bread recipe she wants to try, and she figures why not sell the excess and make some extra income doing what she loves, but she needs a familiar easy to use means to sell her goods. 
 
 Andrew owns a professional bakery where he sells an assortment of desserts. While sales are great on the weekend, he doesn’t get the necessary foot traffic during the week to keep sales high. He’s looking for a way to get his assortment of desserts in front of customers during store hours even when they’re not walking past his shop downtown.
 
-
+##User Flows
 Flow 1
 Goal: Buy baked goods quickly
 
