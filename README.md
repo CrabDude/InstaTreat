@@ -17,18 +17,12 @@ Bakers (Professional and Hobbyists)
 Treat Connoisseurs
 
 ##App Main Functions
-Buy nearby fresh baked items quickly. (Treat Connoisseurs)
-
-Access to a filterable real time stream or a map view of baked items coming up for sale. (Treat Connoisseurs)
-
-Each item will have details such as pricing, quantity, purchase options and appealing photos. (Treat Connoisseurs, Bakers)
-
-Sell baked goods through the stream. (Bakers)
-
-Notifications of subscribed baked good categories or bakers. (Treat Connoisseurs)
-
-Treat and baker reviews. (Treat Connoisseurs, Bakers)
-
+Buy nearby fresh baked items quickly. (Treat Connoisseurs)  
+Access to a filterable real time stream or a map view of baked items coming up for sale. (Treat Connoisseurs)  
+Each item will have details such as pricing, quantity, purchase options and appealing photos. (Treat Connoisseurs, Bakers)  
+Sell baked goods through the stream. (Bakers)  
+Notifications of subscribed baked good categories or bakers. (Treat Connoisseurs)  
+Treat and baker reviews. (Treat Connoisseurs, Bakers)  
 
 ##Buyers:
 Adam and Marlene are young, busy tech workers in Silicon Valley. While passively binging on their latest Netflix season, they’re looking for something to satisfy their sweet tooth. They’re binge watching netflix and don’t want to leave to get desserts. Bakeries close early so even if they decided to they couldn’t get anything.
@@ -42,17 +36,12 @@ Andrew owns a professional bakery where he sells an assortment of desserts. Whil
 
 ##User Flows
 ####Flow 1
-Goal: Buy baked goods quickly
-
-Consumer View
-
-Consumer sees a real time stream of items on sale.
-
-Consumer sees details of items and purchase options. 
-
-Simple interface to purchase the item. 
-
-Tabs: Stream (filters, map), Purchase history, Settings 
+Goal: Buy baked goods quickly  
+Consumer View  
+Consumer sees a real time stream of items on sale.  
+Consumer sees details of items and purchase options.   
+Simple interface to purchase the item.  
+Tabs: Stream (filters, map), Purchase history, Settings  
 
 ####Flow 2
 Goal: Sell baked goods.   
