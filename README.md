@@ -55,44 +55,28 @@ Simple interface to purchase the item.
 Tabs: Stream (filters, map), Purchase history, Settings 
 
 ####Flow 2
-Goal: Sell baked goods. 
-
-Baker View
-
-Post view
-
-Post pictures and details for an item
-
-Put the item on sale
-
-History view
-
-List of past sale items
-
-Option to repost an item
-
-Logistics view
-
-List of items currently on sale
-
-Baker can view who is buying items and when they’re going to pick them up
-
-Quantity remaining 
+Goal: Sell baked goods.   
+Baker View  
+Post view  
+Post pictures and details for an item  
+Put the item on sale  
+History view  
+List of past sale items  
+Option to repost an item  
+Logistics view  
+List of items currently on sale  
+Baker can view who is buying items and when they’re going to pick them up  
+Quantity remaining   
 
 4. Option to specify availability for pickup. 
 
 ####Flow 3
-Goal: Show Baker and Item ratings
-
-Consumer View
-
-Rate an item via a popup after confirmed delivery
-
-Baker View
-
-Show rated average item rating at top of History & Sale views
-
-Show Item rating in History & Sale view list
+Goal: Show Baker and Item ratings  
+Consumer View  
+Rate an item via a popup after confirmed delivery  
+Baker View  
+Show rated average item rating at top of History & Sale views  
+Show Item rating in History & Sale view list  
 
 
 ## Walkthrough
