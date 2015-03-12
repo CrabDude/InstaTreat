@@ -54,7 +54,26 @@ class BakerPostFinalViewController: UIViewController {
             println("Ready to post")
             
             //Post to parse 
-            //Present the Sales view controller 
+            var item = PFObject(className:"Items")
+            item["Title"] = self.postItem.title
+            item["Price"] = self.postItem.price
+            item["Quantity"] = self.postItem.quantity
+            item["Description"] = self.postItem.description
+            item["Categories"] = self.postItem.tags
+            
+            var currentUser = PFUser.currentUser()
+            item["BakerID"] = currentUser.objectId
+
+            item.saveInBackgroundWithBlock {
+                (success: Bool, error: NSError!) -> Void in
+                if (success) {
+                    println("item saved")
+                    // The object has been saved.
+                } else {
+                    // There was a problem, check error.description
+                }
+            }
+            //Present the Sales view controller
         }
         actionSheetController.addAction(nextAction)
         

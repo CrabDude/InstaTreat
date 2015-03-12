@@ -17,25 +17,20 @@ class BakerPostViewController: UIViewController, UINavigationControllerDelegate,
    
     @IBOutlet var CameraImageView: UIImageView!
     
+    @IBOutlet var titleTextField: UITextField!
+    
+    
     var PostItem = Item()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         println("baker post view loaded")
         
-//        var item = PFObject(className:"Items")
-//        item["Title"] = "cookies"
-//        item["Price"] = 2
-//        item.saveInBackgroundWithBlock {
-//            (success: Bool, error: NSError!) -> Void in
-//            if (success) {
-//                println("item saved")
-//                // The object has been saved.
-//            } else {
-//                // There was a problem, check error.description
-//            }
-//        }
-
+        //Just for testing purpase
+        if let img: UIImage = UIImage(named: "Cookie") {
+            self.CameraImageView.image = img
+        }
+        
         // Do any additional setup after loading the view.
     }
 
@@ -65,7 +60,6 @@ class BakerPostViewController: UIViewController, UINavigationControllerDelegate,
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
         println("i've got an image");
         self.CameraImageView.image = image
-        self.PostItem.images = UIImage(named: "cookie")
     }
 
     
@@ -78,7 +72,9 @@ class BakerPostViewController: UIViewController, UINavigationControllerDelegate,
         if let img: UIImage = UIImage(named: "Cookie") {
             self.PostItem.images = img
         }
-        
+//        self.PostItem.images = image
+        self.PostItem.title = titleTextField.text
+
         if let dc = segue.destinationViewController as? BakerPostDetailsViewController {
             dc.postItem = self.PostItem
         }
