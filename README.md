@@ -33,7 +33,7 @@ Jane is a baking hobbyist and just came back from a yoga session. She has an exc
 Andrew owns a professional bakery where he sells an assortment of desserts. While sales are great on the weekend, he doesn’t get the necessary foot traffic during the week to keep sales high. He’s looking for a way to get his assortment of desserts in front of customers during store hours even when they’re not walking past his shop downtown.
 
 ##User Flows
-Flow 1
+####Flow 1
 Goal: Buy baked goods quickly
 
 Consumer View
@@ -44,7 +44,7 @@ Simple interface to purchase the item.
 
 Tabs: Stream (filters, map), Purchase history, Settings 
 
-Flow 2
+####Flow 2
 Goal: Sell baked goods. 
 
 Baker View
@@ -60,7 +60,7 @@ Baker can view who is buying items and when they’re going to pick them up
 Quantity remaining 
 4. Option to specify availability for pickup. 
 
-Flow 3
+####Flow 3
 Goal: Show Baker and Item ratings
 Consumer View
 Rate an item via a popup after confirmed delivery
