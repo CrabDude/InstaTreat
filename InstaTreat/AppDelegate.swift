@@ -21,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        PFUser.logOut()
         if (PFUser.currentUser() != nil) {
             println(PFUser.currentUser())
-            var isBaker = PFUser.currentUser()["isBaker"] as Bool
+            var bakerDetails: AnyObject! = PFUser.currentUser()["baker"]
             window = UIWindow(frame: UIScreen.mainScreen().bounds)
-            if isBaker == true {
+            if bakerDetails != nil {
                 let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("BakerPostViewController") as UITabBarController
                 window?.rootViewController = vc
                 window!.makeKeyAndVisible()

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Adam Crabtree. All rights reserved.
 //
 
-import UIkit
+import UIKit
 
 class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
