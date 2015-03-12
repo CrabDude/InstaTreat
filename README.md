@@ -10,8 +10,8 @@ Put the most delectable and delicious confectioneries into the hands of hungry b
 
 ##App Audience:
 
-###Bakers (Professional and Hobbyists)
-###Treat Connoisseurs
+Bakers (Professional and Hobbyists)
+Treat Connoisseurs
 
 ##App Main Functions
 Buy nearby fresh baked items quickly. (Treat Connoisseurs)
