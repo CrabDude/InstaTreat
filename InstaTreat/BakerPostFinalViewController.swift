@@ -15,7 +15,7 @@ class BakerPostFinalViewController: UIViewController {
     
     @IBOutlet var eggFreeState: UISwitch!
     
-    var postItem :Item!
+    var item: Item!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +31,13 @@ class BakerPostFinalViewController: UIViewController {
 
     @IBAction func confirmPostPressed(sender: AnyObject) {
         if glutenFreeState.on{
-            self.postItem.tags.append("Gluten Free")
+            self.item.tags.append("Gluten Free")
         }
         if nutFreeState.on{
-            self.postItem.tags.append("Nut Free")
+            self.item.tags.append("Nut Free")
         }
         if eggFreeState.on{
-            self.postItem.tags.append("Egg Free")
+            self.item.tags.append("Egg Free")
         }
         
         //Create the AlertController
@@ -54,23 +54,24 @@ class BakerPostFinalViewController: UIViewController {
             println("Ready to post")
             
             //Post to parse 
-            var item = PFObject(className:"Items")
-            item["Title"] = self.postItem.title
-            item["Price"] = self.postItem.price
-            item["Quantity"] = self.postItem.quantity
-            item["Description"] = self.postItem.description
-            item["Categories"] = self.postItem.tags
+            var item = PFObject(className:"Item")
+            item["title"] = self.item.title
+            item["price"] = self.item.price
+            item["quantity"] = self.item.quantity
+            item["description"] = self.item.description
+            item["tags"] = self.item.tags
             
-            var currentUser = PFUser.currentUser()
-            item["BakerID"] = currentUser.objectId
-
-            item.saveInBackgroundWithBlock {
-                (success: Bool, error: NSError!) -> Void in
-                if (success) {
-                    println("item saved")
-                    // The object has been saved.
-                } else {
-                    // There was a problem, check error.description
+            if let currentUser = PFUser.currentUser() {
+                item["baker"] = currentUser["baker"]
+                
+                item.saveInBackgroundWithBlock {
+                    (success, error) in
+                    if (success) {
+                        println("item saved")
+                        // The object has been saved.
+                    } else {
+                        // There was a problem, check error.description
+                    }
                 }
             }
             //Present the Sales view controller

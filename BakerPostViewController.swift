@@ -20,7 +20,7 @@ class BakerPostViewController: UIViewController, UINavigationControllerDelegate,
     @IBOutlet var titleTextField: UITextField!
     
     
-    var PostItem = Item()
+    var item = Item()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,9 +57,9 @@ class BakerPostViewController: UIViewController, UINavigationControllerDelegate,
     }
     
     
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         println("i've got an image");
-        self.CameraImageView.image = image
+        self.CameraImageView.image = info[UIImagePickerControllerEditedImage] as? UIImage
     }
 
     
@@ -70,13 +70,13 @@ class BakerPostViewController: UIViewController, UINavigationControllerDelegate,
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if let img: UIImage = UIImage(named: "Cookie") {
-            self.PostItem.images = img
+            self.item.images = img
         }
 //        self.PostItem.images = image
-        self.PostItem.title = titleTextField.text
+        self.item.title = titleTextField.text
 
         if let dc = segue.destinationViewController as? BakerPostDetailsViewController {
-            dc.postItem = self.PostItem
+            dc.item = self.item
         }
     }
 }

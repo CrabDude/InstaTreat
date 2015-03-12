@@ -18,7 +18,7 @@ class BakerPostDetailsViewController: UIViewController {
     @IBOutlet var quantityLabel: UITextField!
     @IBOutlet var descriptionTextView: UITextView!
     
-    var postItem :Item!
+    var item :Item!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,16 +37,16 @@ class BakerPostDetailsViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        self.postItem.description = descriptionTextView.text
+        self.item.description = descriptionTextView.text
         if let number = self.PriceLabel.text?.toInt() {
-            self.postItem.price = number
+            self.item.price = number
         }
         if let number = self.quantityLabel.text?.toInt() {
-            self.postItem.quantity = number
+            self.item.quantity = number
         }
         
         if let dc = segue.destinationViewController as? BakerPostFinalViewController {
-            dc.postItem = self.postItem
+            dc.item = self.item
         }
     }
     

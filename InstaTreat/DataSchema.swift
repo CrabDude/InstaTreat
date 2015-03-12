@@ -35,11 +35,14 @@ var itemCategories = [
 //    
 //    var options = [String:Bool]()
 //    
+//    func init() {
+//        
+//    }
+//    
 //    func initWithDictionary(dict: [String: AnyObject]) {
 //        
 //    }
 //}
-
 
 class Item {
     let id: AnyObject!
@@ -52,7 +55,7 @@ class Item {
     var quantity : Int!
     var tags: Array<String>!
     
-    init(){
+    init() {
         self.id = ""
         self.images = UIImage()
         self.description = ""
@@ -66,19 +69,35 @@ class Item {
 }
 
 class User {
-//    let email: String!
     let phoneNumber: String!
     let firstName: String!
     let lastName: String!
     let email: String!
     let address: String!
-    let ccId: String!
-    var isBaker: Bool!
-    var userId: AnyObject!
+    let paymentToken: String!
+    let baker: [String:AnyObject]!
+    let userId: AnyObject!
+    
+    init() {
+        self.phoneNumber = ""
+        self.firstName = ""
+        self.lastName = ""
+        self.email = ""
+        self.address = ""
+        self.paymentToken = ""
+        self.baker = [String:AnyObject]()
+        self.userId = ""
+    }
 }
 
 class Baker: User {
-    let availability: AnyObject!
+    let availability: [String:AnyObject]!
+    
+    override init() {
+        self.availability = [String:AnyObject]()
+        
+        super.init()
+    }
 }
 
 class Buyer:User {

@@ -10,24 +10,27 @@ import UIKit
 
 class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var items: Array<AnyObject>!
+    var items = []
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
-        var query = PFQuery(className: "Items")
-        self.items = query.findObjects()
+        var query = PFQuery(className: "Item")
+        self.items = query.findObjects()!
         self.tableView.reloadData()
+        
+        println("items")
+        println(self.items)
     }
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("itemCell") as ItemCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("itemCell") as! ItemCell
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("ItemDetailViewController") as UIViewController
+        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("ItemDetailViewController") as! UIViewController
         self.navigationController?.presentViewController(vc, animated: true, completion: nil)
     }
     
@@ -37,13 +40,13 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBAction func onLogoutPressed(sender: UIButton) {
         PFUser.logOut()
-        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as UIViewController
+        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as! UIViewController
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
 
     @IBAction func onMapButtonPressed(sender: UIButton) {
-        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("MapViewController") as UIViewController
+        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("MapViewController") as! UIViewController
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

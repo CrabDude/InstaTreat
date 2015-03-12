@@ -18,23 +18,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         Parse.enableLocalDatastore()
         Parse.setApplicationId("O9KSrO3dDS9UziYYY225chYXr8HPl8NkFyhUVrSn", clientKey: "C8qHkSAjhdMgYttLiA2OqxSJHAUhe23IvQ4qXxim")
-//        PFUser.logOut()
-        if (PFUser.currentUser() != nil) {
-            println(PFUser.currentUser())
-            var bakerDetails: AnyObject! = PFUser.currentUser()["baker"]
+        PFUser.logOut()
+        if let user = PFUser.currentUser() {
+            println(user)
+            
             window = UIWindow(frame: UIScreen.mainScreen().bounds)
-            if bakerDetails != nil {
-                let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("BakerPostViewController") as UITabBarController
-                window?.rootViewController = vc
-                window!.makeKeyAndVisible()
-            }
-            else {
+            let vc: UIViewController
+            if let baker: AnyObject? = user["baker"] {
+                vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("BakerPostViewController") as! UITabBarController
+            } else {
                 println("this is user not a baker")
-                let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamViewController") as UIViewController
-                
-                window?.rootViewController = vc
-                window!.makeKeyAndVisible()
+                vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamNavigationController") as! UINavigationController
             }
+            window?.rootViewController = vc
+            window!.makeKeyAndVisible()
         }
         
         return true
@@ -65,3 +62,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension PFObject {
+    subscript(index: String) -> AnyObject? {
+        get {
+            return self.valueForKey(index)
+        }
+        set(newValue) {
+            if let newValue: AnyObject = newValue {
+                self.setValue(newValue, forKey: index)
+            }
+        }
+    }
+}
