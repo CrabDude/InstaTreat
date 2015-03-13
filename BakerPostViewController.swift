@@ -26,7 +26,7 @@ class BakerPostViewController: UIViewController, UINavigationControllerDelegate,
         super.viewDidLoad()
         println("baker post view loaded")
         
-        //Just for testing purpase
+        //Just for testing purpose
         if let img: UIImage = UIImage(named: "Cookie") {
             self.CameraImageView.image = img
         }

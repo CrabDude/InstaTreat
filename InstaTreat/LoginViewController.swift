@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
             if let user = user {
                 if let bakerDetails = user["baker"] as? NSObject {
                     println("baker")
-                    let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("BakerPostViewController") as UIViewController
+                    let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("BakerPostViewController") as UITabBarController
                     let navController = UINavigationController(rootViewController: vc)
                     self.navigationController?.pushViewController(vc, animated: true)
                 } else {

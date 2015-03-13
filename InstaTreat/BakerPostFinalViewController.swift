@@ -30,6 +30,7 @@ class BakerPostFinalViewController: UIViewController {
     
 
     @IBAction func confirmPostPressed(sender: AnyObject) {
+        
         if glutenFreeState.on {
             self.item.tags.append("Gluten Free")
         }
@@ -48,7 +49,7 @@ class BakerPostFinalViewController: UIViewController {
             //Do some stuff
         }
         actionSheetController.addAction(cancelAction)
-        //Create and an option action
+        
         let nextAction: UIAlertAction = UIAlertAction(title: "Post", style: .Default) { action -> Void in
             //Do some other stuff
             println("Ready to post")
@@ -67,8 +68,23 @@ class BakerPostFinalViewController: UIViewController {
                 item.saveInBackgroundWithBlock {
                     (success, error) in
                     if (success) {
-                        println("item saved")
-                        // The object has been saved.
+                        let actionSheetController: UIAlertController = UIAlertController(title: "Post", message: "Item successfully posted", preferredStyle: .Alert)
+                        
+                        let okAction: UIAlertAction = UIAlertAction(title: "OK", style: .Default) { action -> Void in
+                            
+                            println("Post Successful")
+                            self.view.window?.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
+//                            if let tabBarController = self.view.window?.rootViewController as? UITabBarController {
+//                                tabBarController.selectedIndex = 2
+//                            }
+//                            if let tabBarController = self.parentViewController as? UITabBarController {
+//                                tabBarController.selectedIndex = 2
+//                            }
+
+                        }
+                        self.presentViewController(actionSheetController, animated: true, completion: nil)
+                        actionSheetController.addAction(okAction)
+                        
                     } else {
                         // There was a problem, check error.description
                     }

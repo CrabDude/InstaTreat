@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lwc-vq-O62">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lwc-vq-O62">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -23,25 +23,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UhW-fm-ucZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="548" y="38"/>
-        </scene>
-        <!--Settings-->
-        <scene sceneID="iHp-fI-S96">
-            <objects>
-                <viewController id="YZq-w5-6yU" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="tV1-2A-jr3"/>
-                        <viewControllerLayoutGuide type="bottom" id="23e-E6-GZP"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZHn-XH-GC7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="9I2-L3-0sE"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cgK-ZD-B24" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="538" y="1369"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="xaA-IG-Gzz">
@@ -575,7 +556,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="8YA-5u-PfW" kind="push" id="TP1-bZ-MrW"/>
+                                    <segue destination="8YA-5u-PfW" kind="modal" modalTransitionStyle="coverVertical" id="TP1-bZ-MrW"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xVU-Hj-2Q0">
@@ -644,7 +625,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cJA-zs-uyf" kind="push" id="F0g-Fz-Sua"/>
+                                    <segue destination="cJA-zs-uyf" kind="modal" modalTransitionStyle="coverVertical" id="F0g-Fz-Sua"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4Y-Qe-wAF">
@@ -772,9 +753,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="I3j-yj-AIY" kind="relationship" relationship="viewControllers" id="T4n-lr-EA0"/>
-                        <segue destination="OWq-lQ-4IE" kind="relationship" relationship="viewControllers" id="0FY-eb-58m"/>
                         <segue destination="VNa-JY-pR5" kind="relationship" relationship="viewControllers" id="pJA-8L-rIJ"/>
-                        <segue destination="YZq-w5-6yU" kind="relationship" relationship="viewControllers" id="qMb-rO-9y9"/>
+                        <segue destination="OWq-lQ-4IE" kind="relationship" relationship="viewControllers" id="0FY-eb-58m"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cCH-VS-aJ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
