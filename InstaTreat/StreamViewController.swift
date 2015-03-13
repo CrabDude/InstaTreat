@@ -8,9 +8,15 @@
 
 import UIKit
 
+@objc
+protocol StreamViewControllerDelegate{
+    optional func updateView(controller: StreamViewController, item:NSObject)
+}
+
 class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, EDStarRatingProtocol {
     
     var items = [Item]()
+    var delegate: StreamViewControllerDelegate?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -108,6 +114,7 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBAction func onBuy(sender: UIButton) {
         println("on buy presed")
+        self.delegate?.updateView!(self, item: "yo")
         NSNotificationCenter.defaultCenter().postNotificationName("uniqueName", object: nil)
         let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("SaveCardViewController") as UIViewController
         self.navigationController?.pushViewController(vc, animated: true)

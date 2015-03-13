@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConfirmationViewController: UIViewController, UIAlertViewDelegate {
+class ConfirmationViewController: UIViewController, UIAlertViewDelegate, StreamViewControllerDelegate {
     
     
     var alert = UIAlertController(title: "Thank You!", message: "Your order is on its way", preferredStyle: UIAlertControllerStyle.Alert)
@@ -47,5 +47,9 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate {
     func dismiss(){
         var vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamNavigationController") as UINavigationController
         self.navigationController?.presentViewController(vc, animated: true, completion: nil)
+    }
+    
+    func updateView(controller: StreamViewController, item: NSObject) {
+        println(item)
     }
 }
