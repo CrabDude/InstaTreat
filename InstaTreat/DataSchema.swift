@@ -84,7 +84,6 @@ class Item {
         var items = [Item]()
 //        println(items)
         for parseItem in parseItems {
-            println(parseItem)
 //            println(parseItem["createdAt"]!)
             let item = Item()
             item.title = parseItem["title"]! as String

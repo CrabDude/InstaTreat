@@ -20,13 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("O9KSrO3dDS9UziYYY225chYXr8HPl8NkFyhUVrSn", clientKey: "C8qHkSAjhdMgYttLiA2OqxSJHAUhe23IvQ4qXxim")
 //        PFUser.logOut()
         if let user = PFUser.currentUser() {
-            println(user)
-            println(user["baker"])
             
             window = UIWindow(frame: UIScreen.mainScreen().bounds)
             var vc: UIViewController
             if let baker: AnyObject = user["baker"] {
-                println("userType: baker")
                 vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("BakerPostViewController") as UITabBarController
             } else {
                 println("userType: buyer")

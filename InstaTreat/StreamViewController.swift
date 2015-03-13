@@ -107,8 +107,12 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     @IBAction func onBuy(sender: UIButton) {
+        println("on buy presed")
+        NSNotificationCenter.defaultCenter().postNotificationName("uniqueName", object: nil)
         let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("SaveCardViewController") as UIViewController
         self.navigationController?.pushViewController(vc, animated: true)
+        
+
     }
     
 }

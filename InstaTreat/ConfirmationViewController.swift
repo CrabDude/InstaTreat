@@ -13,10 +13,22 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate {
     
     var alert = UIAlertController(title: "Thank You!", message: "Your order is on its way", preferredStyle: UIAlertControllerStyle.Alert)
     
+    override func viewWillAppear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "blah:",
+            name: "uniqueName",
+            object: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        println("confirmation view")
         
-        
+    }
+    
+    func blah(notification: NSNotification){
+        println("blah")
     }
 
     @IBAction func onBuy(sender: UIButton) {
