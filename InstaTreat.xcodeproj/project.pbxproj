@@ -28,6 +28,8 @@
 		950352A11AAFBECE00CBFA13 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 950352A01AAFBECE00CBFA13 /* libsqlite3.dylib */; };
 		950352A71AAFD6AF00CBFA13 /* BakerPostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950352A61AAFD6AF00CBFA13 /* BakerPostDetailsViewController.swift */; };
 		950352AF1AAFDD7900CBFA13 /* BakerPostFinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950352AE1AAFDD7900CBFA13 /* BakerPostFinalViewController.swift */; };
+		950352EC1AB39CA900CBFA13 /* BakerSalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950352EB1AB39CA900CBFA13 /* BakerSalesViewController.swift */; };
+		950352EE1AB39F0A00CBFA13 /* SalesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950352ED1AB39F0A00CBFA13 /* SalesCell.swift */; };
 		9521B2CD1AAE02910076ECB8 /* BakerPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521B2CC1AAE02910076ECB8 /* BakerPostViewController.swift */; };
 		9F4F68781AAFC22600434D7B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F68771AAFC22600434D7B /* LoginViewController.swift */; };
 		9F4F687B1AAFCA2800434D7B /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F687A1AAFCA2800434D7B /* AppHelper.swift */; };
@@ -78,6 +80,8 @@
 		950352A31AAFC09500CBFA13 /* InstaTreat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InstaTreat-Bridging-Header.h"; sourceTree = "<group>"; };
 		950352A61AAFD6AF00CBFA13 /* BakerPostDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BakerPostDetailsViewController.swift; sourceTree = "<group>"; };
 		950352AE1AAFDD7900CBFA13 /* BakerPostFinalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BakerPostFinalViewController.swift; sourceTree = "<group>"; };
+		950352EB1AB39CA900CBFA13 /* BakerSalesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BakerSalesViewController.swift; sourceTree = "<group>"; };
+		950352ED1AB39F0A00CBFA13 /* SalesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalesCell.swift; sourceTree = "<group>"; };
 		9521B2CC1AAE02910076ECB8 /* BakerPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BakerPostViewController.swift; path = ../BakerPostViewController.swift; sourceTree = "<group>"; };
 		9F4F68771AAFC22600434D7B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9F4F687A1AAFCA2800434D7B /* AppHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 				9521B2CC1AAE02910076ECB8 /* BakerPostViewController.swift */,
 				950352A61AAFD6AF00CBFA13 /* BakerPostDetailsViewController.swift */,
 				950352AE1AAFDD7900CBFA13 /* BakerPostFinalViewController.swift */,
+				950352EB1AB39CA900CBFA13 /* BakerSalesViewController.swift */,
 				58B9C84F1AA80ED500B28BC0 /* ViewController.swift */,
 				9F4F68771AAFC22600434D7B /* LoginViewController.swift */,
 				9F4F687C1AAFD69100434D7B /* StreamViewController.swift */,
@@ -223,6 +228,7 @@
 		9F4F68751AAFC1ED00434D7B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				950352ED1AB39F0A00CBFA13 /* SalesCell.swift */,
 				9F4F687E1AAFDCAD00434D7B /* ItemCell.swift */,
 			);
 			name = Views;
@@ -402,6 +408,7 @@
 				9F4F68831AB004A300434D7B /* ItemDetailViewController.swift in Sources */,
 				58B9C8501AA80ED500B28BC0 /* ViewController.swift in Sources */,
 				9F4F687B1AAFCA2800434D7B /* AppHelper.swift in Sources */,
+				950352EC1AB39CA900CBFA13 /* BakerSalesViewController.swift in Sources */,
 				9F527B231AB2B0AD008720CA /* AddressViewController.swift in Sources */,
 				950352AF1AAFDD7900CBFA13 /* BakerPostFinalViewController.swift in Sources */,
 				58B9C84E1AA80ED500B28BC0 /* AppDelegate.swift in Sources */,
@@ -409,6 +416,7 @@
 				9F527B251AB2B223008720CA /* ConfirmationViewController.swift in Sources */,
 				9521B2CD1AAE02910076ECB8 /* BakerPostViewController.swift in Sources */,
 				950352A71AAFD6AF00CBFA13 /* BakerPostDetailsViewController.swift in Sources */,
+				950352EE1AB39F0A00CBFA13 /* SalesCell.swift in Sources */,
 				9F4F68781AAFC22600434D7B /* LoginViewController.swift in Sources */,
 				58B9C86E1AA80EED00B28BC0 /* DataSchema.swift in Sources */,
 				9F4F687D1AAFD69100434D7B /* StreamViewController.swift in Sources */,
