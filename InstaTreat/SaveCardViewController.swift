@@ -18,12 +18,18 @@ class SaveCardViewController: UIViewController, PTKViewDelegate {
         super.viewDidLoad()
         self.stripeView2 = PTKView(frame: CGRectMake(15, 20, 290, 55))
 //        self.stripeView2.delegate = self
-        self.view.addSubview(self.stripeView2)
+//        self.view.addSubview(self.stripeView2)
 //        saveButton.enabled = false
     }
     
     func paymentView(paymentView: PTKView!, withCard card: PTKCard!, isValid valid: Bool) {
-        println(card.number)
+//        println(card.number)
     }
     
+    @IBAction func onSave(sender: UIButton) {
+        
+        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("AddressViewController") as UIViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
 }

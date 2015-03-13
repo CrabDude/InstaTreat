@@ -35,6 +35,8 @@
 		9F4F687F1AAFDCAD00434D7B /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F687E1AAFDCAD00434D7B /* ItemCell.swift */; };
 		9F4F68811AB002E900434D7B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F68801AB002E900434D7B /* MapViewController.swift */; };
 		9F4F68831AB004A300434D7B /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F68821AB004A300434D7B /* ItemDetailViewController.swift */; };
+		9F527B231AB2B0AD008720CA /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F527B221AB2B0AD008720CA /* AddressViewController.swift */; };
+		9F527B251AB2B223008720CA /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F527B241AB2B223008720CA /* ConfirmationViewController.swift */; };
 		9FB63A9E1AB298730055DC5B /* SaveCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB63A9D1AB298730055DC5B /* SaveCardViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +85,8 @@
 		9F4F687E1AAFDCAD00434D7B /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		9F4F68801AB002E900434D7B /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9F4F68821AB004A300434D7B /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		9F527B221AB2B0AD008720CA /* AddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
+		9F527B241AB2B223008720CA /* ConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
 		9FB63A9D1AB298730055DC5B /* SaveCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveCardViewController.swift; sourceTree = "<group>"; };
 		CB6ED12A06009C78E723CCCE /* Pods-InstaTreat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaTreat.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaTreat/Pods-InstaTreat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -210,6 +214,8 @@
 				9F4F68801AB002E900434D7B /* MapViewController.swift */,
 				9F4F68821AB004A300434D7B /* ItemDetailViewController.swift */,
 				9FB63A9D1AB298730055DC5B /* SaveCardViewController.swift */,
+				9F527B221AB2B0AD008720CA /* AddressViewController.swift */,
+				9F527B241AB2B223008720CA /* ConfirmationViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -395,9 +401,11 @@
 				9F4F68831AB004A300434D7B /* ItemDetailViewController.swift in Sources */,
 				58B9C8501AA80ED500B28BC0 /* ViewController.swift in Sources */,
 				9F4F687B1AAFCA2800434D7B /* AppHelper.swift in Sources */,
+				9F527B231AB2B0AD008720CA /* AddressViewController.swift in Sources */,
 				950352AF1AAFDD7900CBFA13 /* BakerPostFinalViewController.swift in Sources */,
 				58B9C84E1AA80ED500B28BC0 /* AppDelegate.swift in Sources */,
 				9FB63A9E1AB298730055DC5B /* SaveCardViewController.swift in Sources */,
+				9F527B251AB2B223008720CA /* ConfirmationViewController.swift in Sources */,
 				9521B2CD1AAE02910076ECB8 /* BakerPostViewController.swift in Sources */,
 				950352A71AAFD6AF00CBFA13 /* BakerPostDetailsViewController.swift in Sources */,
 				9F4F68781AAFC22600434D7B /* LoginViewController.swift in Sources */,
