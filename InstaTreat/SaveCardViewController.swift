@@ -8,9 +8,11 @@
 
 import UIKit
 
+
 class SaveCardViewController: UIViewController, PTKViewDelegate {
     
     var paymentView: PTKView?
+    var card = STPCard()
     
     @IBOutlet weak var saveButton: UIButton!
 //    var stripeView:PTKView!
@@ -29,13 +31,34 @@ class SaveCardViewController: UIViewController, PTKViewDelegate {
     
     func paymentView(paymentView: PTKView!, withCard card: PTKCard!, isValid valid: Bool) {
         self.saveButton.enabled = valid
+        if valid {
+            
+                self.card.number = card.number
+                self.card.expMonth = card.expMonth
+                self.card.expYear = card.expYear
+        }
 //        println(card.number)
     }
     
     @IBAction func onSave(sender: UIButton) {
         
+        //Create a stripe customer
+        STPAPIClient.sharedClient().
+        if STPCard.validateCardReturningError(self.card) == true {
+            println("valid card")
+        }
+//        Stripe.
         let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("AddressViewController") as UIViewController
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
+    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        let targetVC = AppHelper.storyboard.instantiateViewControllerWithIdentifier("ConfirmationViewController") as ConfirmationViewController
+//        targetVC.delegate = self
+//    }
+//    
+//    func chargeCard(controller: SaveCardViewController, card: STPCard) {
+//        s
+//    }
 }

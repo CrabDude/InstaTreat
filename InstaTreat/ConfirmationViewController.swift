@@ -8,8 +8,15 @@
 
 import UIKit
 
+protocol SaveCardDelegate {
+    func chargeCard(controller: SaveCardViewController, card: STPCard)
+}
+
 class ConfirmationViewController: UIViewController, UIAlertViewDelegate, StreamViewControllerDelegate {
     
+    
+    var delegate: SaveCardDelegate?
+    var card:STPCard!
     
     var alert = UIAlertController(title: "Thank You!", message: "Your order is on its way", preferredStyle: UIAlertControllerStyle.Alert)
     
@@ -24,6 +31,7 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate, StreamV
     override func viewDidLoad() {
         super.viewDidLoad()
         println("confirmation view")
+        println(self.card)
         
     }
     
@@ -49,7 +57,6 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate, StreamV
         self.navigationController?.presentViewController(vc, animated: true, completion: nil)
     }
     
-    func updateView(controller: StreamViewController, item: NSObject) {
-        println(item)
-    }
+    
+    
 }
