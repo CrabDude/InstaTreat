@@ -49,11 +49,13 @@ class Item {
     var images: UIImage!
     var description: String!
     var title: String!
-    var rating: Int!
+    var rating: Float!
     var owner: String!
-    var price: Int!
+    var price: Float!
     var quantity : Int!
     var tags: Array<String>!
+    var location: AnyObject!
+    var createdAt: NSDate!
     
     init() {
         self.id = ""
@@ -65,6 +67,33 @@ class Item {
         self.price = 0
         self.quantity = 0
         self.tags = []
+        self.location = ""
+        self.createdAt = NSDate()
+    }
+//    
+//    convenience init(_ dictionary: [String: AnyObject]) {
+//        self.description = dictionary["discription"]! as! String
+//        self.title = dictionary["title"]!
+//        self.rating = dictionary["rating"]!
+//        self.owner = dictionary["owner"]!
+//        self.quantity = dictionary["quantity"]!
+//        self.tags = dictionary["tags"]!
+//    }
+//    
+    class func itemsWithPFObjectArray(parseItems: [PFObject]) -> [Item] {
+        var items = [Item]()
+        for parseItem in parseItems {
+            println(parseItem["createdAt"]!)
+            let item = Item()
+            item.title = parseItem["title"]! as! String
+            item.description = parseItem["description"]! as! String
+            item.quantity = parseItem["quantity"]! as! Int
+            item.rating = parseItem["rating"]! as! Float
+            item.price = parseItem["price"]! as! Float
+            item.createdAt = parseItem["createdAt"]! as? NSDate
+            items.append(item)
+        }
+        return items
     }
 }
 

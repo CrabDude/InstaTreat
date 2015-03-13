@@ -38,8 +38,8 @@ class BakerPostDetailsViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         self.item.description = descriptionTextView.text
-        if let number = self.PriceLabel.text?.toInt() {
-            self.item.price = number
+        if let number: NSString = self.PriceLabel.text {
+            self.item.price = number.floatValue
         }
         if let number = self.quantityLabel.text?.toInt() {
             self.item.quantity = number

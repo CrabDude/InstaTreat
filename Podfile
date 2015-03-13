@@ -6,6 +6,8 @@ source 'https://github.com/CocoaPods/Specs.git'
 target 'InstaTreat' do
 
     pod 'Parse'
+    pod 'EDStarRating'
+    
 end
 
 target 'InstaTreatTests' do

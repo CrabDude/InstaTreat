@@ -30,13 +30,13 @@ class BakerPostFinalViewController: UIViewController {
     
 
     @IBAction func confirmPostPressed(sender: AnyObject) {
-        if glutenFreeState.on{
+        if glutenFreeState.on {
             self.item.tags.append("Gluten Free")
         }
-        if nutFreeState.on{
+        if nutFreeState.on {
             self.item.tags.append("Nut Free")
         }
-        if eggFreeState.on{
+        if eggFreeState.on {
             self.item.tags.append("Egg Free")
         }
         

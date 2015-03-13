@@ -18,16 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         Parse.enableLocalDatastore()
         Parse.setApplicationId("O9KSrO3dDS9UziYYY225chYXr8HPl8NkFyhUVrSn", clientKey: "C8qHkSAjhdMgYttLiA2OqxSJHAUhe23IvQ4qXxim")
-        PFUser.logOut()
+//        PFUser.logOut()
         if let user = PFUser.currentUser() {
             println(user)
+            println(user["baker"])
             
             window = UIWindow(frame: UIScreen.mainScreen().bounds)
             let vc: UIViewController
-            if let baker: AnyObject? = user["baker"] {
+            if let baker: AnyObject = user["baker"] {
+                println("userType: baker")
                 vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("BakerPostViewController") as! UITabBarController
             } else {
-                println("this is user not a baker")
+                println("userType: buyer")
                 vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamNavigationController") as! UINavigationController
             }
             window?.rootViewController = vc
