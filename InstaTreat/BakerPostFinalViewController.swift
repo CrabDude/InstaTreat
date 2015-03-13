@@ -63,7 +63,7 @@ class BakerPostFinalViewController: UIViewController {
             item["tags"] = self.item.tags
             
             if let currentUser = PFUser.currentUser() {
-                item["baker"] = currentUser["baker"]
+                item["baker"] = currentUser
                 
                 item.saveInBackgroundWithBlock {
                     (success, error) in

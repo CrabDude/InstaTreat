@@ -85,7 +85,7 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" rowHeight="455" id="sbe-Xl-tP5" customClass="ItemCell" customModule="InstaTreat" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="itemCell" rowHeight="455" id="sbe-Xl-tP5" customClass="ItemCell" customModule="InstaTreat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sbe-Xl-tP5" id="NSo-qb-8CC">
@@ -173,6 +173,7 @@
                                             <outlet property="quantityLabel" destination="wCz-Md-bdN" id="uku-5L-IP8"/>
                                             <outlet property="starRatingView" destination="Q9l-Oi-zQ5" id="MoR-hk-yWB"/>
                                             <outlet property="titleLabel" destination="60h-pf-0ao" id="hUU-Sh-8xT"/>
+                                            <segue destination="ftm-VM-p5p" kind="push" id="RqI-m0-Mvr"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -406,7 +407,7 @@
                                 <color key="backgroundColor" red="0.94175233339999997" green="1" blue="0.1163845934" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.1mi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Sf-85-Smk">
-                                <rect key="frame" x="22" y="162" width="43" height="21"/>
+                                <rect key="frame" x="12" y="162" width="43" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -439,10 +440,6 @@
                                 <rect key="frame" x="235" y="367" width="50" height="45"/>
                                 <color key="backgroundColor" red="0.33659028439999999" green="0.47475490390000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mrY-oN-dpc" userLabel="Ratings Image">
-                                <rect key="frame" x="97" y="98" width="207" height="27"/>
-                                <color key="backgroundColor" red="1" green="0.84983530939999996" blue="0.92349089500000003" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iMg-eb-tsg" userLabel="User Profile ">
                                 <rect key="frame" x="16" y="86" width="55" height="51"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -454,19 +451,44 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1h Ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQS-Jd-17e">
-                                <rect key="frame" x="133" y="191" width="55" height="21"/>
+                                <rect key="frame" x="12" y="191" width="55" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3/22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvC-Am-Sgq">
+                                <rect key="frame" x="269" y="191" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2kH-1q-U99" customClass="EDStarRating">
+                                <rect key="frame" x="85" y="86" width="234" height="51"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="yuJ-dJ-k90"/>
+                    <connections>
+                        <outlet property="badge1Image" destination="eo2-fJ-N1f" id="ogh-Uk-42m"/>
+                        <outlet property="badge2Image" destination="0pq-dr-Vj5" id="2ez-XT-zBV"/>
+                        <outlet property="badge3Image" destination="2Qk-jU-dYF" id="q3Y-Ka-OdL"/>
+                        <outlet property="badge4Image" destination="Yax-dK-42T" id="QJJ-B8-Gof"/>
+                        <outlet property="bakerImageView" destination="iMg-eb-tsg" id="gEe-sH-vCh"/>
+                        <outlet property="createdAtLabel" destination="gQS-Jd-17e" id="Epd-nb-lxu"/>
+                        <outlet property="descriptionTextView" destination="egz-E6-xXq" id="QJK-TI-hNe"/>
+                        <outlet property="distanceLabel" destination="2Sf-85-Smk" id="HyE-At-mzR"/>
+                        <outlet property="itemImage" destination="YxL-w7-E4Q" id="0EW-z8-YvK"/>
+                        <outlet property="priceLabel" destination="dxV-J9-9W3" id="lR2-pp-MWL"/>
+                        <outlet property="quantityLabel" destination="UvC-Am-Sgq" id="2fo-G7-5HQ"/>
+                        <outlet property="starRatingView" destination="2kH-1q-U99" id="SGb-xc-MON"/>
+                        <outlet property="titleLabel" destination="VMq-Fq-gYc" id="qgH-G5-wfw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mOo-jS-KxC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3112" y="2408"/>
+            <point key="canvasLocation" x="2656" y="2408"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="OSr-dM-tkZ">
@@ -797,24 +819,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UzO-pL-UAi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1688" y="1776"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="R8v-1C-fAU">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mVM-TX-wRr" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jAz-FU-rsH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="ftm-VM-p5p" kind="relationship" relationship="rootViewController" id="qoC-ls-xzY"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NeT-5t-tYK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2692" y="2408"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lLi-iA-NBm">
