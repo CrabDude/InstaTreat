@@ -117,8 +117,6 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
         NSNotificationCenter.defaultCenter().postNotificationName("uniqueName", object: nil)
         let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("SaveCardViewController") as UIViewController
         self.navigationController?.pushViewController(vc, animated: true)
-        
-
     }
     
 }

@@ -51,8 +51,17 @@ class ItemDetailViewController: UIViewController {
                 self.starRatingView.rating = Float(item.ratingTotal) / Float(item.ratingCount)
             }
             self.bakerImageView?.image = item.baker.image
-            self.itemImage?.image = item.images?[0]
+            if item.images?.count > 0 {
+                self.itemImage?.image = item.images?[0]
+            }
         }
         
+    }
+    @IBAction func onBuy(sender: AnyObject) {
+        println("on buy presed")
+//        self.delegate?.updateView!(self, item: "yo")
+//        NSNotificationCenter.defaultCenter().postNotificationName("uniqueName", object: nil)
+//        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("SaveCardViewController") as UIViewController
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

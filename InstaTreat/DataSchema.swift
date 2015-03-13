@@ -75,32 +75,35 @@ class Item {
         self.createdAt = NSDate()
     }
     
-    class func itemsWithPFObjectArray(parseItems: [PFObject]) -> [Item] {
-        var items = [Item]()
-        for parseItem in parseItems {
-            let item = Item()
-            item.title = parseItem["title"]! as String
-            item.description = parseItem["description"]! as String
-            item.quantity = parseItem["quantity"]! as Int
-            item.ratingCount = (parseItem["ratingCount"] ?? 0) as Int
-            item.ratingTotal = (parseItem["ratingTotal"] ?? 0) as Int
-            item.price = parseItem["price"]! as Float
-            item.createdAt = parseItem.createdAt
-            item.baker = User(parseObject: parseItem["baker"] as PFObject)
-            items.append(item)
-
-            if let image = parseItem["image"] as? PFFile {
-                image.getDataInBackgroundWithBlock {
-                    (imageData, error) in
-                    item.images = []
-                    if error == nil {
-                        item.images?.append(UIImage(data: imageData)!)
-                        item.onImageLoad?()
-                    }
+    init(parseObject: PFObject) {
+        self.title = parseObject["title"]! as String
+        self.description = parseObject["description"]! as String
+        self.quantity = parseObject["quantity"]! as Int
+        self.ratingCount = (parseObject["ratingCount"] ?? 0) as Int
+        self.ratingTotal = (parseObject["ratingTotal"] ?? 0) as Int
+        self.price = parseObject["price"]! as Float
+        self.createdAt = parseObject.createdAt
+        self.baker = User(parseObject: parseObject["baker"] as PFObject)
+        
+        if let image = parseObject["image"] as? PFFile {
+            image.getDataInBackgroundWithBlock {
+                (imageData, error) in
+                self.images = []
+                if error == nil {
+                    self.images?.append(UIImage(data: imageData)!)
+                    self.onImageLoad?()
                 }
-            } else {
-                item.images = []
             }
+        } else {
+            self.images = []
+        }
+        
+    }
+    
+    class func itemsWithPFObjectArray(parseObjects: [PFObject]) -> [Item] {
+        var items = [Item]()
+        for parseObject in parseObjects {
+            items.append(Item(parseObject: parseObject))
         }
         return items
     }
@@ -133,7 +136,7 @@ class User {
         self.lastName = parseObject["lastName"]! as String
         self.email = parseObject["email"]! as String
         self.address = parseObject["address"]! as String
-        self.isBaker = parseObject["isBaker"] as? Bool ?? false
+        self.isBaker = parseObject["isBaker"] as Bool
         
         if let image = parseObject["image"] as? PFFile {
             image.getDataInBackgroundWithBlock {
@@ -152,8 +155,14 @@ class Sale {
     var quantity: Int!
     var saleId: AnyObject!
     var state:String!
-    var purchasedAt: NSDate!
-    var buyerId: AnyObject!
-    var itemPostId: AnyObject!
+    var createdAt: NSDate!
+    var buyer: User!
+    var item: Item!
+    
+    init(parseObject: PFObject) {
+        self.state = parseObject["state"]! as String
+        self.item = Item(parseObject: parseObject["item"] as PFObject)
+        self.buyer = User(parseObject: parseObject["buyer"] as PFObject)
+    }
 }
 

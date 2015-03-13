@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
         PFUser.logInWithUsernameInBackground(self.usernameTextField.text, password: self.passwordTextField.text) {
             (user, error) in
             if let user = user {
-                if user["isBaker"] == nil || user["isBaker"] as Bool {
+                if user["isBaker"] as Bool {
                     println("this is a user")
                     let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamViewController") as UIViewController
                     self.navigationController?.pushViewController(vc, animated: true)

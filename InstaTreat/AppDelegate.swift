@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             window = UIWindow(frame: UIScreen.mainScreen().bounds)
             var vc: UIViewController
-            if user["isBaker"] == nil || user["isBaker"] as Bool {
+            if user["isBaker"] as Bool {
                 println("userType: buyer")
                 vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamNavigationController") as UINavigationController
             } else {
