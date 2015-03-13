@@ -8,6 +8,8 @@
 
 import UIKit
 
+let StripePublishableKey = "pk_test_ABOlQkVmDvJgyTzNlIOFRoRs"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        Stripe.setDefaultPublishableKey(StripePublishableKey)
         Parse.enableLocalDatastore()
         Parse.setApplicationId("O9KSrO3dDS9UziYYY225chYXr8HPl8NkFyhUVrSn", clientKey: "C8qHkSAjhdMgYttLiA2OqxSJHAUhe23IvQ4qXxim")
 //        PFUser.logOut()
