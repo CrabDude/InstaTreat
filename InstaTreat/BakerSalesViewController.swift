@@ -19,7 +19,7 @@ class BakerSalesViewController: UIViewController, UITableViewDelegate, UITableVi
         
         self.salesTableView.delegate = self
         self.salesTableView.dataSource = self
-        self.salesTableView.registerNib(UINib(nibName: "SalesCell", bundle: nil)!, forCellReuseIdentifier: "SalesCell")
+        self.salesTableView.registerNib(UINib(nibName: "SalesCell", bundle: nil), forCellReuseIdentifier: "SalesCell")
         // Do any additional setup after loading the view.
     }
 

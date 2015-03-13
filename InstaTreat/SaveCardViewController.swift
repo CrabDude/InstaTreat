@@ -43,13 +43,20 @@ class SaveCardViewController: UIViewController, PTKViewDelegate {
     @IBAction func onSave(sender: UIButton) {
         
         //Create a stripe customer
-        STPAPIClient.sharedClient().
-        if STPCard.validateCardReturningError(self.card) == true {
-            println("valid card")
-        }
+        STPAPIClient.sharedClient().createTokenWithCard(self.card, completion: { (token: STPToken!, error: NSError!) -> Void in
+            if error != nil {
+                println("there was an error")
+                println(error)
+            }
+            else {
+                println(token)
+                let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("AddressViewController") as UIViewController
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        })
+        
 //        Stripe.
-        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("AddressViewController") as UIViewController
-        self.navigationController?.pushViewController(vc, animated: true)
+        
         
     }
     
