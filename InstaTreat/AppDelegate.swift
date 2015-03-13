@@ -27,10 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window = UIWindow(frame: UIScreen.mainScreen().bounds)
             var vc: UIViewController
             if user["isBaker"] as Bool {
+                vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("BakerPostViewController") as UITabBarController
+            } else {
                 println("userType: buyer")
                 vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamNavigationController") as UINavigationController
-            } else {
-                vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("BakerPostViewController") as UITabBarController
             }
             window?.rootViewController = vc
             window!.makeKeyAndVisible()

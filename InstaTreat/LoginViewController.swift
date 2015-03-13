@@ -27,13 +27,13 @@ class LoginViewController: UIViewController {
             (user, error) in
             if let user = user {
                 if user["isBaker"] as Bool {
-                    println("this is a user")
-                    let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamViewController") as UIViewController
-                    self.navigationController?.pushViewController(vc, animated: true)
-                } else {
                     println("baker")
                     let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("BakerPostViewController") as UITabBarController
                     let navController = UINavigationController(rootViewController: vc)
+                    self.navigationController?.pushViewController(vc, animated: true)
+                } else {
+                    println("this is a user")
+                    let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamViewController") as UIViewController
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
             } else {
