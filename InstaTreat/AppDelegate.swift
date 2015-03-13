@@ -24,13 +24,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             println(user["baker"])
             
             window = UIWindow(frame: UIScreen.mainScreen().bounds)
-            let vc: UIViewController
+            var vc: UIViewController
             if let baker: AnyObject = user["baker"] {
                 println("userType: baker")
-                vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("BakerPostViewController") as! UITabBarController
+                vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("BakerPostViewController") as UITabBarController
             } else {
                 println("userType: buyer")
-                vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamNavigationController") as! UINavigationController
+                vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamNavigationController") as UINavigationController
             }
             window?.rootViewController = vc
             window!.makeKeyAndVisible()
@@ -64,15 +64,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-extension PFObject {
-    subscript(index: String) -> AnyObject? {
-        get {
-            return self.valueForKey(index)
-        }
-        set(newValue) {
-            if let newValue: AnyObject = newValue {
-                self.setValue(newValue, forKey: index)
-            }
-        }
-    }
-}
+//extension PFObject {
+//    subscript(index: String) -> AnyObject? {
+//        get {
+//            return self.valueForKey(index)
+//        }
+//        set(newValue) {
+//            if let newValue: AnyObject = newValue {
+//                self.setValue(newValue, forKey: index)
+//            }
+//        }
+//    }
+//}

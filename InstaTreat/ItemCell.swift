@@ -21,4 +21,6 @@ class ItemCell: UITableViewCell {
     @IBOutlet weak var badge2Image: UIImageView!
     @IBOutlet weak var badge3Image: UIImageView!
     @IBOutlet weak var badge4Image: UIImageView!
+    
+    
 }

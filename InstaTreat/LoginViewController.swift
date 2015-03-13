@@ -28,12 +28,12 @@ class LoginViewController: UIViewController {
             if let user = user {
                 if let bakerDetails = user["baker"] as? NSObject {
                     println("baker")
-                    let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("BakerPostViewController") as! UIViewController
+                    let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("BakerPostViewController") as UIViewController
                     let navController = UINavigationController(rootViewController: vc)
                     self.navigationController?.pushViewController(vc, animated: true)
                 } else {
                     println("this is a user")
-                    let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamViewController") as! UIViewController
+                    let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamViewController") as UIViewController
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
             } else {

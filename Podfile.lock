@@ -3,14 +3,22 @@ PODS:
   - EDStarRating (1.1)
   - Parse (1.6.4):
     - Bolts (~> 1.1)
+  - PaymentKit (1.1.1)
+  - Stripe (3.1.0):
+    - Stripe/Core (= 3.1.0)
+  - Stripe/Core (3.1.0)
 
 DEPENDENCIES:
   - EDStarRating
   - Parse
+  - PaymentKit
+  - Stripe
 
 SPEC CHECKSUMS:
   Bolts: dd9fb8433d67f5acc3b6b4d1379bbc5513d716c1
   EDStarRating: c7b87f9866be0ea29bb054964023b8eb3f18286c
   Parse: c2610f7a12ad0defc974803b819c4efe7746e6db
+  PaymentKit: f77b4d5cee45947949429c3d587e8eb160a3c9e2
+  Stripe: aaa174b50fac40a16958cbc892457a241d0b4b08
 
-COCOAPODS: 0.36.0.beta.2
+COCOAPODS: 0.35.0

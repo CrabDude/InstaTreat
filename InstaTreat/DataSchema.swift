@@ -82,15 +82,17 @@ class Item {
 //    
     class func itemsWithPFObjectArray(parseItems: [PFObject]) -> [Item] {
         var items = [Item]()
+//        println(items)
         for parseItem in parseItems {
-            println(parseItem["createdAt"]!)
+            println(parseItem)
+//            println(parseItem["createdAt"]!)
             let item = Item()
-            item.title = parseItem["title"]! as! String
-            item.description = parseItem["description"]! as! String
-            item.quantity = parseItem["quantity"]! as! Int
-            item.rating = parseItem["rating"]! as! Float
-            item.price = parseItem["price"]! as! Float
-            item.createdAt = parseItem["createdAt"]! as? NSDate
+            item.title = parseItem["title"]! as String
+            item.description = parseItem["description"]! as String
+            item.quantity = parseItem["quantity"]! as Int
+            item.rating = parseItem["rating"]! as Float
+            item.price = parseItem["price"]! as Float
+            item.createdAt = parseItem.createdAt
             items.append(item)
         }
         return items

@@ -7,6 +7,8 @@ target 'InstaTreat' do
 
     pod 'Parse'
     pod 'EDStarRating'
+    pod 'Stripe'
+    pod 'PaymentKit'
     
 end
 

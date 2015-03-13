@@ -16,7 +16,8 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         var query = PFQuery(className: "Item")
-        let pfItems = query.findObjects() as! [PFObject]
+        let pfItems = query.findObjects() as [PFObject]
+//        println(pfItems)
         self.items = Item.itemsWithPFObjectArray(pfItems)
         self.tableView.reloadData()
         
@@ -56,7 +57,7 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("itemCell") as! ItemCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("itemCell") as ItemCell
         
         let item = items[indexPath.row]
         cell.titleLabel.text = item.title
@@ -80,7 +81,7 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("ItemDetailViewController") as! UIViewController
+        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("ItemDetailViewController") as UIViewController
         self.navigationController?.presentViewController(vc, animated: true, completion: nil)
     }
     
@@ -90,13 +91,13 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBAction func onLogoutPressed(sender: UIButton) {
         PFUser.logOut()
-        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as! UIViewController
+        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as UIViewController
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
 
     @IBAction func onMapButtonPressed(sender: UIButton) {
-        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("MapViewController") as! UIViewController
+        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("MapViewController") as UIViewController
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
@@ -104,4 +105,10 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func starsSelectionChanged(control: EDStarRating, rating: Float) {
         println("starsSelectionChanged")
     }
+    
+    @IBAction func onBuy(sender: UIButton) {
+        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("SaveCardViewController") as UIViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }

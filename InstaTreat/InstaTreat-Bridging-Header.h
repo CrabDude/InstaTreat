@@ -4,3 +4,5 @@
 
 #import <Parse/Parse.h>
 #import <EDStarRating/EDStarRating.h>
+#import <Stripe/Stripe.h>
+#import <PaymentKit/PTKView.h>
