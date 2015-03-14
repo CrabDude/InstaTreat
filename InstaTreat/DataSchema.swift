@@ -117,15 +117,27 @@ class Item {
 class Sale {
     var quantity: Int!
     var saleId: AnyObject!
-    var state:String!
+    var isDelivered: Bool!
     var createdAt: NSDate!
     var buyer: User!
     var item: Item!
+    var pfSale: PFObject!
     
     init(parseObject: PFObject) {
-        self.state = parseObject["state"]! as String
+        self.isDelivered = parseObject["isDelivered"]! as Bool
         self.item = Item(parseObject: parseObject["item"] as PFObject)
         self.buyer = User(parseObject: parseObject["buyer"] as PFUser)
+        self.pfSale = parseObject
+    }
+    
+    func confirmDelivered(conclusion: (NSError?)->()) {
+        println("sale confirmed delivered")
+        self.pfSale.setObject(true, forKey: "isDelivered")
+        self.pfSale.saveInBackgroundWithBlock {
+            (success, error) in
+            conclusion(nil)
+        }
+        
     }
 }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lwc-vq-O62">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D72i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lwc-vq-O62">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -698,7 +698,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SalesCell" rowHeight="109" id="Kh3-5l-I3J" customClass="SalesCell" customModule="InstaTreat" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SalesCell" rowHeight="109" id="Kh3-5l-I3J" customClass="SalesCell" customModule="InstaTreat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kh3-5l-I3J" id="Ajl-tV-HlM">
@@ -757,6 +757,7 @@
                                             <outlet property="priceLabel" destination="e8c-U4-epO" id="qVI-i8-w6n"/>
                                             <outlet property="quantityLabel" destination="sRw-ZD-04q" id="4G8-Ry-4eG"/>
                                             <outlet property="titleLabel" destination="Wdu-ri-aL3" id="nZJ-g8-Hd4"/>
+                                            <segue destination="XDk-pT-f0s" kind="push" id="LLJ-b6-PDw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -788,6 +789,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e7t-n0-7WG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1054" y="692"/>
+        </scene>
+        <!--Sales Details-->
+        <scene sceneID="CE5-J5-oZw">
+            <objects>
+                <tableViewController storyboardIdentifier="BakerSalesDetailViewController" id="XDk-pT-f0s" customClass="BakerSalesDetailViewController" customModule="InstaTreat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ct3-nV-LBX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SalesBuyerCell" rowHeight="110" id="Ybe-Cu-Eog" customClass="SalesBuyerCell" customModule="InstaTreat" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ybe-Cu-Eog" id="Ib6-89-mOM">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6w7-u6-dJw">
+                                            <rect key="frame" x="8" y="-4" width="102" height="106"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Adam Crabtree" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqW-Ay-U1u">
+                                            <rect key="frame" x="118" y="8" width="117" height="64"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4F-KN-s2N">
+                                            <rect key="frame" x="202" y="-3" width="127" height="114"/>
+                                            <state key="normal" title="Delivered">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quantity: 5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKn-Wc-f1U">
+                                            <rect key="frame" x="118" y="80" width="84" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="buyerImageView" destination="6w7-u6-dJw" id="kBo-AN-n3F"/>
+                                    <outlet property="buyerNameLabel" destination="bqW-Ay-U1u" id="1o4-LA-1YK"/>
+                                    <outlet property="confirmButton" destination="L4F-KN-s2N" id="g6N-7s-eeB"/>
+                                    <outlet property="quantityLabel" destination="hKn-Wc-f1U" id="Gus-ne-390"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="XDk-pT-f0s" id="5Wl-kh-k7y"/>
+                            <outlet property="delegate" destination="XDk-pT-f0s" id="2fV-88-4Ex"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Sales Details" id="eyI-ZO-gca"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Xo-Bi-6Zj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1520" y="689"/>
         </scene>
         <!--Post-->
         <scene sceneID="kg6-ex-Ac5">
