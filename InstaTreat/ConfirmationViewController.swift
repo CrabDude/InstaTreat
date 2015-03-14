@@ -8,14 +8,10 @@
 
 import UIKit
 
-protocol SaveCardDelegate {
-    func chargeCard(controller: SaveCardViewController, card: STPCard)
-}
 
-class ConfirmationViewController: UIViewController, UIAlertViewDelegate, StreamViewControllerDelegate {
+class ConfirmationViewController: UIViewController, UIAlertViewDelegate {
     
     
-    var delegate: SaveCardDelegate?
     var card:STPCard!
     
     var alert = UIAlertController(title: "Thank You!", message: "Your order is on its way", preferredStyle: UIAlertControllerStyle.Alert)

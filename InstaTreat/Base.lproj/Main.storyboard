@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D72i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lwc-vq-O62">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lwc-vq-O62">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -224,6 +224,7 @@
                                             <outlet property="badge3Image" destination="ecj-na-8XF" id="2qW-B0-Q0N"/>
                                             <outlet property="badge4Image" destination="FVx-80-75a" id="ESD-8u-Mra"/>
                                             <outlet property="bakerImageView" destination="v5Y-GW-qv2" id="45d-2f-N1o"/>
+                                            <outlet property="buyButton" destination="73F-iH-ZqF" id="Uqj-qU-tlK"/>
                                             <outlet property="createdAtLabel" destination="jcM-T7-86e" id="nlB-o6-STF"/>
                                             <outlet property="distanceLabel" destination="X44-Bx-z8w" id="doM-cV-S0q"/>
                                             <outlet property="itemImage" destination="PXt-pu-Zmr" id="cen-Oc-fAQ"/>

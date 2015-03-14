@@ -12,7 +12,6 @@ import UIKit
 class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var items = [Item]()
-    var delegate: StreamViewControllerDelegate?
     var refreshControl:UIRefreshControl!
     
     @IBOutlet weak var tableView: UITableView!
@@ -108,6 +107,7 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
         }
 
+
         return cell
     }
     
@@ -146,5 +146,13 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("SaveCardViewController") as UIViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func buy(sender: UIButton){
+        println("on buy presed")
+        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("SaveCardViewController") as UIViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
     
 }
