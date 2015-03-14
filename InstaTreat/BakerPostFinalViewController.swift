@@ -62,6 +62,15 @@ class BakerPostFinalViewController: UIViewController {
             item["description"] = self.item.description
             item["tags"] = self.item.tags
             
+//            if let images = item.images
+//            {
+//                if images.count > 0 {
+//                                    cell.itemImage?.image = images[0]
+//                                }
+//                    let imageData = UIImagePNGRepresentation(element)
+//            }
+//       
+//            
             if let currentUser = PFUser.currentUser() {
                 item["baker"] = currentUser
                 

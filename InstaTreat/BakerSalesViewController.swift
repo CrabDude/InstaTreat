@@ -19,8 +19,6 @@ class BakerSalesViewController: UIViewController, UITableViewDelegate, UITableVi
         
         self.salesTableView.delegate = self
         self.salesTableView.dataSource = self
-        self.salesTableView.registerNib(UINib(nibName: "SalesCell", bundle: nil), forCellReuseIdentifier: "SalesCell")
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,7 +30,7 @@ class BakerSalesViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("SalesCell") as SalesCell
         
-        let item = items[indexPath.row]
+        //let item = items[indexPath.row]
         cell.titleLabel.text = "Test"
 //        cell.titleLabel.text = item.title
 //        cell.priceLabel.text = String(format: "%.2f", item.price)
@@ -43,41 +41,7 @@ class BakerSalesViewController: UIViewController, UITableViewDelegate, UITableVi
 //        //        cell.distanceLabel.text = item.distance
         
         
-//        cell.starRatingView.displayMode = UInt(EDStarRatingDisplayHalf)
-//        cell.starRatingView.starImage = UIImage(named: "star")
-//        cell.starRatingView.starHighlightedImage = UIImage(named: "star-highlighted")
-//        cell.starRatingView.maxRating = 5
-//        cell.starRatingView.horizontalMargin = 12
-//        cell.starRatingView.editable = false
-//        if item.ratingCount == 0 {
-//            cell.starRatingView.hidden = true
-//        } else {
-//            cell.starRatingView.hidden = false
-//            cell.starRatingView.rating = Float(item.ratingTotal) / Float(item.ratingCount)
-//        }
-        
-//        if let image = item.baker.image {
-//            cell.bakerImageView?.image = image
-//        } else {
-//            item.baker.onImageLoad = {
-//                cell.bakerImageView?.image = item.baker.image
-//                return
-//            }
-//        }
-//        
-//        if let images = item.images {
-//            if images.count > 0 {
-//                cell.itemImage?.image = images[0]
-//            }
-//        } else {
-//            item.onImageLoad = {
-//                if item.images?.count > 0 {
-//                    cell.itemImage?.image = item.images?[0]
-//                }
-//                return
-//            }
-//        }
-//        
+       
         return cell
     }
     
