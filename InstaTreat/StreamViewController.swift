@@ -106,6 +106,9 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
             
         }
+        
+        cell.buyButton.tag = indexPath.row
+        cell.buyButton.addTarget(self, action: "buy:", forControlEvents: UIControlEvents.TouchUpInside)
 
 
         return cell
