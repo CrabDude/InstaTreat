@@ -32,8 +32,13 @@ class ContainerViewController: UIViewController, UIGestureRecognizerDelegate, Si
         super.viewDidLoad()
         
 
-        let viewControllerName = User.currentUser.isBaker ? "BakerPostViewController" : "StreamViewController"
-        self.centerViewController = AppHelper.storyboard.instantiateViewControllerWithIdentifier(viewControllerName) as UIViewController
+        if User.currentUser.isBaker {
+            let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("BakerPostViewController") as UITabBarController
+            vc.selectedIndex = 0
+            self.centerViewController = vc
+        } else {
+            self.centerViewController = AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamViewController") as UIViewController
+        }
 //        self.centerViewController.delegate = self
         self.centerNavigationController = UINavigationController(rootViewController: centerViewController)
         self.view.addSubview(centerNavigationController.view)
@@ -70,9 +75,8 @@ class ContainerViewController: UIViewController, UIGestureRecognizerDelegate, Si
         if (self.leftViewController == nil) {
             self.leftViewController = UIStoryboard.leftViewController()
             self.leftViewController!.menuItems = [
-                MenuItem(title: "Home", image: UIImage(named: "home")),
-                MenuItem(title: "Profile", image: UIImage(named: "profile")),
-                MenuItem(title: "Mentions", image: UIImage(named: "mentions"))
+                MenuItem(title: "Payment", image: UIImage(named: "payment")),
+                MenuItem(title: "Profile", image: UIImage(named: "profile"))
             ]
             
             self.addChildSidePanelController(self.leftViewController!)
@@ -164,12 +168,12 @@ private extension UIStoryboard {
     class func mainStoryboard() -> UIStoryboard { return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()) }
     
     class func leftViewController() -> SidePanelViewController? {
-        return mainStoryboard().instantiateViewControllerWithIdentifier("LeftViewController") as? SidePanelViewController
+        return mainStoryboard().instantiateViewControllerWithIdentifier("SidePanelViewController") as? SidePanelViewController
     }
     
     class func centerViewController() -> UIViewController? {
         if User.currentUser.isBaker {
-            return AppHelper.storyboard.instantiateViewControllerWithIdentifier("BakerPostViewController") as? BakerPostViewController
+            return AppHelper.storyboard.instantiateViewControllerWithIdentifier("BakerPostViewController") as? UITabBarController
         } else {
             return AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamViewController") as? StreamViewController
         }

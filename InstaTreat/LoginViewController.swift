@@ -25,17 +25,9 @@ class LoginViewController: UIViewController {
     @IBAction func onLoginPressed(sender: UIButton) {
         PFUser.logInWithUsernameInBackground(self.usernameTextField.text, password: self.passwordTextField.text) {
             (user, error) in
-            if let user = user {
-                if user["isBaker"] as Bool {
-                    println("baker")
-                    let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("BakerPostViewController") as UITabBarController
-                    let navController = UINavigationController(rootViewController: vc)
-                    self.navigationController?.pushViewController(vc, animated: true)
-                } else {
-                    println("this is a user")
-                    let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamViewController") as UIViewController
-                    self.navigationController?.pushViewController(vc, animated: true)
-                }
+            
+            if error == nil {
+                self.navigationController?.pushViewController(ContainerViewController(), animated: true)
             } else {
                 println(error)
                 println("user login failed")

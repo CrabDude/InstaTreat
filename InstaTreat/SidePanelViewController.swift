@@ -1,5 +1,5 @@
 //
-//  LeftViewController.swift
+//  SidePanelViewControllerDelegate
 //  Tweetyness
 //
 //  Created by Ashar Rizqi on 2/26/15.
@@ -12,16 +12,15 @@ protocol SidePanelViewControllerDelegate {
     func menuItemSelected(menuItem: MenuItem)
 }
 
-class SidePanelViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-    @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
-    
-    @IBOutlet weak var tableView: UITableView!
+class SidePanelViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+//    
+//    @IBOutlet weak var profileImage: UIImageView!
+//    @IBOutlet weak var nameLabel: UILabel!
+//    @IBOutlet weak var emailLabel: UILabel!
+//    
     var delegate: SidePanelViewControllerDelegate?
     
-    var menuItems: [AnyObject]!
+    var menuItems: [MenuItem]!
     
     struct TableView {
         struct CellIdentifiers {
@@ -32,39 +31,39 @@ class SidePanelViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         println("side menu did load")
-        self.profileImage.layer.cornerRadius = 9.0
-        self.profileImage.layer.masksToBounds = true
-        self.profileImage.image = User.currentUser.image
-        
-        self.nameLabel.text = User.currentUser.firstName + " " + User.currentUser.lastName
-        self.emailLabel.text = User.currentUser.email
+//        self.profileImage.layer.cornerRadius = 9.0
+//        self.profileImage.layer.masksToBounds = true
+//        self.profileImage.image = User.currentUser.image
+//        
+//        self.nameLabel.text = User.currentUser.firstName + " " + User.currentUser.lastName
+//        self.emailLabel.text = User.currentUser.email
         
         self.tableView.reloadData()
     }
     
     // MARK: Table View Data Source
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         println("returning number of sections")
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         println("count of menuitems is \(menuItems.count)")
         return menuItems.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(TableView.CellIdentifiers.MenuItemCell, forIndexPath: indexPath) as MenuItemCell
         println(self.menuItems)
-        cell.configureForMenuItem(menuItems[indexPath.row] as MenuItem)
+        cell.configureForMenuItem(menuItems[indexPath.row])
         return cell
     }
     
     // Mark: Table View Delegate
     
-    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        delegate?.menuItemSelected(menuItems[indexPath.row] as MenuItem)
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        delegate?.menuItemSelected(menuItems[indexPath.row])
     }
     
 }
