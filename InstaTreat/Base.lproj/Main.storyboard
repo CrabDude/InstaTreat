@@ -678,7 +678,13 @@
                             <constraint firstItem="jap-7P-dAz" firstAttribute="top" secondItem="Zek-dg-I8s" secondAttribute="top" id="rBU-Kj-R1T"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Sales" id="CLa-Ye-rC7"/>
+                    <navigationItem key="navigationItem" title="Sales" id="CLa-Ye-rC7">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="vcO-XU-Xm0">
+                            <connections>
+                                <action selector="logoutTapped:" destination="VNa-JY-pR5" id="vs4-8E-Lyi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="salesTableView" destination="jap-7P-dAz" id="B1E-zQ-kD2"/>
                     </connections>
@@ -765,7 +771,13 @@
                             <constraint firstItem="ywG-fw-yCD" firstAttribute="centerY" secondItem="XO1-98-4uf" secondAttribute="centerY" id="upo-s8-hRU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Post" id="0yd-tH-fql"/>
+                    <navigationItem key="navigationItem" title="Post" id="0yd-tH-fql">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="2FD-ca-hWf">
+                            <connections>
+                                <action selector="logoutTapped:" destination="BPH-Qo-ZpT" id="03D-wW-f1l"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="CameraImageView" destination="xVU-Hj-2Q0" id="8t7-ve-6gn"/>
                         <outlet property="titleTextField" destination="ywG-fw-yCD" id="GgW-AZ-okK"/>

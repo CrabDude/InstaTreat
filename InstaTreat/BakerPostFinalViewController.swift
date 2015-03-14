@@ -83,13 +83,10 @@ class BakerPostFinalViewController: UIViewController {
                             
                             println("Post Successful")
                             self.view.window?.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
-//                            if let tabBarController = self.view.window?.rootViewController as? UITabBarController {
-//                                tabBarController.selectedIndex = 2
-//                            }
-//                            if let tabBarController = self.parentViewController as? UITabBarController {
-//                                tabBarController.selectedIndex = 2
-//                            }
-
+                            
+                            if let tbc = UIStoryboard.centerViewController() as? UITabBarController {
+                                tbc.selectedIndex = 2
+                            }
                         }
                         self.presentViewController(actionSheetController, animated: true, completion: nil)
                         actionSheetController.addAction(okAction)

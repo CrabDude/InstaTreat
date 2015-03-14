@@ -102,4 +102,10 @@ class BakerSalesViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.items.count
     }
+    
+    @IBAction func logoutTapped(sender: AnyObject) {
+        PFUser.logOut()
+        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as UIViewController
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
 }

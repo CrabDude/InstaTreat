@@ -31,15 +31,7 @@ class ContainerViewController: UIViewController, UIGestureRecognizerDelegate, Si
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        if User.currentUser.isBaker {
-            let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("BakerPostViewController") as UITabBarController
-            vc.selectedIndex = 0
-            self.centerViewController = vc
-        } else {
-            self.centerViewController = AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamViewController") as UIViewController
-        }
-//        self.centerViewController.delegate = self
+        self.centerViewController = UIStoryboard.centerViewController()
         self.centerNavigationController = UINavigationController(rootViewController: centerViewController)
         self.view.addSubview(centerNavigationController.view)
         self.addChildViewController(centerNavigationController)
@@ -164,7 +156,10 @@ class ContainerViewController: UIViewController, UIGestureRecognizerDelegate, Si
     }
 }
 
-private extension UIStoryboard {
+var _centerViewController: UIViewController!
+var _leftViewController: UIViewController!
+
+extension UIStoryboard {
     class func mainStoryboard() -> UIStoryboard { return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()) }
     
     class func leftViewController() -> SidePanelViewController? {
@@ -172,10 +167,13 @@ private extension UIStoryboard {
     }
     
     class func centerViewController() -> UIViewController? {
-        if User.currentUser.isBaker {
-            return AppHelper.storyboard.instantiateViewControllerWithIdentifier("BakerPostViewController") as? UITabBarController
-        } else {
-            return AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamViewController") as? StreamViewController
+        if _centerViewController == nil {
+            if User.currentUser.isBaker {
+                _centerViewController =  AppHelper.storyboard.instantiateViewControllerWithIdentifier("BakerPostViewController") as? UITabBarController
+            } else {
+                _centerViewController = AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamViewController") as? StreamViewController
+            }
         }
+        return _centerViewController
     }
 }

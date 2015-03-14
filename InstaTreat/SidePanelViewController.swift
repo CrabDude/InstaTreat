@@ -54,7 +54,7 @@ class SidePanelViewController: UITableViewController, UITableViewDataSource, UIT
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(TableView.CellIdentifiers.MenuItemCell, forIndexPath: indexPath) as MenuItemCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(TableView.CellIdentifiers.MenuItemCell) as MenuItemCell
         println(self.menuItems)
         cell.configureForMenuItem(menuItems[indexPath.row])
         return cell
