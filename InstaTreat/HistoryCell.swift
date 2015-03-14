@@ -14,6 +14,7 @@ class HistoryCell: UITableViewCell {
     @IBOutlet var totalSalesLabel: UILabel!
     @IBOutlet var saleEndedDateLabel: UILabel!
     @IBOutlet var saleRatingLabel: UILabel!
+    @IBOutlet var titleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

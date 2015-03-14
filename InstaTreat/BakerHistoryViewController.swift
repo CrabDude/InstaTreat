@@ -69,7 +69,7 @@ class BakerHistoryViewController: UIViewController , UITableViewDelegate, UITabl
         var cell = tableView.dequeueReusableCellWithIdentifier("HistoryCell") as HistoryCell
         
         let item = items[indexPath.row]
-//        cell.titleLabel.text = item.title
+        cell.titleLabel.text = item.title
 //        cell.priceLabel.text = String(format: "%.2f", item.price)
 //        cell.quantityLabel.text = String(item.quantity)
 //        let dateFormat = NSDateFormatter()
@@ -90,15 +90,6 @@ class BakerHistoryViewController: UIViewController , UITableViewDelegate, UITabl
         }
         
         return cell
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //        if let dc = segue.destinationViewController as? ItemDetailViewController {
-        //            if let indexPath = self.tableView.indexPathForSelectedRow() {
-        //                let item = self.items[indexPath.row]
-        //                dc.item = item
-        //            }
-        //        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
