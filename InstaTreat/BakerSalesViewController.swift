@@ -13,17 +13,31 @@ class BakerSalesViewController: UIViewController, UITableViewDelegate, UITableVi
     var items = [Item]()
     
     @IBOutlet var salesTableView: UITableView!
+    var refreshControl:UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.salesTableView.delegate = self
         self.salesTableView.dataSource = self
+//        
+//        self.refreshControl = UIRefreshControl()
+//        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+//        self.tableView.addSubview(refreshControl)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func refresh(sender:AnyObject){
+//        var query = PFQuery(className: "Item")
+//        query.includeKey("baker")
+//        let pfItems = query.findObjects() as [PFObject]
+//        self.items = Item.itemsWithPFObjectArray(pfItems)
+//        self.tableView.reloadData()
+//        self.refreshControl.endRefreshing()
     }
     
 
