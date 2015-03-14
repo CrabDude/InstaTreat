@@ -88,6 +88,25 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 return
             }
         }
+        
+        cell.badge1Image.hidden = true
+        cell.badge2Image.hidden = true
+        cell.badge3Image.hidden = true
+        cell.badge4Image.hidden = true
+        
+        for tag in item.tags {
+            switch (tag) {
+            case "Nut Free":
+                cell.badge1Image.hidden = false
+            case "Gluten Free":
+                cell.badge2Image.hidden = false
+            case "Egg Free":
+                cell.badge3Image.hidden = false
+            default:
+                break
+            }
+            
+        }
 
         return cell
     }

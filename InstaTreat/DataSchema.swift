@@ -54,7 +54,7 @@ class Item {
     var owner: String!
     var price: Float!
     var quantity : Int!
-    var tags: Array<String>!
+    var tags: [String]!
     var location: AnyObject!
     var createdAt: NSDate!
     var baker: User!
@@ -82,6 +82,7 @@ class Item {
         self.ratingCount = (parseObject["ratingCount"] ?? 0) as Int
         self.ratingTotal = (parseObject["ratingTotal"] ?? 0) as Int
         self.price = parseObject["price"]! as Float
+        self.tags = parseObject["tags"]! as [String]
         self.createdAt = parseObject.createdAt
         self.baker = User(parseObject: parseObject["baker"] as PFUser)
         

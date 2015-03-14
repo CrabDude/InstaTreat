@@ -54,6 +54,26 @@ class ItemDetailViewController: UIViewController {
             if item.images?.count > 0 {
                 self.itemImage?.image = item.images?[0]
             }
+            
+            
+            self.badge1Image.hidden = true
+            self.badge2Image.hidden = true
+            self.badge3Image.hidden = true
+            self.badge4Image.hidden = true
+            
+            for tag in item.tags {
+                switch (tag) {
+                case "Nut Free":
+                    self.badge1Image.hidden = false
+                case "Gluten Free":
+                    self.badge2Image.hidden = false
+                case "Egg Free":
+                    self.badge3Image.hidden = false
+                default:
+                    break
+                }
+                
+            }
         }
         
     }
