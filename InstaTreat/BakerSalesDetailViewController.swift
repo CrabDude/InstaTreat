@@ -17,6 +17,25 @@ class BakerSalesDetailViewController: UITableViewController, UIAlertViewDelegate
         super.viewDidLoad()
 
         self.tableView.allowsSelection = false
+        
+        var query = PFQuery(className:"Sale")
+        query.whereKey("baker", equalTo:User.currentUser.pfUser)
+        query.includeKey("buyer")
+        query.orderByDescending("createdAt")
+        
+        query.findObjectsInBackgroundWithBlock {
+            (objects, error) in
+            if error != nil {
+                println(error)
+                return
+            }
+            
+            // The find succeeded.
+            println("Successfully retrieved \(objects.count) items")
+            
+            self.sales = Sale.salesWithPFObjectArray(objects as [PFObject])
+            self.tableView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,7 +60,7 @@ class BakerSalesDetailViewController: UITableViewController, UIAlertViewDelegate
         let sale = self.sales[indexPath.row]
         
         cell.buyerNameLabel.text = sale.buyer.firstName + " " + sale.buyer.lastName
-        cell.quantityLabel.text = String(sale.quantity)
+        cell.quantityLabel.text = "Quantity: \(String(sale.quantity))"
         cell.buyerImageView.image = sale.buyer.image
         cell.confirmButton.addTarget(self, action: "confirmTapped:", forControlEvents: .TouchUpInside)
         

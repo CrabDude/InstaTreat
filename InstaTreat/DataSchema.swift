@@ -127,6 +127,7 @@ class Sale {
         self.isDelivered = parseObject["isDelivered"]! as Bool
         self.item = Item(parseObject: parseObject["item"] as PFObject)
         self.buyer = User(parseObject: parseObject["buyer"] as PFUser)
+        self.quantity = parseObject["quantity"] as Int
         self.pfSale = parseObject
     }
     
@@ -139,5 +140,14 @@ class Sale {
         }
         
     }
+    
+    class func salesWithPFObjectArray(parseObjects: [PFObject]) -> [Sale] {
+        var sales = [Sale]()
+        for parseObject in parseObjects {
+            sales.append(Sale(parseObject: parseObject))
+        }
+        return sales
+    }
+
 }
 
