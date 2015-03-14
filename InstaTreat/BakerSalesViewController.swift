@@ -21,15 +21,31 @@ class BakerSalesViewController: UIViewController, UITableViewDelegate, UITableVi
         self.salesTableView.delegate = self
         self.salesTableView.dataSource = self
         
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.salesTableView.addSubview(refreshControl)
+    
+        self.getItemData()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func getItemData()
+    {
         let user = PFUser.currentUser()
         var query = PFQuery(className:"Item")
         query.whereKey("baker", equalTo:user)
+        query.whereKey("onSale", equalTo:true)
+        
         query.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]!, error: NSError!) -> Void in
             if error == nil {
                 // The find succeeded.
                 println("Successfully retrieved \(objects.count) items")
-
+                
                 let pfItems = objects as [PFObject]
                 self.items = Item.itemsWithPFObjectArray(pfItems)
                 self.salesTableView.reloadData()
@@ -39,22 +55,10 @@ class BakerSalesViewController: UIViewController, UITableViewDelegate, UITableVi
                 println("Error: \(error) \(error.userInfo!)")
             }
         }
-        self.refreshControl = UIRefreshControl()
-        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
-        self.salesTableView.addSubview(refreshControl)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func refresh(sender:AnyObject){
-        var query = PFQuery(className:"Item")
-        query.whereKey("baker", equalTo:PFUser.currentUser())
-        let pfItems = query.findObjects() as [PFObject]
-        self.items = Item.itemsWithPFObjectArray(pfItems)
-        self.salesTableView.reloadData()
+        self.getItemData()
         self.refreshControl.endRefreshing()
     }
     
