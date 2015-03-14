@@ -27,9 +27,9 @@ class BakerPostViewController: UIViewController, UINavigationControllerDelegate,
         println("baker post view loaded")
         
         //Just for testing purpose
-        if let img: UIImage = UIImage(named: "Cookie") {
-            self.CameraImageView.image = img
-        }
+//        if let img: UIImage = UIImage(named: "Cookie") {
+//            self.CameraImageView.image = img
+//        }
         
         // Do any additional setup after loading the view.
     }
@@ -41,27 +41,22 @@ class BakerPostViewController: UIViewController, UINavigationControllerDelegate,
     
 
     @IBAction func AddPhotoPressed(sender: AnyObject) {
-        println("Add photo was pressed")
         
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
-            println("Button capture")
-            
-            var imag = UIImagePickerController()
-            imag.delegate = self
-            imag.sourceType = UIImagePickerControllerSourceType.Camera;
-            imag.mediaTypes = [kUTTypeImage]
-            imag.allowsEditing = false
-            
-            self.presentViewController(imag, animated: true, completion: nil)
-        }
+        var vc = UIImagePickerController()
+        vc.delegate = self
+        //vc.sourceType = UIImagePickerControllerSourceType.Camera;
+        //Show photolibrary for now so it works on the simulator
+        vc.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        vc.allowsEditing = false
+        self.presentViewController(vc, animated: true, completion: nil)
     }
     
-    
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
-        println("i've got an image");
-        self.CameraImageView.image = info[UIImagePickerControllerEditedImage] as? UIImage
+    func imagePickerController(picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+            var originalImage = info[UIImagePickerControllerOriginalImage] as UIImage
+            self.CameraImageView.image = originalImage
+            self.dismissViewControllerAnimated(true, completion: nil)
     }
-
     
     // MARK: - Navigation
 
@@ -69,10 +64,13 @@ class BakerPostViewController: UIViewController, UINavigationControllerDelegate,
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if let image = UIImage(named: "Cookie") {
+//        if let image = UIImage(named: "Cookie") {
+//            self.item.images?.append(image)
+//        }
+        if let image = self.CameraImageView.image {
             self.item.images?.append(image)
         }
-//        self.PostItem.images = image
+
         self.item.title = titleTextField.text
 
         if let dc = segue.destinationViewController as? BakerPostDetailsViewController {
