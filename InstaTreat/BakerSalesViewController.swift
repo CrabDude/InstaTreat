@@ -22,7 +22,6 @@ class BakerSalesViewController: UIViewController, UITableViewDelegate, UITableVi
         self.salesTableView.dataSource = self
         
         let user = PFUser.currentUser()
-        
         var query = PFQuery(className:"Item")
         query.whereKey("baker", equalTo:user)
         query.findObjectsInBackgroundWithBlock {
@@ -40,11 +39,9 @@ class BakerSalesViewController: UIViewController, UITableViewDelegate, UITableVi
                 println("Error: \(error) \(error.userInfo!)")
             }
         }
-            }
-//
-//        self.refreshControl = UIRefreshControl()
-//        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
-//        self.tableView.addSubview(refreshControl)
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.salesTableView.addSubview(refreshControl)
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,12 +50,12 @@ class BakerSalesViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func refresh(sender:AnyObject){
-//        var query = PFQuery(className: "Item")
-//        query.includeKey("baker")
-//        let pfItems = query.findObjects() as [PFObject]
-//        self.items = Item.itemsWithPFObjectArray(pfItems)
-//        self.tableView.reloadData()
-//        self.refreshControl.endRefreshing()
+        var query = PFQuery(className:"Item")
+        query.whereKey("baker", equalTo:PFUser.currentUser())
+        let pfItems = query.findObjects() as [PFObject]
+        self.items = Item.itemsWithPFObjectArray(pfItems)
+        self.salesTableView.reloadData()
+        self.refreshControl.endRefreshing()
     }
     
 
@@ -67,46 +64,38 @@ class BakerSalesViewController: UIViewController, UITableViewDelegate, UITableVi
         
         let item = items[indexPath.row]
         cell.titleLabel.text = item.title
-
-//        let item = items[indexPath.row]
-//        cell.titleLabel.text = "Test"
-//        cell.titleLabel.text = item.title>>>>>>> origin/master
-//        cell.priceLabel.text = String(format: "%.2f", item.price)
-//        let dateFormat = NSDateFormatter()
-//        dateFormat.dateFormat = "EEE, MMM d, h:mm a"
-//        cell.createdAtLabel.text = dateFormat.stringFromDate(item.createdAt)
-//        cell.quantityLabel.text = String(item.quantity)
-//        //        cell.distanceLabel.text = item.distance
-        
-        
+        cell.priceLabel.text = String(format: "%.2f", item.price)
+        cell.quantityLabel.text = String(item.quantity)
+        let dateFormat = NSDateFormatter()
+        dateFormat.dateFormat = "EEE, MMM d, h:mm a"
+        cell.createdTimeLabel.text = dateFormat.stringFromDate(item.createdAt)
        
+        if let images = item.images {
+            if images.count > 0 {
+                cell.itemImageView?.image = images[0]
+            }
+        } else {
+            item.onImageLoad = {
+                if item.images?.count > 0 {
+                    cell.itemImageView?.image = item.images?[0]
+                }
+                return
+            }
+        }
+        
         return cell
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if let dc = segue.destinationViewController as? ItemDetailViewController {
-//            if let indexPath = self.tableView.indexPathForSelectedRow() {
-//                let item = self.items[indexPath.row]
-//                dc.item = item
-//            }
-//        }
-//    }
-//    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //        if let dc = segue.destinationViewController as? ItemDetailViewController {
+        //            if let indexPath = self.tableView.indexPathForSelectedRow() {
+        //                let item = self.items[indexPath.row]
+        //                dc.item = item
+        //            }
+        //        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.items.count
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
