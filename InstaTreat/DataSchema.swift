@@ -60,6 +60,7 @@ class Item {
     var baker: User!
     var onImageLoad: (() -> Void)?
     var parseRef: PFObject!
+    var bakerRef: PFObject!
     
     init() {
         self.id = ""
@@ -100,6 +101,7 @@ class Item {
             self.images = []
         }
         self.parseRef = parseObject
+        self.bakerRef = parseObject["baker"] as PFUser
         
     }
     

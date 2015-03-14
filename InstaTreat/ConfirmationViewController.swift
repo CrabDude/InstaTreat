@@ -63,7 +63,7 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate {
         sale["buyer"] = PFUser.currentUser()
         sale["item"] = self.item.parseRef
         sale["quantity"] = self.item.quantity
-        sale["baker"] = PFUser.currentUser()
+        sale["baker"] = self.item.bakerRef
         sale.saveInBackgroundWithBlock {
             (success: Bool, error: NSError!) -> Void in
             if (success) {
