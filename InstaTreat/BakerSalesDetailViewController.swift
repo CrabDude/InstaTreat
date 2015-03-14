@@ -16,6 +16,7 @@ class BakerSalesDetailViewController: UITableViewController, UIAlertViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tableView.rowHeight = 110
         self.tableView.allowsSelection = false
         
         var query = PFQuery(className:"Sale")
@@ -60,9 +61,20 @@ class BakerSalesDetailViewController: UITableViewController, UIAlertViewDelegate
         let sale = self.sales[indexPath.row]
         
         cell.buyerNameLabel.text = sale.buyer.firstName + " " + sale.buyer.lastName
-        cell.quantityLabel.text = "Quantity: \(String(sale.quantity))"
-        cell.buyerImageView.image = sale.buyer.image
+        cell.quantityLabel.text = "#: \(String(sale.quantity))"
         cell.confirmButton.addTarget(self, action: "confirmTapped:", forControlEvents: .TouchUpInside)
+        
+        
+        if let image = sale.buyer.image {
+            cell.buyerImageView.image = image
+        } else {
+            sale.buyer.onImageLoad = {
+                if let image = sale.buyer.image {
+                    cell.buyerImageView.image = image
+                }
+            }
+        }
+        
         
         return cell
     }
@@ -74,11 +86,11 @@ class BakerSalesDetailViewController: UITableViewController, UIAlertViewDelegate
             let sale = self.sales[indexPath.row]
             sale.confirmDelivered {
                 error in
-//                let okAction = UIAlertAction(title: "OK", style: .Default) {
-//                    (action) in
+                let okAction = UIAlertAction(title: "OK", style: .Default) {
+                    (action) in
 //                    self.dismiss()
-//                }
-//                self.alert.addAction(okAction)
+                }
+                self.alert.addAction(okAction)
                 self.presentViewController(self.alert, animated: true, completion: nil)
                 
             }
