@@ -13,6 +13,17 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate {
     
     
     var card:STPCard!
+    var item:Item!
+    var address: Dictionary<String, String>!
+    let deliveryCharge = Float(5)
+    var total: Float!
+    @IBOutlet weak var itemNameLabel: UILabel!
+    @IBOutlet weak var itemCost: UILabel!
+    @IBOutlet weak var address1Label: UILabel!
+    @IBOutlet weak var address2Label: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var stateLabel: UILabel!
+    @IBOutlet weak var totalLabel: UILabel!
     
     var alert = UIAlertController(title: "Thank You!", message: "Your order is on its way", preferredStyle: UIAlertControllerStyle.Alert)
     
@@ -27,7 +38,18 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         println("confirmation view")
+        self.itemNameLabel.text = self.item.title
+        self.address1Label.text = address["address1"]
+        self.address2Label.text = address["address2"]
+        self.cityLabel.text = address["city"]
+        self.stateLabel.text = address["state"]
+        self.totalLabel.text = ""
         println(self.card)
+        println(self.item)
+        println(self.address)
+        self.total = self.deliveryCharge + self.item.price
+        self.totalLabel.text = "$\(self.total)"
+        println(self.total)
         
     }
     

@@ -25,6 +25,8 @@ class SaveCardViewController: UIViewController, PTKViewDelegate {
         paymentView?.delegate = self
         view.addSubview(paymentView!)
         self.saveButton.enabled = false
+        println("item in save card")
+        println(self.item)
 //        self.stripeView2.delegate = self
 //        self.view.addSubview(self.stripeView2)
 //        saveButton.enabled = false
@@ -65,7 +67,8 @@ class SaveCardViewController: UIViewController, PTKViewDelegate {
                 })
                     
                 UIAlertView(title: "Success", message: "Card added", delegate: nil, cancelButtonTitle: "Okay").show()
-                let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("AddressViewController") as UIViewController
+                let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("AddressViewController") as AddressViewController
+                vc.item = self.item
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         })

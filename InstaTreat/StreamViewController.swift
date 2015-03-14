@@ -110,7 +110,6 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.buyButton.tag = indexPath.row
         cell.buyButton.addTarget(self, action: "buy:", forControlEvents: UIControlEvents.TouchUpInside)
 
-
         return cell
     }
     
@@ -121,6 +120,8 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 dc.item = item
             }
         }
+        var idx = sender as UIButton
+        println(idx.tag)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -143,16 +144,21 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
-    @IBAction func onBuy(sender: UIButton) {
-        println("on buy presed")
-        NSNotificationCenter.defaultCenter().postNotificationName("uniqueName", object: nil)
-        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("SaveCardViewController") as UIViewController
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
+//    @IBAction func onBuy(sender: UIButton) {
+//        println("on buy presed")
+//        NSNotificationCenter.defaultCenter().postNotificationName("uniqueName", object: nil)
+//        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("SaveCardViewController") as UIViewController
+//        self.navigationController?.pushViewController(vc, animated: true)
+//    }
     
     func buy(sender: UIButton){
         println("on buy presed")
-        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("SaveCardViewController") as UIViewController
+        var selectedItem = self.items[sender.tag]
+        
+        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("SaveCardViewController") as SaveCardViewController
+        println("item in streamview")
+        println(selectedItem)
+        vc.item = selectedItem
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

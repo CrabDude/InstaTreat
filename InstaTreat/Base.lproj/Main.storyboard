@@ -162,9 +162,6 @@
                                                     <state key="normal" title="BUY">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <connections>
-                                                        <action selector="onBuy:" destination="2Cw-lP-gV0" eventType="touchUpInside" id="h1g-Rs-uAJ"/>
-                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.1mi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X44-Bx-z8w">
                                                     <rect key="frame" x="15" y="116" width="43" height="21"/>
@@ -362,6 +359,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="xne-7M-JXm"/>
+                    <connections>
+                        <outlet property="address1TextField" destination="q1n-DB-oDW" id="gLL-Re-rIX"/>
+                        <outlet property="address2TextField" destination="8PN-Pc-vgl" id="5at-hB-RPo"/>
+                        <outlet property="cityTextField" destination="wMR-mk-7pl" id="BDd-la-N58"/>
+                        <outlet property="stateTextField" destination="niZ-ia-qxI" id="HWW-Ty-R1t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ly-MY-xZq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -440,14 +443,41 @@
                                     <action selector="onBuy:" destination="w2d-SY-pj5" eventType="touchUpInside" id="Hbb-G7-AYN"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4g-O9-Ghx">
+                                <rect key="frame" x="16" y="347" width="37" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5iL-4H-vi1">
+                                <rect key="frame" x="131" y="318" width="24" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9l0-jv-Vnc">
+                                <rect key="frame" x="225" y="347" width="95" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Lds-G9-Pnt"/>
+                    <connections>
+                        <outlet property="address1Label" destination="HSi-RD-3tM" id="j2d-r5-MdX"/>
+                        <outlet property="address2Label" destination="Uom-hV-DnL" id="MQx-QZ-qGE"/>
+                        <outlet property="cityLabel" destination="JyR-ki-uUx" id="DYe-yD-vQ3"/>
+                        <outlet property="itemCost" destination="psw-JL-vQd" id="Tsr-De-eKE"/>
+                        <outlet property="itemNameLabel" destination="Rv4-Ir-2eo" id="VV2-b7-MzY"/>
+                        <outlet property="stateLabel" destination="5iL-4H-vi1" id="4kc-MP-vml"/>
+                        <outlet property="totalLabel" destination="9l0-jv-Vnc" id="qh0-ol-Wu6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fKI-hl-JM7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5068" y="3337"/>
+            <point key="canvasLocation" x="5024" y="3337"/>
         </scene>
         <!--Item Detail View Controller-->
         <scene sceneID="cxT-gn-0Yq">
