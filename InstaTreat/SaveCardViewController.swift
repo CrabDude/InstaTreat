@@ -78,6 +78,5 @@ class SaveCardViewController: UIViewController, PTKViewDelegate {
     }
     
     func chargeCard(controller: SaveCardViewController, card: STPCard) {
-        
     }
 }
