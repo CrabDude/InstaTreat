@@ -42,6 +42,7 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate, StreamV
     @IBAction func onBuy(sender: UIButton) {
         
         let okAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+            
             self.dismiss()
         }
         alert.addAction(okAction)
@@ -53,6 +54,7 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate, StreamV
     }
     
     func dismiss(){
+        
         var vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamNavigationController") as UINavigationController
         self.navigationController?.presentViewController(vc, animated: true, completion: nil)
     }

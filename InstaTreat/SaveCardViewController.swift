@@ -53,6 +53,17 @@ class SaveCardViewController: UIViewController, PTKViewDelegate {
                 PFUser.currentUser()["stripeCustomerId"] = token?.tokenId!
                 PFUser.currentUser().save()
                 
+                let manager = AFHTTPRequestOperationManager()
+                var parameters = ["description":"Customer","source":token?.tokenId!]
+                manager.requestSerializer.setValue("sk_test_lnqw4PCAMpZFwjQqHEfJbu6I", forHTTPHeaderField: "user")
+                manager.POST("https://api.stripe.com/v1/customers", parameters: [], success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+                    println("JSON: " + responseObject.description)
+                    },
+                    failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+                        println("Error: " + error.localizedDescription)
+                })
+                    
+                UIAlertView(title: "Success", message: "Card added", delegate: nil, cancelButtonTitle: "Okay").show()
                 let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("AddressViewController") as UIViewController
                 self.navigationController?.pushViewController(vc, animated: true)
             }

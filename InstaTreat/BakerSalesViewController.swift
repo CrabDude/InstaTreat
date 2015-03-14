@@ -30,8 +30,9 @@ class BakerSalesViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("SalesCell") as SalesCell
         
-        //let item = items[indexPath.row]
-        cell.titleLabel.text = "Test"
+
+//        let item = items[indexPath.row]
+//        cell.titleLabel.text = "Test"
 //        cell.titleLabel.text = item.title
 //        cell.priceLabel.text = String(format: "%.2f", item.price)
 //        let dateFormat = NSDateFormatter()

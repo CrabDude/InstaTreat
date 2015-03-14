@@ -9,6 +9,7 @@ target 'InstaTreat' do
     pod 'EDStarRating'
     pod 'Stripe'
     pod 'PaymentKit'
+    pod 'AFNetworking'
     
 end
 

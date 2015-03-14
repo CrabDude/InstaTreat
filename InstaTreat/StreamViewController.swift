@@ -17,10 +17,15 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var items = [Item]()
     var delegate: StreamViewControllerDelegate?
+    var refreshControl:UIRefreshControl!
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(refreshControl)
+        
         var query = PFQuery(className: "Item")
         query.includeKey("baker")
         let pfItems = query.findObjects() as [PFObject]
@@ -28,6 +33,15 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.tableView.reloadData()
         
         println("item count: \(self.items.count)")
+    }
+    
+    func refresh(sender:AnyObject){
+        var query = PFQuery(className: "Item")
+        query.includeKey("baker")
+        let pfItems = query.findObjects() as [PFObject]
+        self.items = Item.itemsWithPFObjectArray(pfItems)
+        self.tableView.reloadData()
+        self.refreshControl.endRefreshing()
     }
     
     
