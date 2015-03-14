@@ -70,12 +70,10 @@ class BakerHistoryViewController: UIViewController , UITableViewDelegate, UITabl
         
         let item = items[indexPath.row]
         cell.titleLabel.text = item.title
-//        cell.priceLabel.text = String(format: "%.2f", item.price)
-//        cell.quantityLabel.text = String(item.quantity)
-//        let dateFormat = NSDateFormatter()
-//        dateFormat.dateFormat = "EEE, MMM d, h:mm a"
-//        cell.createdTimeLabel.text = dateFormat.stringFromDate(item.createdAt)
-        
+        var myValue:float_t = float_t(item.quantity)
+        let totalSales = item.price*myValue
+        cell.totalSalesLabel.text = String(format: "$%.2f", totalSales)
+      
         if let images = item.images {
             if images.count > 0 {
                 cell.itemImageView?.image = images[0]
