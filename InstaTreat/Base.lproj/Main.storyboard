@@ -8,7 +8,7 @@
         <!--History-->
         <scene sceneID="UU5-fG-Za6">
             <objects>
-                <viewController id="OWq-lQ-4IE" sceneMemberID="viewController">
+                <viewController id="OWq-lQ-4IE" customClass="BakerHistoryViewController" customModule="InstaTreat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4Lb-OX-mOS"/>
                         <viewControllerLayoutGuide type="bottom" id="W90-5N-hNi"/>
@@ -17,16 +17,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rNf-se-51l">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="105" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rNf-se-51l">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="Lz9-Pr-xdj">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" rowHeight="105" id="Lz9-Pr-xdj" customClass="HistoryCell" customModule="InstaTreat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lz9-Pr-xdj" id="LcQ-c2-i0F">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ADd-dZ-fO7">
+                                                    <rect key="frame" x="8" y="8" width="76" height="76"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sales:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziK-Oy-5NB">
+                                                    <rect key="frame" x="92" y="16" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ended:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmD-mi-9di">
+                                                    <rect key="frame" x="92" y="39" width="49" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leP-Jz-dTU">
+                                                    <rect key="frame" x="92" y="63" width="49" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uyu-8h-34n">
+                                                    <rect key="frame" x="154" y="16" width="136" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Today" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIF-lt-edY">
+                                                    <rect key="frame" x="155" y="39" width="136" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5 stars" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKC-cS-fSx">
+                                                    <rect key="frame" x="155" y="63" width="136" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="itemImageView" destination="ADd-dZ-fO7" id="x68-lN-Dp7"/>
+                                            <outlet property="saleEndedDateLabel" destination="fIF-lt-edY" id="DEk-Sf-9Pm"/>
+                                            <outlet property="saleRatingLabel" destination="cKC-cS-fSx" id="4kl-va-bpe"/>
+                                            <outlet property="totalSalesLabel" destination="Uyu-8h-34n" id="V01-FE-N14"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -39,11 +86,14 @@
                             <constraint firstAttribute="trailing" secondItem="rNf-se-51l" secondAttribute="trailing" id="q8z-0B-c1w"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="History" id="bBS-Wn-YUm"/>
+                    <navigationItem key="navigationItem" title="History" id="dVS-4l-823"/>
+                    <connections>
+                        <outlet property="historyTableView" destination="rNf-se-51l" id="Jb9-WJ-TcL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UhW-fm-ucZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="548" y="38"/>
+            <point key="canvasLocation" x="1080" y="37"/>
         </scene>
         <!--Side Panel View Controller-->
         <scene sceneID="5gN-U2-ZFr">
@@ -989,7 +1039,7 @@
                     <connections>
                         <segue destination="I3j-yj-AIY" kind="relationship" relationship="viewControllers" id="T4n-lr-EA0"/>
                         <segue destination="Pmj-7L-OMd" kind="relationship" relationship="viewControllers" id="pJA-8L-rIJ"/>
-                        <segue destination="OWq-lQ-4IE" kind="relationship" relationship="viewControllers" id="0FY-eb-58m"/>
+                        <segue destination="X2w-ph-jDE" kind="relationship" relationship="viewControllers" id="0FY-eb-58m"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cCH-VS-aJ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1141,6 +1191,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vJ6-Qr-qhH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="548" y="692"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="b9I-ra-tci">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="X2w-ph-jDE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="History" id="bBS-Wn-YUm"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ku3-h2-R8c">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OWq-lQ-4IE" kind="relationship" relationship="rootViewController" id="TTa-lO-Tmn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0cM-iq-kgc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="548" y="37"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
