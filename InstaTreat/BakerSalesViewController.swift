@@ -19,7 +19,27 @@ class BakerSalesViewController: UIViewController, UITableViewDelegate, UITableVi
         
         self.salesTableView.delegate = self
         self.salesTableView.dataSource = self
-    }
+        
+        let user = PFUser.currentUser()
+        
+        var query = PFQuery(className:"Item")
+        query.whereKey("baker", equalTo:user)
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]!, error: NSError!) -> Void in
+            if error == nil {
+                // The find succeeded.
+                println("Successfully retrieved \(objects.count) items")
+
+                let pfItems = objects as [PFObject]
+                self.items = Item.itemsWithPFObjectArray(pfItems)
+                self.salesTableView.reloadData()
+                
+            } else {
+                // Log details of the failure
+                println("Error: \(error) \(error.userInfo!)")
+            }
+        }
+            }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -30,9 +50,8 @@ class BakerSalesViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("SalesCell") as SalesCell
         
-        //let item = items[indexPath.row]
-        cell.titleLabel.text = "Test"
-//        cell.titleLabel.text = item.title
+        let item = items[indexPath.row]
+        cell.titleLabel.text = item.title
 //        cell.priceLabel.text = String(format: "%.2f", item.price)
 //        let dateFormat = NSDateFormatter()
 //        dateFormat.dateFormat = "EEE, MMM d, h:mm a"
@@ -58,8 +77,7 @@ class BakerSalesViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return self.items.count
-        return 1
+        return self.items.count
     }
 
     /*
