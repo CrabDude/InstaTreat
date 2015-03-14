@@ -57,6 +57,7 @@ List of items currently on sale
 Baker can view who is buying items and when they’re going to pick them up  
 Quantity remaining   
 
+<!---
 4. Option to specify availability for pickup. 
 
 ####Flow 3
@@ -66,10 +67,13 @@ Rate an item via a popup after confirmed delivery
 Baker View  
 Show rated average item rating at top of History & Sale views  
 Show Item rating in History & Sale view list  
+-->
 
+## Walkthroughs
 
-## Walkthrough
+Baker Walkthrough:
+![Video Walkthrough](baker_walkthrough.gif)
 
-![Video Walkthrough](Instacart.gif)
+Buyer Walkthrough:
+![Video Walkthrough](buyer_walkthrough.gif)
 
-Libraries:

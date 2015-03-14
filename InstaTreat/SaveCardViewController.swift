@@ -46,33 +46,34 @@ class SaveCardViewController: UIViewController, PTKViewDelegate {
     }
     
     @IBAction func onSave(sender: UIButton) {
-        
         //Create a stripe customer
         println(self.card)
-        STPAPIClient.sharedClient().createTokenWithCard(self.card, completion: { (token: STPToken?, error) -> Void in
-            if error == nil {
-                
-                println("error is nil")
-                PFUser.currentUser()["stripeCustomerId"] = token?.tokenId!
-                PFUser.currentUser().save()
-                
-                let manager = AFHTTPRequestOperationManager()
-                var parameters = ["description":"Customer","source":token?.tokenId!]
-                manager.requestSerializer.setValue("sk_test_lnqw4PCAMpZFwjQqHEfJbu6I", forHTTPHeaderField: "user")
-                manager.POST("https://api.stripe.com/v1/customers", parameters: [], success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
-                    println("JSON: " + responseObject.description)
-                    },
-                    failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
-                        println("Error: " + error.localizedDescription)
-                })
-                    
-                UIAlertView(title: "Success", message: "Card added", delegate: nil, cancelButtonTitle: "Okay").show()
-                let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("AddressViewController") as AddressViewController
-                vc.item = self.item
-                self.navigationController?.pushViewController(vc, animated: true)
+        STPAPIClient.sharedClient().createTokenWithCard(self.card) {
+            (token: STPToken?, error) in
+            if error != nil {
+                println(error)
+                return
             }
-        })
-        
+            
+            println("error is nil")
+            PFUser.currentUser()["stripeCustomerId"] = token?.tokenId!
+            PFUser.currentUser().save()
+            
+            let manager = AFHTTPRequestOperationManager()
+            var parameters = ["description":"Customer","source":token?.tokenId!]
+            manager.requestSerializer.setValue("sk_test_lnqw4PCAMpZFwjQqHEfJbu6I", forHTTPHeaderField: "user")
+            manager.POST("https://api.stripe.com/v1/customers", parameters: [], success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+                println("JSON: " + responseObject.description)
+                },
+                failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+                    println("Error: " + error.localizedDescription)
+            })
+                
+            UIAlertView(title: "Success", message: "Card added", delegate: nil, cancelButtonTitle: "Okay").show()
+            let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("AddressViewController") as AddressViewController
+            vc.item = self.item
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
