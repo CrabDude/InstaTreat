@@ -72,7 +72,7 @@ Show Item rating in History & Sale view list
 ## Walkthroughs
 
 Baker Walkthrough:
-![Video Walkthrough](baker_view.gif)
+![Video Walkthrough](Baker_view.gif)
 
 Buyer Walkthrough:
 ![Video Walkthrough](buyer_walkthrough.gif)
