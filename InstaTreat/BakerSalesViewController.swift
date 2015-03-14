@@ -13,6 +13,7 @@ class BakerSalesViewController: UIViewController, UITableViewDelegate, UITableVi
     var items = [Item]()
     
     @IBOutlet var salesTableView: UITableView!
+    var refreshControl:UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,10 +41,24 @@ class BakerSalesViewController: UIViewController, UITableViewDelegate, UITableVi
             }
         }
             }
+//
+//        self.refreshControl = UIRefreshControl()
+//        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+//        self.tableView.addSubview(refreshControl)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func refresh(sender:AnyObject){
+//        var query = PFQuery(className: "Item")
+//        query.includeKey("baker")
+//        let pfItems = query.findObjects() as [PFObject]
+//        self.items = Item.itemsWithPFObjectArray(pfItems)
+//        self.tableView.reloadData()
+//        self.refreshControl.endRefreshing()
     }
     
 
@@ -52,6 +67,10 @@ class BakerSalesViewController: UIViewController, UITableViewDelegate, UITableVi
         
         let item = items[indexPath.row]
         cell.titleLabel.text = item.title
+
+//        let item = items[indexPath.row]
+//        cell.titleLabel.text = "Test"
+//        cell.titleLabel.text = item.title>>>>>>> origin/master
 //        cell.priceLabel.text = String(format: "%.2f", item.price)
 //        let dateFormat = NSDateFormatter()
 //        dateFormat.dateFormat = "EEE, MMM d, h:mm a"

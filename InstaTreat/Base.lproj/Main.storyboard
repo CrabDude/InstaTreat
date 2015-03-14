@@ -606,6 +606,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="VNa-JY-pR5" id="jjk-8a-izo"/>
+                                    <outlet property="delegate" destination="VNa-JY-pR5" id="RnP-zo-WYe"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
