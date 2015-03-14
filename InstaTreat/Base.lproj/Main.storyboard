@@ -16,7 +16,28 @@
                     <view key="view" contentMode="scaleToFill" id="wee-QC-Nu2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rNf-se-51l">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="Lz9-Pr-xdj">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lz9-Pr-xdj" id="LcQ-c2-i0F">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rNf-se-51l" firstAttribute="leading" secondItem="wee-QC-Nu2" secondAttribute="leading" id="RXL-q0-uec"/>
+                            <constraint firstItem="rNf-se-51l" firstAttribute="top" secondItem="wee-QC-Nu2" secondAttribute="top" id="RgP-v6-jOJ"/>
+                            <constraint firstAttribute="bottom" secondItem="rNf-se-51l" secondAttribute="bottom" id="Wof-Fk-yIJ"/>
+                            <constraint firstAttribute="trailing" secondItem="rNf-se-51l" secondAttribute="trailing" id="q8z-0B-c1w"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="History" id="bBS-Wn-YUm"/>
                 </viewController>
@@ -722,7 +743,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e7t-n0-7WG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1080" y="692"/>
+            <point key="canvasLocation" x="1054" y="692"/>
         </scene>
         <!--Post-->
         <scene sceneID="kg6-ex-Ac5">

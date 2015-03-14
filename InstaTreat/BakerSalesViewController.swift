@@ -39,6 +39,7 @@ class BakerSalesViewController: UIViewController, UITableViewDelegate, UITableVi
         var query = PFQuery(className:"Item")
         query.whereKey("baker", equalTo:user)
         query.whereKey("onSale", equalTo:true)
+        query.orderByDescending("createdAt")
         
         query.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]!, error: NSError!) -> Void in
