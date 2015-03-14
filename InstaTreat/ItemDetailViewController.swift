@@ -80,7 +80,8 @@ class ItemDetailViewController: UIViewController {
     @IBAction func onBuy(sender: AnyObject) {
         println("on buy presed")
         NSNotificationCenter.defaultCenter().postNotificationName("uniqueName", object: nil)
-        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("SaveCardViewController") as UIViewController
+        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("SaveCardViewController") as SaveCardViewController
+        vc.item = self.item
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

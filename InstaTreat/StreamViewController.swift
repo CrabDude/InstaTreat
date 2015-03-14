@@ -120,8 +120,8 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 dc.item = item
             }
         }
-        var idx = sender as UIButton
-        println(idx.tag)
+//        var idx = sender as UIButton
+//        println(idx.tag)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
