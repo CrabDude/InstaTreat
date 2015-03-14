@@ -57,7 +57,7 @@ class Item {
     var tags: Array<String>!
     var location: AnyObject!
     var createdAt: NSDate!
-    var baker: User! = User()
+    var baker: User!
     var onImageLoad: (() -> Void)?
     
     init() {
@@ -83,7 +83,7 @@ class Item {
         self.ratingTotal = (parseObject["ratingTotal"] ?? 0) as Int
         self.price = parseObject["price"]! as Float
         self.createdAt = parseObject.createdAt
-        self.baker = User(parseObject: parseObject["baker"] as PFObject)
+        self.baker = User(parseObject: parseObject["baker"] as PFUser)
         
         if let image = parseObject["image"] as? PFFile {
             image.getDataInBackgroundWithBlock {
@@ -109,48 +109,6 @@ class Item {
     }
 }
 
-class User {
-    let phoneNumber: Int!
-    let firstName: String!
-    let lastName: String!
-    let email: String!
-    let address: String!
-    let paymentToken: String!
-    let isBaker: Bool
-    var image: UIImage?
-    var onImageLoad: (() -> Void)?
-    
-    init() {
-        self.phoneNumber = 1234567890
-        self.firstName = "John"
-        self.lastName = "Doe"
-        self.email = "john@doe.com"
-        self.address = "123 Wallaby Way, Sydney"
-        self.paymentToken = "abcdefghijklmnopqrstuvwxyz"
-        self.isBaker = false
-    }
-    
-    init(parseObject: PFObject) {
-        self.phoneNumber = parseObject["phoneNumber"]! as Int
-        self.firstName = parseObject["firstName"]! as String
-        self.lastName = parseObject["lastName"]! as String
-        self.email = parseObject["email"]! as String
-        self.address = parseObject["address"]! as String
-        self.isBaker = parseObject["isBaker"] as Bool
-        
-        if let image = parseObject["image"] as? PFFile {
-            image.getDataInBackgroundWithBlock {
-                (imageData, error) in
-                if error == nil {
-                    self.image = UIImage(data: imageData)
-                    self.onImageLoad?()
-                }
-            }
-        }
-
-    }
-}
-
 class Sale {
     var quantity: Int!
     var saleId: AnyObject!
@@ -162,7 +120,7 @@ class Sale {
     init(parseObject: PFObject) {
         self.state = parseObject["state"]! as String
         self.item = Item(parseObject: parseObject["item"] as PFObject)
-        self.buyer = User(parseObject: parseObject["buyer"] as PFObject)
+        self.buyer = User(parseObject: parseObject["buyer"] as PFUser)
     }
 }
 

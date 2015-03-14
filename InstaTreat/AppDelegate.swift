@@ -22,17 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.enableLocalDatastore()
         Parse.setApplicationId("O9KSrO3dDS9UziYYY225chYXr8HPl8NkFyhUVrSn", clientKey: "C8qHkSAjhdMgYttLiA2OqxSJHAUhe23IvQ4qXxim")
 //        PFUser.logOut()
-        if let user = PFUser.currentUser() {
-            
+        if User.currentUser != nil {
             window = UIWindow(frame: UIScreen.mainScreen().bounds)
-            var vc: UIViewController
-            if user["isBaker"] as Bool {
-                vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("BakerPostViewController") as UITabBarController
-            } else {
-                println("userType: buyer")
-                vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamNavigationController") as UINavigationController
-            }
-            window?.rootViewController = vc
+            window?.rootViewController = ContainerViewController()
             window!.makeKeyAndVisible()
         }
         
@@ -63,16 +55,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
-//extension PFObject {
-//    subscript(index: String) -> AnyObject? {
-//        get {
-//            return self.valueForKey(index)
-//        }
-//        set(newValue) {
-//            if let newValue: AnyObject = newValue {
-//                self.setValue(newValue, forKey: index)
-//            }
-//        }
-//    }
-//}
