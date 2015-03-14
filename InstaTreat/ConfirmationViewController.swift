@@ -60,10 +60,10 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate {
     @IBAction func onBuy(sender: UIButton) {
         
         var sale = PFObject(className:"Sale")
-        sale["buyer"] = "abc"
-        sale["item"] = "blah"
-        sale["quantity"] = 5
-        sale["baker"] = "me"
+        sale["buyer"] = PFUser.currentUser()
+        sale["item"] = self.item.parseRef
+        sale["quantity"] = self.item.quantity
+        sale["baker"] = PFUser.currentUser()
         sale.saveInBackgroundWithBlock {
             (success: Bool, error: NSError!) -> Void in
             if (success) {

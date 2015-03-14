@@ -59,6 +59,7 @@ class Item {
     var createdAt: NSDate!
     var baker: User!
     var onImageLoad: (() -> Void)?
+    var parseRef: PFObject!
     
     init() {
         self.id = ""
@@ -98,6 +99,7 @@ class Item {
         } else {
             self.images = []
         }
+        self.parseRef = parseObject
         
     }
     
