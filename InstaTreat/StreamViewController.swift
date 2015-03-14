@@ -8,10 +8,6 @@
 
 import UIKit
 
-@objc
-protocol StreamViewControllerDelegate{
-    optional func updateView(controller: StreamViewController, item:NSObject)
-}
 
 class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     

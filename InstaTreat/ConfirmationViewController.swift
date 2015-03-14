@@ -41,14 +41,27 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate, StreamV
 
     @IBAction func onBuy(sender: UIButton) {
         
+        var sale = PFObject(className:"Sale")
+        sale["buyer"] = "abc"
+        sale["item"] = "blah"
+        sale["quantity"] = 5
+        sale["baker"] = "me"
+        sale.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError!) -> Void in
+            if (success) {
+                println("success")
+                // The object has been saved.
+            } else {
+                println(error)
+                // There was a problem, check error.description
+            }
+        }
+        
         let okAction = UIAlertAction(title: "OK", style: .Default) { (action) in
             
             self.dismiss()
         }
         alert.addAction(okAction)
-//        self.presentViewController(alert, animated: true) { () -> Void in
-//            self.dismiss()
-//        }
         self.presentViewController(alert, animated: true, completion: nil)
         
     }

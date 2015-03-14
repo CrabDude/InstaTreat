@@ -13,6 +13,7 @@ class SaveCardViewController: UIViewController, PTKViewDelegate {
     
     var paymentView: PTKView?
     var card = STPCard()
+    var item: Item!
     
     @IBOutlet weak var saveButton: UIButton!
 //    var stripeView:PTKView!
@@ -68,22 +69,15 @@ class SaveCardViewController: UIViewController, PTKViewDelegate {
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         })
-//        STPAPIClient.sharedClient().createTokenWithCard(self.card, completion: { (token: STPToken!, error: NSError!) -> Void in
-//            println(token)
-//            
-//        })
-        
-//        Stripe.
-        
         
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        let targetVC = AppHelper.storyboard.instantiateViewControllerWithIdentifier("ConfirmationViewController") as ConfirmationViewController
-//        targetVC.delegate = self
-//    }
-//    
-//    func chargeCard(controller: SaveCardViewController, card: STPCard) {
-//        s
-//    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let targetVC = AppHelper.storyboard.instantiateViewControllerWithIdentifier("AddressViewController") as AddressViewController
+//        targetVC.
+    }
+    
+    func chargeCard(controller: SaveCardViewController, card: STPCard) {
+        s
+    }
 }
