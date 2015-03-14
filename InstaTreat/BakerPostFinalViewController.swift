@@ -61,17 +61,18 @@ class BakerPostFinalViewController: UIViewController {
             item["quantity"] = self.item.quantity
             item["description"] = self.item.description
             item["tags"] = self.item.tags
+            item["onSale"] = true;
             
-//            if let images = item.images
-//            {
-//                if images.count > 0 {
-//                                    cell.itemImage?.image = images[0]
-//                                }
-//                    let imageData = UIImagePNGRepresentation(element)
-//            }
-//       
-//            
-            if let currentUser = PFUser.currentUser() {
+            if let images = self.item.images {
+                if images.count > 0 {
+                    let data = UIImagePNGRepresentation(images[0])
+                    let file = PFFile(name:"image.png", data:data)
+                    file.save()
+                    item["image"] = file
+                }
+            }
+            
+           if let currentUser = PFUser.currentUser() {
                 item["baker"] = currentUser
                 
                 item.saveInBackgroundWithBlock {
@@ -85,7 +86,7 @@ class BakerPostFinalViewController: UIViewController {
                             self.view.window?.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
                             
                             if let tbc = UIStoryboard.centerViewController() as? UITabBarController {
-                                tbc.selectedIndex = 2
+                                tbc.selectedIndex = 1
                             }
                         }
                         self.presentViewController(actionSheetController, animated: true, completion: nil)
@@ -103,4 +104,5 @@ class BakerPostFinalViewController: UIViewController {
         //Present the AlertController
         self.presentViewController(actionSheetController, animated: true, completion: nil)
     }
+
 }
