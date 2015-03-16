@@ -9,7 +9,7 @@
 import UIKit
 import MobileCoreServices
 
-class BakerPostViewController: UIViewController, UINavigationControllerDelegate,  UIImagePickerControllerDelegate {
+class BakerPostViewController: UIViewController, UINavigationControllerDelegate,  UIImagePickerControllerDelegate, ELCImagePickerControllerDelegate {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -37,21 +37,51 @@ class BakerPostViewController: UIViewController, UINavigationControllerDelegate,
 
     @IBAction func AddPhotoPressed(sender: AnyObject) {
         
-        var vc = UIImagePickerController()
+        var imagePicker = ELCImagePickerController()
+        imagePicker.maximumImagesCount = 5
+        imagePicker.imagePickerDelegate = self
+        
+        self.presentViewController(imagePicker, animated: true, completion: nil)
+        
+        /*var vc = UIImagePickerController()
         vc.delegate = self
         //vc.sourceType = UIImagePickerControllerSourceType.Camera;
         //Show photolibrary for now so it works on the simulator
         vc.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         vc.allowsEditing = false
-        self.presentViewController(vc, animated: true, completion: nil)
+        self.presentViewController(vc, animated: true, completion: nil)*/
     }
     
-    func imagePickerController(picker: UIImagePickerController,
-        didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
-            var originalImage = info[UIImagePickerControllerOriginalImage] as UIImage
-            self.CameraImageView.image = originalImage
-            self.dismissViewControllerAnimated(true, completion: nil)
+    func elcImagePickerController(picker: ELCImagePickerController!, didFinishPickingMediaWithInfo info:[AnyObject]!) {
+        
+        println("controller executed.")
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        if (info.count == 0) {
+            return
+        }
+        for any in info {
+            let dict = any as NSMutableDictionary
+            let image = dict.objectForKey(UIImagePickerControllerOriginalImage) as UIImage
+            self.item.images?.append(image)
+        }
+        
+        //Fix this to show all selected images in a collection view
+        self.CameraImageView.image =  self.item.images?[0]
     }
+    
+    func elcImagePickerControllerDidCancel(picker: ELCImagePickerController!) {
+        println("controller executed cancel")
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+//    func imagePickerController(picker: UIImagePickerController,
+//        didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+//            var originalImage = info[UIImagePickerControllerOriginalImage] as UIImage
+//            self.CameraImageView.image = originalImage
+//            self.dismissViewControllerAnimated(true, completion: nil)
+//    }
     
     // MARK: - Navigation
 
@@ -60,9 +90,9 @@ class BakerPostViewController: UIViewController, UINavigationControllerDelegate,
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
 
-        if let image = self.CameraImageView.image {
-            self.item.images?.append(image)
-        }
+//        if let image = self.CameraImageView.image {
+//            self.item.images?.append(image)
+//        }
 
         self.item.title = titleTextField.text
         //Confirm that the title and atleast one image is present before adding details 

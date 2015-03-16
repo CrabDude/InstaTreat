@@ -10,6 +10,7 @@ target 'InstaTreat' do
     pod 'Stripe'
     pod 'PaymentKit'
     pod 'AFNetworking'
+    pod 'ELCImagePickerController'
     
 end
 

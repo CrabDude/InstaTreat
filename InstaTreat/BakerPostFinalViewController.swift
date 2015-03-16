@@ -71,6 +71,17 @@ class BakerPostFinalViewController: UIViewController {
                     item["image"] = file
                 }
             }
+//            
+//            ParseObject pObject = new ParseObject();
+//            ArrayList<ParseFile> pFileList = new ArrayList<ParseFile>();
+//            for (String thumbPath : thumbList) {
+//                byte[] imgData = convertFileToByteArray(thumbPath);
+//                ParseFile pFile = new ParseFile("mediaFiles",imgData);
+//                pFileList.add(pFile);
+//            }
+//            
+//            pObject.addAll("mediaFiles", pFileList);
+//            pObject.saveEventually();
             
            if let currentUser = PFUser.currentUser() {
                 item["baker"] = currentUser

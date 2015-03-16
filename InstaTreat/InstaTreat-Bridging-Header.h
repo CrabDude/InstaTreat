@@ -7,5 +7,5 @@
 #import <Stripe/Stripe.h>
 #import <PaymentKit/PTKView.h>
 #import <AFNetworking/AFNetworking.h>
-//#import <AFNetworking/AFNetworking.h>
+#import <ELCImagePickerController/ELCImagePickerController.h>
 //#import <AFNetworking/AFHTTPRequestOperationManager.h>
