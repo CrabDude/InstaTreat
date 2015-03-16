@@ -235,6 +235,7 @@
 				950352A61AAFD6AF00CBFA13 /* BakerPostDetailsViewController.swift */,
 				950352AE1AAFDD7900CBFA13 /* BakerPostFinalViewController.swift */,
 				950352EB1AB39CA900CBFA13 /* BakerSalesViewController.swift */,
+				584F80A11AB3F99F00AF664D /* BakerSalesDetailViewController.swift */,
 				95FECDAC1AB3FD1F0087CF3E /* BakerHistoryViewController.swift */,
 				58B9C84F1AA80ED500B28BC0 /* ViewController.swift */,
 				9F4F68771AAFC22600434D7B /* LoginViewController.swift */,
@@ -246,7 +247,6 @@
 				9F527B241AB2B223008720CA /* ConfirmationViewController.swift */,
 				588991D61AB3ABEC00EA84FD /* ContainerViewController.swift */,
 				588991DA1AB3AF6900EA84FD /* SidePanelViewController.swift */,
-				584F80A11AB3F99F00AF664D /* BakerSalesDetailViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";

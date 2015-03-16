@@ -16,6 +16,7 @@ class BakerPostFinalViewController: UIViewController {
     @IBOutlet var eggFreeState: UISwitch!
     
     var item: Item!
+    var urlArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,66 +55,85 @@ class BakerPostFinalViewController: UIViewController {
             //Do some other stuff
             println("Ready to post")
             
-            //Post to parse 
-            var item = PFObject(className:"Item")
-            item["title"] = self.item.title
-            item["price"] = self.item.price
-            item["quantity"] = self.item.quantity
-            item["description"] = self.item.description
-            item["tags"] = self.item.tags
-            item["onSale"] = true;
             
-            if let images = self.item.images {
-                if images.count > 0 {
-                    let data = UIImagePNGRepresentation(images[0])
+            
+            if let images = self.item.images
+            {
+                for image in images
+                {
+                    let data = UIImagePNGRepresentation(image)
                     let file = PFFile(name:"image.png", data:data)
-                    file.save()
-                    item["image"] = file
-                }
-            }
-//            
-//            ParseObject pObject = new ParseObject();
-//            ArrayList<ParseFile> pFileList = new ArrayList<ParseFile>();
-//            for (String thumbPath : thumbList) {
-//                byte[] imgData = convertFileToByteArray(thumbPath);
-//                ParseFile pFile = new ParseFile("mediaFiles",imgData);
-//                pFileList.add(pFile);
-//            }
-//            
-//            pObject.addAll("mediaFiles", pFileList);
-//            pObject.saveEventually();
-            
-           if let currentUser = PFUser.currentUser() {
-                item["baker"] = currentUser
-                
-                item.saveInBackgroundWithBlock {
-                    (success, error) in
-                    if (success) {
-                        let actionSheetController: UIAlertController = UIAlertController(title: "Post", message: "Item successfully posted", preferredStyle: .Alert)
-                        
-                        let okAction: UIAlertAction = UIAlertAction(title: "OK", style: .Default) { action -> Void in
-                            
-                            println("Post Successful")
-                            self.view.window?.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
-                            
-                            if let tbc = UIStoryboard.centerViewController() as? UITabBarController {
-                                tbc.selectedIndex = 1
-                            }
+                    file.saveInBackgroundWithBlock
+                    {
+                        (success, error) in
+                        if (success)
+                        {
+                            self.urlArray.append(file.url)
+                            self.postToBackend()
                         }
-                        self.presentViewController(actionSheetController, animated: true, completion: nil)
-                        actionSheetController.addAction(okAction)
-                        
-                    } else {
-                        // There was a problem, check error.description
                     }
                 }
             }
-            //Present the Sales view controller
+           
         }
         actionSheetController.addAction(nextAction)
         
         //Present the AlertController
         self.presentViewController(actionSheetController, animated: true, completion: nil)
     }
-
+    
+    func postToBackend()
+    {
+        if self.urlArray.count != self.item.images?.count
+        {
+            return //do nothing till all the images have uploaded
+        }
+        //Post to parse
+        var item = PFObject(className:"Item")
+        item["title"] = self.item.title
+        item["price"] = self.item.price
+        item["quantity"] = self.item.quantity
+        item["description"] = self.item.description
+        item["tags"] = self.item.tags
+        item["onSale"] = true;
+        
+        if let images = self.item.images {
+            if images.count > 0 {
+                let data = UIImagePNGRepresentation(images[0])
+                let file = PFFile(name:"image.png", data:data)
+                file.saveInBackgroundWithBlock({ (success, error) -> Void in
+                    
+                })
+                item["image"] = file
+            }
+        }
+        
+        if let currentUser = PFUser.currentUser() {
+            item["baker"] = currentUser
+            item["images"] = self.urlArray
+            
+            item.saveInBackgroundWithBlock {
+                (success, error) in
+                if (success) {
+                    let actionSheetController: UIAlertController = UIAlertController(title: "Post", message: "Item successfully posted", preferredStyle: .Alert)
+                    
+                    let okAction: UIAlertAction = UIAlertAction(title: "OK", style: .Default) { action -> Void in
+                        
+                        println("Post Successful")
+                        self.view.window?.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
+                        
+                        if let tbc = UIStoryboard.centerViewController() as? UITabBarController {
+                            tbc.selectedIndex = 1
+                        }
+                        //Present the Sales view controller
+                    }
+                    self.presentViewController(actionSheetController, animated: true, completion: nil)
+                    actionSheetController.addAction(okAction)
+                    
+                } else {
+                    // There was a problem, check error.description
+                }
+            }
+        }
+    }
 }
