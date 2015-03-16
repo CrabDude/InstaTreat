@@ -45,7 +45,7 @@ RUN \
   rm -rf /var/lib/apt/lists/*
 
 # symlink conf dir
-RUN ln -s /fixer/infra/payment_server/nginx.conf /etc/nginx/sites-enabled/
+RUN ln -s /InstaTreat/infra/payment_server/nginx.conf /etc/nginx/sites-enabled/
 RUN unlink /etc/nginx/sites-enabled/default
 
 # Define mountable directories.
@@ -63,11 +63,11 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
 RUN mkdir -p /var/log/uwsgi/
 RUN touch /var/log/uwsgi/uwsgi.log
-#RUN uwsgi --socket 127.0.0.1:8080 --chdir /fixer/infra/payment_server/ --module app --callable app --processes 1 --daemonize /var/log/uwsgi/uwsgi.log
+#RUN uwsgi --socket 127.0.0.1:8080 --chdir /InstaTreat/infra/payment_server/ --module app --callable app --processes 1 --daemonize /var/log/uwsgi/uwsgi.log
 
 RUN touch /run.sh
 RUN chmod 755 /run.sh
-RUN echo "#!/bin/bash\nuwsgi --socket 127.0.0.1:8080 --chdir /fixer/infra/payment_server/ --module app --callable app --processes 1 --daemonize /var/log/uwsgi/uwsgi.log;nginx;" >> /run.sh
-#RUN echo "#!/bin/bash\nuwsgi --ini /fixer/etc/conf/uwsgi.conf;nginx;" >> /run.sh
+RUN echo "#!/bin/bash\nuwsgi --socket 127.0.0.1:8080 --chdir /InstaTreat/infra/payment_server/ --module app --callable app --processes 1 --daemonize /var/log/uwsgi/uwsgi.log;nginx;" >> /run.sh
+#RUN echo "#!/bin/bash\nuwsgi --ini /InstaTreat/etc/conf/uwsgi.conf;nginx;" >> /run.sh
 
 CMD ["/run.sh"]
