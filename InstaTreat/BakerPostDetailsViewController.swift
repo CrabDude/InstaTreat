@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BakerPostDetailsViewController: UIViewController {
+class BakerPostDetailsViewController: UIViewController, UITextViewDelegate {
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -22,6 +22,7 @@ class BakerPostDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        descriptionTextView?.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -31,6 +32,14 @@ class BakerPostDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func textViewShouldBeginEditing(aTextView: UITextView) -> Bool
+    {
+        if aTextView == descriptionTextView
+        {
+            descriptionTextView.text = ""
+        }
+        return true
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -43,6 +52,18 @@ class BakerPostDetailsViewController: UIViewController {
         }
         if let number = self.quantityLabel.text?.toInt() {
             self.item.quantity = number
+        }
+        
+        //Confirm that the title and atleast one image is present before adding details
+        if self.item.price==0 || self.item.quantity==0 || self.item.description.utf16Count==0
+        {
+            let actionSheetController: UIAlertController = UIAlertController(title: "Missing Information", message: "Please add all fields and try again", preferredStyle: .Alert)
+            let nextAction: UIAlertAction = UIAlertAction(title: "OK", style: .Default) { action -> Void in
+            }
+            actionSheetController.addAction(nextAction)
+            
+            //Present the AlertController
+            self.presentViewController(actionSheetController, animated: true, completion: nil)
         }
         
         if let dc = segue.destinationViewController as? BakerPostFinalViewController {

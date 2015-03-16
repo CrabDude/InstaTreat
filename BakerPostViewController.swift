@@ -26,11 +26,6 @@ class BakerPostViewController: UIViewController, UINavigationControllerDelegate,
         super.viewDidLoad()
         println("baker post view loaded")
         
-        //Just for testing purpose
-//        if let img: UIImage = UIImage(named: "Cookie") {
-//            self.CameraImageView.image = img
-//        }
-        
         // Do any additional setup after loading the view.
     }
 
@@ -64,15 +59,24 @@ class BakerPostViewController: UIViewController, UINavigationControllerDelegate,
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-//        if let image = UIImage(named: "Cookie") {
-//            self.item.images?.append(image)
-//        }
+
         if let image = self.CameraImageView.image {
             self.item.images?.append(image)
         }
 
         self.item.title = titleTextField.text
-
+        //Confirm that the title and atleast one image is present before adding details 
+        if self.item.images?.count==0 || self.item.title.utf16Count==0
+        {
+            let actionSheetController: UIAlertController = UIAlertController(title: "Missing Information", message: "Please add all fields and try again", preferredStyle: .Alert)
+            let nextAction: UIAlertAction = UIAlertAction(title: "OK", style: .Default) { action -> Void in
+            }
+            actionSheetController.addAction(nextAction)
+            
+            //Present the AlertController
+            self.presentViewController(actionSheetController, animated: true, completion: nil)
+        }
+        
         if let dc = segue.destinationViewController as? BakerPostDetailsViewController {
             dc.item = self.item
         }
