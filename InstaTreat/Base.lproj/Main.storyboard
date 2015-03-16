@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D72i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lwc-vq-O62">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lwc-vq-O62">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -543,97 +543,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YxL-w7-E4Q" userLabel="Item Image">
-                                <rect key="frame" x="12" y="145" width="297" height="281"/>
-                                <color key="backgroundColor" red="0.94175233339999997" green="1" blue="0.1163845934" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.1mi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Sf-85-Smk">
-                                <rect key="frame" x="12" y="162" width="43" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxV-J9-9W3">
-                                <rect key="frame" x="269" y="162" width="29" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cookies" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMq-Fq-gYc">
-                                <rect key="frame" x="129" y="162" width="63" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eo2-fJ-N1f" userLabel="Badge 1">
-                                <rect key="frame" x="177" y="314" width="50" height="45"/>
-                                <color key="backgroundColor" red="0.4534796646" green="1" blue="0.9692657026" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0pq-dr-Vj5" userLabel="Badge 2">
-                                <rect key="frame" x="235" y="314" width="50" height="45"/>
-                                <color key="backgroundColor" red="1" green="0.41977829579999998" blue="0.91566677100000005" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Qk-jU-dYF" userLabel="Badge 3">
-                                <rect key="frame" x="177" y="367" width="50" height="45"/>
-                                <color key="backgroundColor" red="0.47002206680000003" green="1" blue="0.67535181430000002" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yax-dK-42T" userLabel="Badge 4">
-                                <rect key="frame" x="235" y="367" width="50" height="45"/>
-                                <color key="backgroundColor" red="0.33659028439999999" green="0.47475490390000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iMg-eb-tsg" userLabel="User Profile ">
-                                <rect key="frame" x="16" y="86" width="55" height="51"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="These are the best cookies ever" translatesAutoresizingMaskIntoConstraints="NO" id="egz-E6-xXq">
-                                <rect key="frame" x="12" y="434" width="297" height="71"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="215" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rEq-b6-K1t">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1h Ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQS-Jd-17e">
-                                <rect key="frame" x="12" y="191" width="55" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3/22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvC-Am-Sgq">
-                                <rect key="frame" x="269" y="191" width="35" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2kH-1q-U99" customClass="EDStarRating">
-                                <rect key="frame" x="85" y="86" width="234" height="51"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRf-xk-6xs">
-                                <rect key="frame" x="144" y="518" width="32" height="30"/>
-                                <state key="normal" title="BUY">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="215" id="ksQ-0i-Mdg">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ksQ-0i-Mdg" id="oid-KG-Kn6">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <action selector="onBuy:" destination="ftm-VM-p5p" eventType="touchUpInside" id="G1l-bH-5jj"/>
+                                    <outlet property="dataSource" destination="ftm-VM-p5p" id="iZV-5i-72e"/>
+                                    <outlet property="delegate" destination="ftm-VM-p5p" id="o1d-GL-iET"/>
                                 </connections>
-                            </button>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="yuJ-dJ-k90"/>
                     <connections>
-                        <outlet property="badge1Image" destination="eo2-fJ-N1f" id="ogh-Uk-42m"/>
-                        <outlet property="badge2Image" destination="0pq-dr-Vj5" id="2ez-XT-zBV"/>
-                        <outlet property="badge3Image" destination="2Qk-jU-dYF" id="q3Y-Ka-OdL"/>
-                        <outlet property="badge4Image" destination="Yax-dK-42T" id="QJJ-B8-Gof"/>
-                        <outlet property="bakerImageView" destination="iMg-eb-tsg" id="gEe-sH-vCh"/>
-                        <outlet property="createdAtLabel" destination="gQS-Jd-17e" id="Epd-nb-lxu"/>
-                        <outlet property="descriptionTextView" destination="egz-E6-xXq" id="QJK-TI-hNe"/>
-                        <outlet property="distanceLabel" destination="2Sf-85-Smk" id="HyE-At-mzR"/>
-                        <outlet property="itemImage" destination="YxL-w7-E4Q" id="0EW-z8-YvK"/>
-                        <outlet property="priceLabel" destination="dxV-J9-9W3" id="lR2-pp-MWL"/>
-                        <outlet property="quantityLabel" destination="UvC-Am-Sgq" id="2fo-G7-5HQ"/>
-                        <outlet property="starRatingView" destination="2kH-1q-U99" id="SGb-xc-MON"/>
-                        <outlet property="titleLabel" destination="VMq-Fq-gYc" id="qgH-G5-wfw"/>
+                        <outlet property="tableView" destination="rEq-b6-K1t" id="nWa-AR-1MT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mOo-jS-KxC" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ItemDetailViewController: UIViewController {
+class ItemDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
@@ -24,6 +24,8 @@ class ItemDetailViewController: UIViewController {
     @IBOutlet weak var badge4Image: UIImageView!
     @IBOutlet weak var descriptionTextView: UITextView!
         
+    @IBOutlet weak var tableView: UITableView!
+    
     var item: Item?
     
     override func viewDidLoad() {
@@ -83,5 +85,18 @@ class ItemDetailViewController: UIViewController {
         let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("SaveCardViewController") as SaveCardViewController
         vc.item = self.item
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = ItemDetailCell()
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
     }
 }
