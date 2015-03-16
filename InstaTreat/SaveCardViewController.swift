@@ -49,7 +49,7 @@ class SaveCardViewController: UIViewController, PTKViewDelegate {
         //Create a stripe customer
         println(self.card)
         STPAPIClient.sharedClient().createTokenWithCard(self.card) {
-            (token: STPToken?, error) in
+            (token: STPToken!, error) in
             if error != nil {
                 println(error)
                 return
@@ -59,10 +59,12 @@ class SaveCardViewController: UIViewController, PTKViewDelegate {
             PFUser.currentUser()["stripeCustomerId"] = token?.tokenId!
             PFUser.currentUser().save()
             
+            var token =  token.tokenId as NSString
+            var p: AnyObject!
+            p = ["token": "\(token)", "description":"Customer"] as NSDictionary
             let manager = AFHTTPRequestOperationManager()
-            var parameters = ["description":"Customer","source":token?.tokenId!]
             manager.requestSerializer.setValue("sk_test_lnqw4PCAMpZFwjQqHEfJbu6I", forHTTPHeaderField: "user")
-            manager.POST("https://api.stripe.com/v1/customers", parameters: [], success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+            manager.POST("http://leapdoc.me:644/instatreat/api/v1/stripe/customers/create", parameters: p, success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
                 println("JSON: " + responseObject.description)
                 },
                 failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
