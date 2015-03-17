@@ -119,7 +119,6 @@ class BakerPostFinalViewController: UIViewController {
                     
                     let okAction: UIAlertAction = UIAlertAction(title: "OK", style: .Default) { action -> Void in
                         
-                        println("Post Successful")
                         self.view.window?.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
                         
                         if let tbc = UIStoryboard.centerViewController() as? UITabBarController {
