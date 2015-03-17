@@ -48,9 +48,12 @@
 		9F527B231AB2B0AD008720CA /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F527B221AB2B0AD008720CA /* AddressViewController.swift */; };
 		9F527B251AB2B223008720CA /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F527B241AB2B223008720CA /* ConfirmationViewController.swift */; };
 		9FB63A9E1AB298730055DC5B /* SaveCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB63A9D1AB298730055DC5B /* SaveCardViewController.swift */; };
-		9FCD66C91AB69255003CAC02 /* ItemDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCD66C81AB69255003CAC02 /* ItemDetailCell.swift */; };
-		9FCD66CB1AB69343003CAC02 /* ItemDetailCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FCD66CA1AB69343003CAC02 /* ItemDetailCellView.xib */; };
 		9FCD66D01AB777CE003CAC02 /* StripeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCD66CF1AB777CE003CAC02 /* StripeClient.swift */; };
+		9FCD66D21AB7AE18003CAC02 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCD66D11AB7AE18003CAC02 /* DetailViewController.swift */; };
+		9FCD66D51AB7AF38003CAC02 /* ItemDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCD66D31AB7AF38003CAC02 /* ItemDetailTableViewCell.swift */; };
+		9FCD66D61AB7AF38003CAC02 /* ItemDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FCD66D41AB7AF38003CAC02 /* ItemDetailTableViewCell.xib */; };
+		9FCD66D91AB7B540003CAC02 /* BakerDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCD66D71AB7B540003CAC02 /* BakerDetailTableViewCell.swift */; };
+		9FCD66DA1AB7B540003CAC02 /* BakerDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FCD66D81AB7B540003CAC02 /* BakerDetailTableViewCell.xib */; };
 		FBD8FC97ECD66F51B0F7ADB4 /* libPods-InstaTreat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E089D56D977369D0970766F1 /* libPods-InstaTreat.a */; };
 /* End PBXBuildFile section */
 
@@ -112,9 +115,12 @@
 		9F527B221AB2B0AD008720CA /* AddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
 		9F527B241AB2B223008720CA /* ConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
 		9FB63A9D1AB298730055DC5B /* SaveCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveCardViewController.swift; sourceTree = "<group>"; };
-		9FCD66C81AB69255003CAC02 /* ItemDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailCell.swift; sourceTree = "<group>"; };
-		9FCD66CA1AB69343003CAC02 /* ItemDetailCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemDetailCellView.xib; sourceTree = "<group>"; };
 		9FCD66CF1AB777CE003CAC02 /* StripeClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StripeClient.swift; sourceTree = "<group>"; };
+		9FCD66D11AB7AE18003CAC02 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9FCD66D31AB7AF38003CAC02 /* ItemDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailTableViewCell.swift; sourceTree = "<group>"; };
+		9FCD66D41AB7AF38003CAC02 /* ItemDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemDetailTableViewCell.xib; sourceTree = "<group>"; };
+		9FCD66D71AB7B540003CAC02 /* BakerDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BakerDetailTableViewCell.swift; sourceTree = "<group>"; };
+		9FCD66D81AB7B540003CAC02 /* BakerDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BakerDetailTableViewCell.xib; sourceTree = "<group>"; };
 		CB6ED12A06009C78E723CCCE /* Pods-InstaTreat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaTreat.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaTreat/Pods-InstaTreat.release.xcconfig"; sourceTree = "<group>"; };
 		E089D56D977369D0970766F1 /* libPods-InstaTreat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstaTreat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -250,6 +256,7 @@
 				9F527B241AB2B223008720CA /* ConfirmationViewController.swift */,
 				588991D61AB3ABEC00EA84FD /* ContainerViewController.swift */,
 				588991DA1AB3AF6900EA84FD /* SidePanelViewController.swift */,
+				9FCD66D11AB7AE18003CAC02 /* DetailViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -262,8 +269,10 @@
 				9F4F687E1AAFDCAD00434D7B /* ItemCell.swift */,
 				95FECDAE1AB3FD590087CF3E /* HistoryCell.swift */,
 				584F80A31AB3F9E000AF664D /* SalesBuyerCell.swift */,
-				9FCD66C81AB69255003CAC02 /* ItemDetailCell.swift */,
-				9FCD66CA1AB69343003CAC02 /* ItemDetailCellView.xib */,
+				9FCD66D31AB7AF38003CAC02 /* ItemDetailTableViewCell.swift */,
+				9FCD66D41AB7AF38003CAC02 /* ItemDetailTableViewCell.xib */,
+				9FCD66D71AB7B540003CAC02 /* BakerDetailTableViewCell.swift */,
+				9FCD66D81AB7B540003CAC02 /* BakerDetailTableViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -394,8 +403,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FCD66CB1AB69343003CAC02 /* ItemDetailCellView.xib in Resources */,
+				9FCD66D61AB7AF38003CAC02 /* ItemDetailTableViewCell.xib in Resources */,
 				58B9C8531AA80ED500B28BC0 /* Main.storyboard in Resources */,
+				9FCD66DA1AB7B540003CAC02 /* BakerDetailTableViewCell.xib in Resources */,
 				58B9C8581AA80ED500B28BC0 /* LaunchScreen.xib in Resources */,
 				58B9C8551AA80ED500B28BC0 /* Images.xcassets in Resources */,
 			);
@@ -454,9 +464,11 @@
 				58B9C8501AA80ED500B28BC0 /* ViewController.swift in Sources */,
 				9F4F687B1AAFCA2800434D7B /* AppHelper.swift in Sources */,
 				950352EC1AB39CA900CBFA13 /* BakerSalesViewController.swift in Sources */,
+				9FCD66D91AB7B540003CAC02 /* BakerDetailTableViewCell.swift in Sources */,
 				95FECDAF1AB3FD590087CF3E /* HistoryCell.swift in Sources */,
 				584F80A21AB3F99F00AF664D /* BakerSalesDetailViewController.swift in Sources */,
 				9F527B231AB2B0AD008720CA /* AddressViewController.swift in Sources */,
+				9FCD66D21AB7AE18003CAC02 /* DetailViewController.swift in Sources */,
 				950352AF1AAFDD7900CBFA13 /* BakerPostFinalViewController.swift in Sources */,
 				588991D91AB3AC6600EA84FD /* User.swift in Sources */,
 				9FCD66D01AB777CE003CAC02 /* StripeClient.swift in Sources */,
@@ -472,9 +484,9 @@
 				950352EE1AB39F0A00CBFA13 /* SalesCell.swift in Sources */,
 				9F4F68781AAFC22600434D7B /* LoginViewController.swift in Sources */,
 				58B9C86E1AA80EED00B28BC0 /* DataSchema.swift in Sources */,
+				9FCD66D51AB7AF38003CAC02 /* ItemDetailTableViewCell.swift in Sources */,
 				9F4F687D1AAFD69100434D7B /* StreamViewController.swift in Sources */,
 				584F80A41AB3F9E000AF664D /* SalesBuyerCell.swift in Sources */,
-				9FCD66C91AB69255003CAC02 /* ItemDetailCell.swift in Sources */,
 				588991DD1AB3CB4B00EA84FD /* MenuItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

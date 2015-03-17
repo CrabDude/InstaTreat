@@ -95,7 +95,7 @@ class ItemDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = ItemDetailCell()
+        var cell = ItemCell()
         return cell
     }
     
