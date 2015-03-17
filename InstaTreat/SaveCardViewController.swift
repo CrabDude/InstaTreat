@@ -48,6 +48,7 @@ class SaveCardViewController: UIViewController, PTKViewDelegate {
     @IBAction func onSave(sender: UIButton) {
         //Create a stripe customer
         println(self.card)
+    
         STPAPIClient.sharedClient().createTokenWithCard(self.card) {
             (token: STPToken!, error) in
             if error != nil {
@@ -55,26 +56,30 @@ class SaveCardViewController: UIViewController, PTKViewDelegate {
                 return
             }
             
-            println("error is nil")
-            PFUser.currentUser()["stripeCustomerId"] = token?.tokenId!
-            PFUser.currentUser().save()
             
             var token =  token.tokenId as NSString
             var p: AnyObject!
-            p = ["token": "\(token)", "description":"Customer"] as NSDictionary
+            p = ["token": "\(token)", "description":PFUser.currentUser().username] as NSDictionary
             let manager = AFHTTPRequestOperationManager()
             manager.requestSerializer.setValue("sk_test_lnqw4PCAMpZFwjQqHEfJbu6I", forHTTPHeaderField: "user")
             manager.POST("http://leapdoc.me:644/instatreat/api/v1/stripe/customers/create", parameters: p, success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
-                println("JSON: " + responseObject.description)
+                var stripeResponse = responseObject as NSDictionary
+                var customerId = stripeResponse["id"]!
+                var amount = self.item.price
+                
+                PFUser.currentUser()["stripeCustomerId"] = customerId
+                PFUser.currentUser().save()
+                UIAlertView(title: "Success", message: "Card added", delegate: nil, cancelButtonTitle: "Okay").show()
+                let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("AddressViewController") as AddressViewController
+                vc.item = self.item
+                self.navigationController?.pushViewController(vc, animated: true)
                 },
                 failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
                     println("Error: " + error.localizedDescription)
+                    UIAlertView(title: "Oops", message: "There was an error with your card", delegate: nil, cancelButtonTitle: "Okay").show()
             })
                 
-            UIAlertView(title: "Success", message: "Card added", delegate: nil, cancelButtonTitle: "Okay").show()
-            let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("AddressViewController") as AddressViewController
-            vc.item = self.item
-            self.navigationController?.pushViewController(vc, animated: true)
+            
         }
     }
     
@@ -83,6 +88,5 @@ class SaveCardViewController: UIViewController, PTKViewDelegate {
 //        targetVC.
     }
     
-    func chargeCard(controller: SaveCardViewController, card: STPCard) {
-    }
+    
 }

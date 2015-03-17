@@ -60,6 +60,12 @@
 #define COCOAPODS_VERSION_MINOR_EDStarRating 1
 #define COCOAPODS_VERSION_PATCH_EDStarRating 0
 
+// ELCImagePickerController
+#define COCOAPODS_POD_AVAILABLE_ELCImagePickerController
+#define COCOAPODS_VERSION_MAJOR_ELCImagePickerController 0
+#define COCOAPODS_VERSION_MINOR_ELCImagePickerController 2
+#define COCOAPODS_VERSION_PATCH_ELCImagePickerController 0
+
 // Parse
 #define COCOAPODS_POD_AVAILABLE_Parse
 #define COCOAPODS_VERSION_MAJOR_Parse 1

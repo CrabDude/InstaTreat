@@ -155,11 +155,22 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
         println("on buy presed")
         var selectedItem = self.items[sender.tag]
         
-        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("SaveCardViewController") as SaveCardViewController
-        println("item in streamview")
-        println(selectedItem)
-        vc.item = selectedItem
-        self.navigationController?.pushViewController(vc, animated: true)
+        if PFUser.currentUser()["stripeCustomerId"] != nil {
+            let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("AddressViewController") as AddressViewController
+            vc.item = selectedItem
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        else {
+            let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("SaveCardViewController") as SaveCardViewController
+            vc.item = selectedItem
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+//        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("SaveCardViewController") as SaveCardViewController
+//        println("item in streamview")
+//        println(selectedItem)
+//        vc.item = selectedItem
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     

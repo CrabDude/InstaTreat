@@ -81,10 +81,17 @@ class ItemDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     @IBAction func onBuy(sender: AnyObject) {
         println("on buy presed")
-        NSNotificationCenter.defaultCenter().postNotificationName("uniqueName", object: nil)
-        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("SaveCardViewController") as SaveCardViewController
-        vc.item = self.item
-        self.navigationController?.pushViewController(vc, animated: true)
+        if PFUser.currentUser()["stripeCustomerId"] != nil {
+            let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("AddressViewController") as AddressViewController
+            vc.item = self.item
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        else {
+            let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("SaveCardViewController") as SaveCardViewController
+            vc.item = self.item
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
