@@ -113,18 +113,27 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let dc = segue.destinationViewController as? ItemDetailViewController {
-            if let indexPath = self.tableView.indexPathForSelectedRow() {
-                let item = self.items[indexPath.row]
-                dc.item = item
-            }
-        }
-//        var idx = sender as UIButton
-//        println(idx.tag)
-    }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if let dc = segue.destinationViewController as? DetailViewController {
+//            if let indexPath = self.tableView.indexPathForSelectedRow() {
+//                let item = self.items[indexPath.row]
+//                dc.item = item
+//            }
+//        }
+////        var idx = sender as UIButton
+////        println(idx.tag)
+//    }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("DetailViewController") as DetailViewController
+        let item = self.items[indexPath.row]
+        vc.item = item
+//        var itemDetailnib = UINib(nibName: "ItemDetailTableViewCell", bundle: nil)
+//        var bakerDetailnib = UINib(nibName: "BakerDetailTableViewCell", bundle: nil)
+//        vc.tableView.registerNib(itemDetailnib, forCellReuseIdentifier: "itemDetailTableViewCell")
+//        vc.tableView.registerNib(bakerDetailnib, forCellReuseIdentifier: "bakerDetailTableViewCell")
+
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
