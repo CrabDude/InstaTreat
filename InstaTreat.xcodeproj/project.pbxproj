@@ -50,6 +50,7 @@
 		9FB63A9E1AB298730055DC5B /* SaveCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB63A9D1AB298730055DC5B /* SaveCardViewController.swift */; };
 		9FCD66C91AB69255003CAC02 /* ItemDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCD66C81AB69255003CAC02 /* ItemDetailCell.swift */; };
 		9FCD66CB1AB69343003CAC02 /* ItemDetailCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FCD66CA1AB69343003CAC02 /* ItemDetailCellView.xib */; };
+		9FCD66D01AB777CE003CAC02 /* StripeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCD66CF1AB777CE003CAC02 /* StripeClient.swift */; };
 		FBD8FC97ECD66F51B0F7ADB4 /* libPods-InstaTreat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E089D56D977369D0970766F1 /* libPods-InstaTreat.a */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +114,7 @@
 		9FB63A9D1AB298730055DC5B /* SaveCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveCardViewController.swift; sourceTree = "<group>"; };
 		9FCD66C81AB69255003CAC02 /* ItemDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailCell.swift; sourceTree = "<group>"; };
 		9FCD66CA1AB69343003CAC02 /* ItemDetailCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemDetailCellView.xib; sourceTree = "<group>"; };
+		9FCD66CF1AB777CE003CAC02 /* StripeClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StripeClient.swift; sourceTree = "<group>"; };
 		CB6ED12A06009C78E723CCCE /* Pods-InstaTreat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaTreat.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaTreat/Pods-InstaTreat.release.xcconfig"; sourceTree = "<group>"; };
 		E089D56D977369D0970766F1 /* libPods-InstaTreat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstaTreat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -170,6 +172,7 @@
 		58B9C84A1AA80ED500B28BC0 /* InstaTreat */ = {
 			isa = PBXGroup;
 			children = (
+				9FCD66CE1AB777C4003CAC02 /* API */,
 				9F4F68791AAFCA1800434D7B /* helpers */,
 				9F4F68761AAFC1F400434D7B /* Models */,
 				9F4F68751AAFC1ED00434D7B /* Views */,
@@ -281,6 +284,14 @@
 				9F4F687A1AAFCA2800434D7B /* AppHelper.swift */,
 			);
 			name = helpers;
+			sourceTree = "<group>";
+		};
+		9FCD66CE1AB777C4003CAC02 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				9FCD66CF1AB777CE003CAC02 /* StripeClient.swift */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 		E805B5C5FA78B25F7142CBEE /* Frameworks */ = {
@@ -448,6 +459,7 @@
 				9F527B231AB2B0AD008720CA /* AddressViewController.swift in Sources */,
 				950352AF1AAFDD7900CBFA13 /* BakerPostFinalViewController.swift in Sources */,
 				588991D91AB3AC6600EA84FD /* User.swift in Sources */,
+				9FCD66D01AB777CE003CAC02 /* StripeClient.swift in Sources */,
 				58B9C84E1AA80ED500B28BC0 /* AppDelegate.swift in Sources */,
 				9FB63A9E1AB298730055DC5B /* SaveCardViewController.swift in Sources */,
 				9F527B251AB2B223008720CA /* ConfirmationViewController.swift in Sources */,

@@ -69,6 +69,7 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate {
             (success: Bool, error: NSError!) -> Void in
             if (success) {
                 println("success")
+                self.chargeCard(PFUser.currentUser()["stripeCustomerId"] as NSString, amount: self.item.price)
                 // The object has been saved.
             } else {
                 println(error)
@@ -77,7 +78,6 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate {
         }
         
         let okAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-            
             self.dismiss()
         }
         alert.addAction(okAction)
@@ -89,6 +89,23 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate {
         
         var vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamNavigationController") as UINavigationController
         self.navigationController?.presentViewController(vc, animated: true, completion: nil)
+    }
+    
+    func chargeCard(id: NSString, amount: Float) {
+        let manager = AFHTTPRequestOperationManager()
+        var p: AnyObject!
+        p = ["customer_id": id, "amount":amount] as NSDictionary
+        manager.POST("http://leapdoc.me:644/instatreat/api/v1/stripe/charge/create", parameters: p, success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+            var stripeResponse = responseObject as NSDictionary
+            println(stripeResponse)
+            
+            },
+            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+                println("Error: " + error.localizedDescription)
+                
+        })
+        
+        
     }
     
     

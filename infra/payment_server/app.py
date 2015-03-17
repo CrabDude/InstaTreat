@@ -77,14 +77,12 @@ def edit_card():
 @app.route("/instatreat/api/v1/stripe/charge/create", methods=["POST"])
 def create_charge():
     customer_id = request.form["customer_id"]
-    token = request.form["token"]
-    amount = request.form["amount"]
+    amount = int(request.form["amount"]) * 100
     try:
       charge = stripe.Charge.create(
           amount=amount,
           currency="usd",
           customer=customer_id,
-          card=token
       )
       return jsonify(charge)
     except stripe.CardError, e:

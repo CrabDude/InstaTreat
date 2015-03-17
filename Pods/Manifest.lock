@@ -22,6 +22,7 @@ PODS:
     - AFNetworking/NSURLSession
   - Bolts (1.1.4)
   - EDStarRating (1.1)
+  - ELCImagePickerController (0.2.0)
   - Parse (1.6.4):
     - Bolts (~> 1.1)
   - PaymentKit (1.1.1)
@@ -32,6 +33,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - EDStarRating
+  - ELCImagePickerController
   - Parse
   - PaymentKit
   - Stripe
@@ -40,6 +42,7 @@ SPEC CHECKSUMS:
   AFNetworking: 8bee59492a6ff15d69130efa4d0dc67e0094a52a
   Bolts: dd9fb8433d67f5acc3b6b4d1379bbc5513d716c1
   EDStarRating: c7b87f9866be0ea29bb054964023b8eb3f18286c
+  ELCImagePickerController: 4dc83bb6ce995f4964b0080d77ad5a01141e6db2
   Parse: c2610f7a12ad0defc974803b819c4efe7746e6db
   PaymentKit: f77b4d5cee45947949429c3d587e8eb160a3c9e2
   Stripe: aaa174b50fac40a16958cbc892457a241d0b4b08
