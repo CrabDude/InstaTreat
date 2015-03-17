@@ -50,12 +50,12 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var cell = UITableViewCell()
         if indexPath.row == 0 {
             var itemDetailnib = UINib(nibName: "ItemDetailTableViewCell", bundle: nil)
-            self.tableView.registerNib(itemDetailnib, forCellReuseIdentifier: "itemDetailTableViewCell")
+            self.tableView.registerNib(itemDetailnib!, forCellReuseIdentifier: "itemDetailTableViewCell")
             cell = tableView.dequeueReusableCellWithIdentifier("itemDetailTableViewCell") as ItemDetailTableViewCell
         }
         else if indexPath.row == 1 {
             var bakerDetailnib = UINib(nibName: "BakerDetailTableViewCell", bundle: nil)
-            self.tableView.registerNib(bakerDetailnib, forCellReuseIdentifier: "bakerDetailTableViewCell")
+            self.tableView.registerNib(bakerDetailnib!, forCellReuseIdentifier: "bakerDetailTableViewCell")
             cell = tableView.dequeueReusableCellWithIdentifier("bakerDetailTableViewCell") as BakerDetailTableViewCell
         }
         return cell

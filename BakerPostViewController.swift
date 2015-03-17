@@ -111,6 +111,7 @@ class BakerPostViewController: UIViewController, UINavigationControllerDelegate,
             dc.item = self.item
         }
     }
+    
     @IBAction func logoutTapped(sender: AnyObject) {
         PFUser.logOut()
         let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as UIViewController

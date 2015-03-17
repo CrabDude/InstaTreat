@@ -77,6 +77,24 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate {
             }
         }
         
+        var query = PFQuery(className:"Item")
+        query.getObjectInBackgroundWithId(self.item.parseRef.objectId) {
+            (item: PFObject!, error: NSError!) -> Void in
+            if error != nil {
+                println(error)
+            } else {
+                var quantity = item["quantity"] as NSInteger
+                var soldQuantity = item["soldQuantity"] as NSInteger
+                println("Item" + String(self.item.parseRef.objectId))
+                println(" Available quanity" + String(quantity) + " Sold quantity" + String(soldQuantity))
+                item["soldQuantity"] = soldQuantity+1
+                item["quantity"] = quantity-1
+                item.saveInBackgroundWithBlock({ (success, error) -> Void in
+                    
+                })
+            }
+        }
+        
         let okAction = UIAlertAction(title: "OK", style: .Default) { (action) in
             self.dismiss()
         }
