@@ -86,9 +86,14 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate {
                 var quantity = item["quantity"] as NSInteger
                 var soldQuantity = item["soldQuantity"] as NSInteger
                 println("Item" + String(self.item.parseRef.objectId))
-                println(" Available quanity" + String(quantity) + " Sold quantity" + String(soldQuantity))
-                item["soldQuantity"] = soldQuantity+1
-                item["quantity"] = quantity-1
+                println(" Total quantity" + String(quantity) + " Sold quantity" + String(soldQuantity))
+                soldQuantity = soldQuantity+1 //update total soldQuantity
+                item["soldQuantity"] = soldQuantity
+                if quantity==soldQuantity
+                {
+                    item["onSale"]=false
+                }
+                
                 item.saveInBackgroundWithBlock({ (success, error) -> Void in
                     
                 })
