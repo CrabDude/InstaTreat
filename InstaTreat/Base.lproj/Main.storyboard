@@ -52,6 +52,15 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ac9-Uf-9Gf">
+                                                    <rect key="frame" x="252" y="75" width="56" height="30"/>
+                                                    <state key="normal" title="Re-Post">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onRePostItem:" destination="OWq-lQ-4IE" eventType="touchUpInside" id="Bv9-Xu-moP"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ADd-dZ-fO7" firstAttribute="top" secondItem="LcQ-c2-i0F" secondAttribute="top" constant="8" id="6p5-q7-fri"/>

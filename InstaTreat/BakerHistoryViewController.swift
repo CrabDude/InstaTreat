@@ -94,6 +94,8 @@ class BakerHistoryViewController: UIViewController , UITableViewDelegate, UITabl
         return self.items.count
     }
 
+    @IBAction func onRePostItem(sender: AnyObject) {
+    }
     /*
     // MARK: - Navigation
 
