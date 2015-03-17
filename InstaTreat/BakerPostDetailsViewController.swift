@@ -18,11 +18,18 @@ class BakerPostDetailsViewController: UIViewController, UITextViewDelegate {
     @IBOutlet var quantityLabel: UITextField!
     @IBOutlet var descriptionTextView: UITextView!
     
+    @IBOutlet var datePicker: UIDatePicker!
+    
     var item :Item!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         descriptionTextView?.delegate = self
+
+        self.datePicker.datePickerMode = UIDatePickerMode.DateAndTime
+        let currentDate = NSDate()
+        self.datePicker.minimumDate = currentDate  //Set the current date/time as a minimum
+        self.datePicker.date = currentDate 
 
         // Do any additional setup after loading the view.
     }
@@ -40,8 +47,24 @@ class BakerPostDetailsViewController: UIViewController, UITextViewDelegate {
         }
         return true
     }
-    // MARK: - Navigation
 
+    func getDeliveryDate() -> NSString
+    {
+        let dateFormatter = NSDateFormatter()
+        
+        var theDateFormat = NSDateFormatterStyle.ShortStyle
+        let theTimeFormat = NSDateFormatterStyle.ShortStyle
+        
+        dateFormatter.dateStyle = theDateFormat
+        dateFormatter.timeStyle = theTimeFormat
+        
+        var dateCalculated = dateFormatter.stringFromDate(self.datePicker.date)
+        println("Delivery Window " + dateCalculated)
+        
+        return dateCalculated
+    }
+  
+    // MARK: - Navigation
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
@@ -53,6 +76,7 @@ class BakerPostDetailsViewController: UIViewController, UITextViewDelegate {
         if let number = self.quantityLabel.text?.toInt() {
             self.item.quantity = number
         }
+        self.item.deliveryTime = getDeliveryDate()
         
         //Confirm that the title and atleast one image is present before adding details
         if self.item.price==0 || self.item.quantity==0 || self.item.description.utf16Count==0
@@ -65,9 +89,11 @@ class BakerPostDetailsViewController: UIViewController, UITextViewDelegate {
             //Present the AlertController
             self.presentViewController(actionSheetController, animated: true, completion: nil)
         }
-        
-        if let dc = segue.destinationViewController as? BakerPostFinalViewController {
+        else
+        {
+            if let dc = segue.destinationViewController as? BakerPostFinalViewController {
             dc.item = self.item
+            }
         }
     }
     

@@ -34,6 +34,7 @@ class Item {
     var price: Float!
     var quantity : Int!
     var soldQuantity : Int!
+    var deliveryTime: String!
     var tags: [String]!
     var location: AnyObject!
     var createdAt: NSDate!
@@ -53,6 +54,7 @@ class Item {
         self.price = 0
         self.quantity = 0
         self.soldQuantity = 0
+        self.deliveryTime = ""
         self.tags = []
         self.location = ""
         self.createdAt = NSDate()
@@ -68,6 +70,7 @@ class Item {
         self.price = parseObject["price"]! as Float
         self.tags = parseObject["tags"]! as [String]
         self.createdAt = parseObject.createdAt
+        self.deliveryTime = parseObject["deliveryTime"]! as String
         self.baker = User(parseObject: parseObject["baker"] as PFUser)
         
         if let image = parseObject["image"] as? PFFile {
