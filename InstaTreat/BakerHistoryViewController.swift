@@ -70,7 +70,7 @@ class BakerHistoryViewController: UIViewController , UITableViewDelegate, UITabl
         
         let item = items[indexPath.row]
         cell.titleLabel.text = item.title
-        var myValue:float_t = float_t(item.quantity)
+        var myValue:float_t = float_t(item.soldQuantity)
         let totalSales = item.price*myValue
         cell.totalSalesLabel.text = String(format: "$%.2f", totalSales)
       

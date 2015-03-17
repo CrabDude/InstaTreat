@@ -96,6 +96,7 @@ class BakerPostFinalViewController: UIViewController {
         item["description"] = self.item.description
         item["tags"] = self.item.tags
         item["onSale"] = true;
+        item["soldQuantity"]=self.item.soldQuantity
         
         if let images = self.item.images {
             if images.count > 0 {

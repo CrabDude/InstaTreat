@@ -23,27 +23,6 @@ var itemCategories = [
     "marshmallows"
 ]
 
-//class ItemPost {
-//    let id: AnyObject!
-//    let quantity: Int
-//    let createdAt: NSDate
-//    let endDate: NSDate
-//    let item: Item
-//    let price: String
-//    var longitude: Float!
-//    var latitude: Float!
-//    
-//    var options = [String:Bool]()
-//    
-//    func init() {
-//        
-//    }
-//    
-//    func initWithDictionary(dict: [String: AnyObject]) {
-//        
-//    }
-//}
-
 class Item {
     let id: AnyObject!
     var images: [UIImage]?
@@ -54,6 +33,7 @@ class Item {
     var owner: String!
     var price: Float!
     var quantity : Int!
+    var soldQuantity : Int!
     var tags: [String]!
     var location: AnyObject!
     var createdAt: NSDate!
@@ -72,6 +52,7 @@ class Item {
         self.owner = ""
         self.price = 0
         self.quantity = 0
+        self.soldQuantity = 0
         self.tags = []
         self.location = ""
         self.createdAt = NSDate()
@@ -81,6 +62,7 @@ class Item {
         self.title = parseObject["title"]! as String
         self.description = parseObject["description"]! as String
         self.quantity = parseObject["quantity"]! as Int
+        self.soldQuantity = parseObject["soldQuantity"]! as Int
         self.ratingCount = (parseObject["ratingCount"] ?? 0) as Int
         self.ratingTotal = (parseObject["ratingTotal"] ?? 0) as Int
         self.price = parseObject["price"]! as Float
