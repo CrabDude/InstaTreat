@@ -24,8 +24,7 @@ class BakerPostViewController: UIViewController, UINavigationControllerDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("baker post view loaded")
-        
+
         // Do any additional setup after loading the view.
     }
 
