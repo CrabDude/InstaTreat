@@ -40,6 +40,15 @@ def create_customer():
     except stripe.StripeError,e:
         abort(500)
 
+@app.route("/instatreat/api/v1/stripe/customers/retrieve", methods=["GET"])
+def get_customer():
+    customer_id = request.args.get('customer_id')
+    try:
+        cs =  stripe.Customer.retrieve(customer_id)
+        return jsonify(cs)
+    except stripe.StripeError,e:
+        abort(500)
+
 @app.route("/instatreat/api/v1/stripe/customers/cards/delete", methods=["POST"])
 def delete_card():
     customer_id = request.form["customer_id"]
