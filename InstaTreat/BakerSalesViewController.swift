@@ -72,7 +72,7 @@ class BakerSalesViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.priceLabel.text = String(format: "$%.2f", item.price)
         cell.quantityLabel.text = String(item.quantity)
         let dateFormat = NSDateFormatter()
-        dateFormat.dateFormat = "EEE, MMM d, h:mm a"
+        dateFormat.dateFormat = "MMM d, h:mm a"
         cell.createdTimeLabel.text = dateFormat.stringFromDate(item.createdAt)
        
         if let images = item.images {

@@ -111,4 +111,6 @@ class BakerHistoryViewController: UIViewController , UITableViewDelegate, UITabl
             
         }
     }
+    
+    @IBAction func unwindToSegue(segue:UIStoryboardSegue) {}
 }
