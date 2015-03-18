@@ -52,19 +52,23 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ac9-Uf-9Gf">
-                                                    <rect key="frame" x="252" y="75" width="56" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ac9-Uf-9Gf">
+                                                    <rect key="frame" x="252" y="66" width="56" height="30"/>
+                                                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="Re-Post">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="onRePostItem:" destination="OWq-lQ-4IE" eventType="touchUpInside" id="Bv9-Xu-moP"/>
+                                                        <segue destination="FON-72-S6b" kind="modal" id="Miw-m8-Smb"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ADd-dZ-fO7" firstAttribute="top" secondItem="LcQ-c2-i0F" secondAttribute="top" constant="8" id="6p5-q7-fri"/>
+                                                <constraint firstAttribute="trailing" secondItem="ac9-Uf-9Gf" secondAttribute="trailing" constant="12" id="AeH-IL-hv5"/>
                                                 <constraint firstItem="ziK-Oy-5NB" firstAttribute="top" secondItem="LcQ-c2-i0F" secondAttribute="top" constant="16" id="FC0-SB-1cc"/>
+                                                <constraint firstAttribute="bottom" secondItem="ac9-Uf-9Gf" secondAttribute="bottom" constant="8.5" id="QZn-4a-5rj"/>
                                                 <constraint firstItem="ziK-Oy-5NB" firstAttribute="leading" secondItem="ADd-dZ-fO7" secondAttribute="trailing" constant="8" id="Tmb-2Q-vYw"/>
                                                 <constraint firstItem="ziK-Oy-5NB" firstAttribute="leading" secondItem="ADd-dZ-fO7" secondAttribute="trailing" constant="8" id="VxX-VT-XBd"/>
                                                 <constraint firstItem="Uyu-8h-34n" firstAttribute="leading" secondItem="ziK-Oy-5NB" secondAttribute="trailing" constant="8" id="d6B-tP-2WE"/>
@@ -98,6 +102,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UhW-fm-ucZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1080" y="37"/>
+        </scene>
+        <!--Post-->
+        <scene sceneID="hx3-zJ-mVJ">
+            <objects>
+                <viewController id="fNW-o5-cdU" customClass="BakerRepostItemViewController" customModule="InstaTreat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zuh-ke-1jJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="sSW-uw-2yC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qvx-e3-n6t">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tfX-e7-NHk">
+                                <rect key="frame" x="0.0" y="64" width="320" height="215"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pt2-zI-Q76">
+                                <rect key="frame" x="9" y="308" width="44" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quantity:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1VV-lM-XLn">
+                                <rect key="frame" x="8" y="344" width="70" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4b8-el-qdf">
+                                <rect key="frame" x="86" y="301" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nCc-GH-BcE">
+                                <rect key="frame" x="86" y="342" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIZ-fb-j48">
+                                <rect key="frame" x="137" y="439" width="32" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Post">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Post" id="rtb-By-anN">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ov0-7B-yWS"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bVA-mb-3tS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1998" y="36"/>
         </scene>
         <!--Side Panel View Controller-->
         <scene sceneID="5gN-U2-ZFr">
@@ -1419,6 +1478,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hq7-X6-3bl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1034" y="-606"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6fm-IH-l6a">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FON-72-S6b" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jUM-pd-bdr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fNW-o5-cdU" kind="relationship" relationship="rootViewController" id="IkN-9g-t7X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dsv-XY-hCf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1466" y="36"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

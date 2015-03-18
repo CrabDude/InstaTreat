@@ -36,6 +36,7 @@
 		950352AF1AAFDD7900CBFA13 /* BakerPostFinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950352AE1AAFDD7900CBFA13 /* BakerPostFinalViewController.swift */; };
 		950352EC1AB39CA900CBFA13 /* BakerSalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950352EB1AB39CA900CBFA13 /* BakerSalesViewController.swift */; };
 		950352EE1AB39F0A00CBFA13 /* SalesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950352ED1AB39F0A00CBFA13 /* SalesCell.swift */; };
+		95113CBC1AB90BEA001E7727 /* BakerRepostItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95113CBB1AB90BE9001E7727 /* BakerRepostItemViewController.swift */; };
 		9521B2CD1AAE02910076ECB8 /* BakerPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521B2CC1AAE02910076ECB8 /* BakerPostViewController.swift */; };
 		95FECDAD1AB3FD1F0087CF3E /* BakerHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FECDAC1AB3FD1F0087CF3E /* BakerHistoryViewController.swift */; };
 		95FECDAF1AB3FD590087CF3E /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FECDAE1AB3FD590087CF3E /* HistoryCell.swift */; };
@@ -103,6 +104,7 @@
 		950352AE1AAFDD7900CBFA13 /* BakerPostFinalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BakerPostFinalViewController.swift; sourceTree = "<group>"; };
 		950352EB1AB39CA900CBFA13 /* BakerSalesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BakerSalesViewController.swift; sourceTree = "<group>"; };
 		950352ED1AB39F0A00CBFA13 /* SalesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalesCell.swift; sourceTree = "<group>"; };
+		95113CBB1AB90BE9001E7727 /* BakerRepostItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BakerRepostItemViewController.swift; sourceTree = "<group>"; };
 		9521B2CC1AAE02910076ECB8 /* BakerPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BakerPostViewController.swift; path = ../BakerPostViewController.swift; sourceTree = "<group>"; };
 		95FECDAC1AB3FD1F0087CF3E /* BakerHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BakerHistoryViewController.swift; sourceTree = "<group>"; };
 		95FECDAE1AB3FD590087CF3E /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				950352EB1AB39CA900CBFA13 /* BakerSalesViewController.swift */,
 				584F80A11AB3F99F00AF664D /* BakerSalesDetailViewController.swift */,
 				95FECDAC1AB3FD1F0087CF3E /* BakerHistoryViewController.swift */,
+				95113CBB1AB90BE9001E7727 /* BakerRepostItemViewController.swift */,
 				58B9C84F1AA80ED500B28BC0 /* ViewController.swift */,
 				9F4F68771AAFC22600434D7B /* LoginViewController.swift */,
 				9F4F687C1AAFD69100434D7B /* StreamViewController.swift */,
@@ -469,6 +472,7 @@
 				584F80A21AB3F99F00AF664D /* BakerSalesDetailViewController.swift in Sources */,
 				9F527B231AB2B0AD008720CA /* AddressViewController.swift in Sources */,
 				9FCD66D21AB7AE18003CAC02 /* DetailViewController.swift in Sources */,
+				95113CBC1AB90BEA001E7727 /* BakerRepostItemViewController.swift in Sources */,
 				950352AF1AAFDD7900CBFA13 /* BakerPostFinalViewController.swift in Sources */,
 				588991D91AB3AC6600EA84FD /* User.swift in Sources */,
 				9FCD66D01AB777CE003CAC02 /* StripeClient.swift in Sources */,
