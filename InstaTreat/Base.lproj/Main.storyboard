@@ -1565,7 +1565,7 @@
         <scene sceneID="LRQ-MZ-RVt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pmj-7L-OMd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Sales" id="I22-2O-9M0"/>
+                    <tabBarItem key="tabBarItem" title="Sales" image="Sales" id="I22-2O-9M0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ahi-xu-3LY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1584,7 +1584,7 @@
         <scene sceneID="b9I-ra-tci">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="X2w-ph-jDE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="History" id="bBS-Wn-YUm"/>
+                    <tabBarItem key="tabBarItem" title="History" image="history" id="bBS-Wn-YUm"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ku3-h2-R8c">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1603,7 +1603,7 @@
         <scene sceneID="XA1-GO-97m">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="88e-2G-6Ho" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Post" id="TTI-Aj-UJl"/>
+                    <tabBarItem key="tabBarItem" title="Post" image="Add" id="TTI-Aj-UJl"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="O9U-zd-Yx5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1638,11 +1638,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Add" width="25" height="25"/>
         <image name="LoginBrandLogo" width="226" height="75"/>
         <image name="Onboarding_1" width="1080" height="1920"/>
+        <image name="Sales" width="25" height="25"/>
         <image name="egg-free" width="250" height="250"/>
         <image name="gluten-free" width="224" height="227"/>
         <image name="hamburger" width="23" height="19"/>
+        <image name="history" width="25" height="25"/>
         <image name="locationButton" width="18" height="23"/>
         <image name="nut-free" width="200" height="200"/>
         <image name="orangeButton" width="250" height="44"/>
