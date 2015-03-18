@@ -89,10 +89,6 @@ class BakerPostViewController: UIViewController, UINavigationControllerDelegate,
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
 
-//        if let image = self.CameraImageView.image {
-//            self.item.images?.append(image)
-//        }
-
         self.item.title = titleTextField.text
         //Confirm that the title and atleast one image is present before adding details 
         if self.item.images?.count==0 || self.item.title.utf16Count==0

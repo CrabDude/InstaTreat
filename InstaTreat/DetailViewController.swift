@@ -51,7 +51,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if indexPath.row == 0 {
             var displayImages: Array<UIImage>!
             var itemDetailnib = UINib(nibName: "ItemImagesViewCell", bundle: nil)
-            self.tableView.registerNib(itemDetailnib, forCellReuseIdentifier: "itemImagesViewCell")
+            self.tableView.registerNib(itemDetailnib!, forCellReuseIdentifier: "itemImagesViewCell")
             var cell = tableView.dequeueReusableCellWithIdentifier("itemImagesViewCell") as ItemImagesViewCell
             var pageImages = [UIImage]()
             
@@ -73,19 +73,19 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         else if indexPath.row == 1 {
             var itemDetailnib = UINib(nibName: "ItemDetailTableViewCell", bundle: nil)
-            self.tableView.registerNib(itemDetailnib, forCellReuseIdentifier: "itemDetailTableViewCell")
+            self.tableView.registerNib(itemDetailnib!, forCellReuseIdentifier: "itemDetailTableViewCell")
             var cell = tableView.dequeueReusableCellWithIdentifier("itemDetailTableViewCell") as ItemDetailTableViewCell
             return cell
         }
         else if indexPath.row == 2 {
             var bakerDetailnib = UINib(nibName: "BakerDetailTableViewCell", bundle: nil)
-            self.tableView.registerNib(bakerDetailnib, forCellReuseIdentifier: "bakerDetailTableViewCell")
+            self.tableView.registerNib(bakerDetailnib!, forCellReuseIdentifier: "bakerDetailTableViewCell")
             var cell = tableView.dequeueReusableCellWithIdentifier("bakerDetailTableViewCell") as BakerDetailTableViewCell
             return cell
         }
         else {
             var itemDetailnib = UINib(nibName: "ItemDetailTableViewCell", bundle: nil)
-            self.tableView.registerNib(itemDetailnib, forCellReuseIdentifier: "itemDetailTableViewCell")
+            self.tableView.registerNib(itemDetailnib!, forCellReuseIdentifier: "itemDetailTableViewCell")
             var cell = tableView.dequeueReusableCellWithIdentifier("itemDetailTableViewCell") as ItemDetailTableViewCell
             return cell
 

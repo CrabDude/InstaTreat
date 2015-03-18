@@ -24,7 +24,7 @@ class BakerPostDetailsViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        descriptionTextView?.delegate = self
+        self.descriptionTextView?.delegate = self
 
         self.datePicker.datePickerMode = UIDatePickerMode.DateAndTime
         let currentDate = NSDate()
@@ -41,9 +41,9 @@ class BakerPostDetailsViewController: UIViewController, UITextViewDelegate {
     
     func textViewShouldBeginEditing(aTextView: UITextView) -> Bool
     {
-        if aTextView == descriptionTextView
+        if aTextView == self.descriptionTextView
         {
-            descriptionTextView.text = ""
+            self.descriptionTextView.text = ""
         }
         return true
     }
@@ -69,7 +69,10 @@ class BakerPostDetailsViewController: UIViewController, UITextViewDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        self.item.description = descriptionTextView.text
+        if self.descriptionTextView.text != nil
+        {
+            self.item.description = self.descriptionTextView.text
+        }
         if let number: NSString = self.PriceLabel.text {
             self.item.price = number.floatValue
         }
