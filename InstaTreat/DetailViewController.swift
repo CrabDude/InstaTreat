@@ -48,21 +48,21 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        var cell = UITableViewCell()
-//        var cell:AnyObject!
         if indexPath.row == 0 {
             var displayImages: Array<UIImage>!
-            for imgUrl in self.item.otherImages {
-                var imgView = UIImageView()
-                
-                imgView.setImageWithURL(NSURL(string: imgUrl))
-                println(imgView)
-                displayImages.append(imgView.image!)
-            }
             var itemDetailnib = UINib(nibName: "ItemImagesViewCell", bundle: nil)
             self.tableView.registerNib(itemDetailnib, forCellReuseIdentifier: "itemImagesViewCell")
             var cell = tableView.dequeueReusableCellWithIdentifier("itemImagesViewCell") as ItemImagesViewCell
-            cell.pageImages = displayImages
+            var pageImages = [UIImage]()
+            for url in self.item.otherImages {
+                var urlB = NSURL(string: url)
+                var test =  UIImage(data: NSData(contentsOfURL: NSURL(string:url)!)!)
+                pageImages.append(test!)
+
+            }
+
+            cell.configure(pageImages)
+            
             return cell
             
             
@@ -86,15 +86,5 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return cell
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

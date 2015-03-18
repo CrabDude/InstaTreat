@@ -14,15 +14,40 @@ class ItemImagesViewCell: UITableViewCell, UIScrollViewDelegate {
 
     @IBOutlet weak var pageControl: UIPageControl!
     
+    var imageUrls: [String]!
+    
     var pageImages: [UIImage]!
     
     var pageViews: [UIImageView?] = []
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        pageImages = [UIImage(named: "Cookie.png")!,
-            UIImage(named: "payment.png")!,
-            UIImage(named: "profile.png")!]
+        
+//        pageImages = [UIImage(named: "Cookie.png")!,
+//            UIImage(named: "payment.png")!,
+//            UIImage(named: "profile.png")!]
+//        
+//        let pageCount = pageImages.count
+//        pageControl.currentPage = 0
+//        pageControl.numberOfPages = pageCount
+//        
+//        for _ in 0..<pageCount {
+//            pageViews.append(nil)
+//        }
+//        let pagesScrollViewSize = scrollView.frame.size
+//        scrollView.contentSize = CGSize(width: pagesScrollViewSize.width * CGFloat(pageImages.count),
+//            height: pagesScrollViewSize.height)
+//        
+//        loadVisiblePages()
+        
+    }
+    
+    func configure(var pageImages: [UIImage]!){
+//        pageImages = [UIImage(named: "Cookie.png")!,
+//            UIImage(named: "payment.png")!,
+//            UIImage(named: "profile.png")!]
         
         let pageCount = pageImages.count
         pageControl.currentPage = 0
@@ -35,9 +60,10 @@ class ItemImagesViewCell: UITableViewCell, UIScrollViewDelegate {
         scrollView.contentSize = CGSize(width: pagesScrollViewSize.width * CGFloat(pageImages.count),
             height: pagesScrollViewSize.height)
         
+        self.pageImages = pageImages
+        
         loadVisiblePages()
         
-        // Initialization code
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
