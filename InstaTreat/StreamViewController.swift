@@ -53,18 +53,18 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //        cell.distanceLabel.text = item.distance
         
         
-        cell.starRatingView.displayMode = UInt(EDStarRatingDisplayHalf)
-        cell.starRatingView.starImage = UIImage(named: "star")
-        cell.starRatingView.starHighlightedImage = UIImage(named: "star-highlighted")
-        cell.starRatingView.maxRating = 5
-        cell.starRatingView.horizontalMargin = 12
-        cell.starRatingView.editable = false
-        if item.ratingCount == 0 {
-            cell.starRatingView.hidden = true
-        } else {
-            cell.starRatingView.hidden = false
-            cell.starRatingView.rating = Float(item.ratingTotal) / Float(item.ratingCount)
-        }
+//        cell.starRatingView.displayMode = UInt(EDStarRatingDisplayHalf)
+//        cell.starRatingView.starImage = UIImage(named: "star")
+//        cell.starRatingView.starHighlightedImage = UIImage(named: "star-highlighted")
+//        cell.starRatingView.maxRating = 5
+//        cell.starRatingView.horizontalMargin = 12
+//        cell.starRatingView.editable = false
+//        if item.ratingCount == 0 {
+//            cell.starRatingView.hidden = true
+//        } else {
+//            cell.starRatingView.hidden = false
+//            cell.starRatingView.rating = Float(item.ratingTotal) / Float(item.ratingCount)
+//        }
         
         if let image = item.baker.image {
             cell.bakerImageView?.image = image
@@ -102,13 +102,26 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.badge3Image.hidden = true
         cell.badge4Image.hidden = true
         
+        
         for tag in item.tags {
             switch (tag) {
             case "Nut Free":
+                cell.badge1Image?.layer.borderWidth = 3.0
+                cell.badge1Image?.layer.borderColor = UIColor.whiteColor().CGColor
+                cell.badge1Image?.layer.cornerRadius = cell.bakerImageView.frame.size.width / 2
+                cell.badge1Image?.clipsToBounds = true
                 cell.badge1Image.hidden = false
             case "Gluten Free":
+                cell.badge2Image?.layer.borderWidth = 3.0
+                cell.badge2Image?.layer.borderColor = UIColor.whiteColor().CGColor
+                cell.badge2Image?.layer.cornerRadius = cell.bakerImageView.frame.size.width / 2
+                cell.badge2Image?.clipsToBounds = true
                 cell.badge2Image.hidden = false
             case "Egg Free":
+                cell.badge3Image?.layer.borderWidth = 3.0
+                cell.badge3Image?.layer.borderColor = UIColor.whiteColor().CGColor
+                cell.badge3Image?.layer.cornerRadius = cell.bakerImageView.frame.size.width / 2
+                cell.badge3Image?.clipsToBounds = true
                 cell.badge3Image.hidden = false
             default:
                 break
