@@ -45,7 +45,7 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let item = items[indexPath.row]
         cell.titleLabel.text = item.title
-        cell.priceLabel.text = String(format: "%.2f", item.price)
+        cell.priceLabel.text = String(format: "$%.2f", item.price)
         let dateFormat = NSDateFormatter()
         dateFormat.dateFormat = "EEE, MMM d, h:mm a"
         cell.createdAtLabel.text = dateFormat.stringFromDate(item.createdAt)

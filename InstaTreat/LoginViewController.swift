@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
     @IBAction func onLoginPressed(sender: UIButton) {
         PFUser.logInWithUsernameInBackground(self.usernameTextField.text, password: self.passwordTextField.text) {
             (user, error) in
-            
+            println(user)
             if error == nil {
                 self.view.window?.rootViewController = ContainerViewController()
             } else {

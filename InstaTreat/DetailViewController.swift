@@ -54,14 +54,18 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.tableView.registerNib(itemDetailnib, forCellReuseIdentifier: "itemImagesViewCell")
             var cell = tableView.dequeueReusableCellWithIdentifier("itemImagesViewCell") as ItemImagesViewCell
             var pageImages = [UIImage]()
-            for url in self.item.otherImages {
-                var urlB = NSURL(string: url)
-                var test =  UIImage(data: NSData(contentsOfURL: NSURL(string:url)!)!)
-                pageImages.append(test!)
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                for url in self.item.otherImages {
+                    var urlB = NSURL(string: url)
+                    var test =  UIImage(data: NSData(contentsOfURL: NSURL(string:url)!)!)
+                    pageImages.append(test!)
+                    cell.configure(pageImages)
+                }
+            })
+            
 
-            }
-
-            cell.configure(pageImages)
+            
             
             return cell
             
