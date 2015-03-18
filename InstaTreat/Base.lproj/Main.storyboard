@@ -319,7 +319,7 @@
         <!--Stream View Controller-->
         <scene sceneID="dLT-UD-l5W">
             <objects>
-                <viewController storyboardIdentifier="StreamViewController" id="2Cw-lP-gV0" userLabel="Stream View Controller" customClass="StreamViewController" customModule="InstaTreat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StreamViewController" automaticallyAdjustsScrollViewInsets="NO" id="2Cw-lP-gV0" userLabel="Stream View Controller" customClass="StreamViewController" customModule="InstaTreat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c4b-uF-6r7"/>
                         <viewControllerLayoutGuide type="bottom" id="fYr-hN-0q6"/>
@@ -1477,7 +1477,7 @@
         <!--Detail View Controller-->
         <scene sceneID="Ej3-Fz-iFE">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" id="pyO-9S-4Bd" userLabel="Detail View Controller" customClass="DetailViewController" customModule="InstaTreat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" automaticallyAdjustsScrollViewInsets="NO" id="pyO-9S-4Bd" userLabel="Detail View Controller" customClass="DetailViewController" customModule="InstaTreat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eSM-sN-n1Q"/>
                         <viewControllerLayoutGuide type="bottom" id="kPP-Xr-INz"/>
