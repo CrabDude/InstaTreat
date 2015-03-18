@@ -16,9 +16,12 @@ class BakerPostViewController: UIViewController, UINavigationControllerDelegate,
     }
    
     @IBOutlet var CameraImageView: UIImageView!
+    @IBOutlet var secondaryImage1: UIImageView!
+    @IBOutlet var secondaryImage2: UIImageView!
+    @IBOutlet var secondaryImage3: UIImageView!
+    @IBOutlet var secondaryImage4: UIImageView!
     
     @IBOutlet var titleTextField: UITextField!
-    
     
     var item = Item()
     
@@ -42,13 +45,6 @@ class BakerPostViewController: UIViewController, UINavigationControllerDelegate,
         
         self.presentViewController(imagePicker, animated: true, completion: nil)
         
-        /*var vc = UIImagePickerController()
-        vc.delegate = self
-        //vc.sourceType = UIImagePickerControllerSourceType.Camera;
-        //Show photolibrary for now so it works on the simulator
-        vc.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        vc.allowsEditing = false
-        self.presentViewController(vc, animated: true, completion: nil)*/
     }
     
     func elcImagePickerController(picker: ELCImagePickerController!, didFinishPickingMediaWithInfo info:[AnyObject]!) {
@@ -65,8 +61,16 @@ class BakerPostViewController: UIViewController, UINavigationControllerDelegate,
             self.item.images?.append(image)
         }
         
-        //Fix this to show all selected images in a collection view
         self.CameraImageView.image =  self.item.images?[0]
+        if self.item.images?.count > 1 {
+            self.secondaryImage1.image = self.item.images?[1]}
+        if self.item.images?.count > 2 {
+            self.secondaryImage2.image = self.item.images?[2]}
+        if self.item.images?.count > 3 {
+            self.secondaryImage3.image = self.item.images?[3]}
+        if self.item.images?.count > 4 {
+            self.secondaryImage4.image = self.item.images?[4]}
+
     }
     
     func elcImagePickerControllerDidCancel(picker: ELCImagePickerController!) {
@@ -74,13 +78,6 @@ class BakerPostViewController: UIViewController, UINavigationControllerDelegate,
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    
-//    func imagePickerController(picker: UIImagePickerController,
-//        didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
-//            var originalImage = info[UIImagePickerControllerOriginalImage] as UIImage
-//            self.CameraImageView.image = originalImage
-//            self.dismissViewControllerAnimated(true, completion: nil)
-//    }
     
     // MARK: - Navigation
 
