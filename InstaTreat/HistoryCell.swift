@@ -16,6 +16,9 @@ class HistoryCell: UITableViewCell {
     @IBOutlet var saleRatingLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
     
+   
+    @IBOutlet var repostButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

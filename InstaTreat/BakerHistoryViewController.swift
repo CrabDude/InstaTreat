@@ -87,6 +87,7 @@ class BakerHistoryViewController: UIViewController , UITableViewDelegate, UITabl
             }
         }
         
+        cell.repostButton.tag = indexPath.row
         return cell
     }
     
@@ -103,11 +104,11 @@ class BakerHistoryViewController: UIViewController , UITableViewDelegate, UITabl
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
+        let myButton = sender as UIButton
+        let selectedItem = self.items[myButton.tag]
         if let dc = segue.destinationViewController as? BakerRepostItemViewController {
-            if let index = self.historyTableView.indexPathForSelectedRow()?.row {
-                dc.item=self.items[index]
-            }
+                dc.item=selectedItem
+            
         }
     }
 }
