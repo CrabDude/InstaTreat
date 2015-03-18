@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,22 +14,37 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chocolate Cookies" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tyg-EM-WYh">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chocolate Cookies" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tyg-EM-WYh">
                         <rect key="frame" x="100" y="21" width="146" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fYb-ha-1BP">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fYb-ha-1BP">
                         <rect key="frame" x="38" y="50" width="271" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="AEU-QZ-ZwH"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="these are amazingly delicious cooki" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXh-6V-U2G">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="these are amazingly delicious cooki" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXh-6V-U2G">
                         <rect key="frame" x="8" y="90" width="331" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="vXh-6V-U2G" firstAttribute="top" secondItem="fYb-ha-1BP" secondAttribute="bottom" constant="8" id="0SM-8W-k6O"/>
+                    <constraint firstItem="fYb-ha-1BP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="30" id="8qd-yK-p53"/>
+                    <constraint firstAttribute="trailing" secondItem="vXh-6V-U2G" secondAttribute="trailing" constant="8" id="Anc-2n-Fjb"/>
+                    <constraint firstItem="vXh-6V-U2G" firstAttribute="centerX" secondItem="Tyg-EM-WYh" secondAttribute="centerX" id="GYh-Ne-dXD"/>
+                    <constraint firstItem="vXh-6V-U2G" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="90" id="Uhw-6J-Ixx"/>
+                    <constraint firstItem="vXh-6V-U2G" firstAttribute="centerX" secondItem="fYb-ha-1BP" secondAttribute="centerX" id="cjv-7N-avN"/>
+                    <constraint firstItem="vXh-6V-U2G" firstAttribute="top" secondItem="fYb-ha-1BP" secondAttribute="bottom" constant="8" symbolic="YES" id="m9z-LL-trv"/>
+                    <constraint firstItem="fYb-ha-1BP" firstAttribute="top" secondItem="Tyg-EM-WYh" secondAttribute="bottom" constant="8" symbolic="YES" id="q4K-hv-uFF"/>
+                    <constraint firstItem="vXh-6V-U2G" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="r7G-Vr-Jni"/>
+                    <constraint firstItem="vXh-6V-U2G" firstAttribute="top" secondItem="fYb-ha-1BP" secondAttribute="bottom" constant="8" id="vzT-G5-0dM"/>
+                </constraints>
             </tableViewCellContentView>
             <point key="canvasLocation" x="479.5" y="711.5"/>
         </tableViewCell>
