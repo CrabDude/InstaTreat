@@ -26,6 +26,7 @@ var itemCategories = [
 class Item {
     let id: AnyObject!
     var images: [UIImage]?
+    var otherImages: [String]?
     var description: String!
     var title: String!
     var ratingCount: Int!
@@ -87,6 +88,8 @@ class Item {
         }
         self.parseRef = parseObject
         self.bakerRef = parseObject["baker"] as PFUser
+        println(parseObject["images"])
+        self.otherImages = parseObject["images"] as? Array<String>
         
     }
     

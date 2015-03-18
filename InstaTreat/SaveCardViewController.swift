@@ -21,7 +21,7 @@ class SaveCardViewController: UIViewController, PTKViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         paymentView = PTKView(frame: CGRectMake(15, 20, 290, 55))
-        paymentView?.center = view.center
+        paymentView?.center.y = 100.0
         paymentView?.delegate = self
         view.addSubview(paymentView!)
         self.saveButton.enabled = false

@@ -13,9 +13,9 @@ class ItemDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var yoLabel: UILabel!
     
     
-    override init?(style: UITableViewCellStyle, reuseIdentifier: String!) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-    }
+//    override init?(style: UITableViewCellStyle, reuseIdentifier: String!) {
+//        super.init(style: style, reuseIdentifier: reuseIdentifier)
+//    }
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

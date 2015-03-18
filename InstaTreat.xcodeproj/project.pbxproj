@@ -55,6 +55,8 @@
 		9FCD66D61AB7AF38003CAC02 /* ItemDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FCD66D41AB7AF38003CAC02 /* ItemDetailTableViewCell.xib */; };
 		9FCD66D91AB7B540003CAC02 /* BakerDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCD66D71AB7B540003CAC02 /* BakerDetailTableViewCell.swift */; };
 		9FCD66DA1AB7B540003CAC02 /* BakerDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FCD66D81AB7B540003CAC02 /* BakerDetailTableViewCell.xib */; };
+		9FE54FCC1AB902BD007BBE1E /* ItemImagesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE54FCA1AB902BD007BBE1E /* ItemImagesViewCell.swift */; };
+		9FE54FCD1AB902BD007BBE1E /* ItemImagesViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FE54FCB1AB902BD007BBE1E /* ItemImagesViewCell.xib */; };
 		FBD8FC97ECD66F51B0F7ADB4 /* libPods-InstaTreat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E089D56D977369D0970766F1 /* libPods-InstaTreat.a */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +125,8 @@
 		9FCD66D41AB7AF38003CAC02 /* ItemDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemDetailTableViewCell.xib; sourceTree = "<group>"; };
 		9FCD66D71AB7B540003CAC02 /* BakerDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BakerDetailTableViewCell.swift; sourceTree = "<group>"; };
 		9FCD66D81AB7B540003CAC02 /* BakerDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BakerDetailTableViewCell.xib; sourceTree = "<group>"; };
+		9FE54FCA1AB902BD007BBE1E /* ItemImagesViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemImagesViewCell.swift; sourceTree = "<group>"; };
+		9FE54FCB1AB902BD007BBE1E /* ItemImagesViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemImagesViewCell.xib; sourceTree = "<group>"; };
 		CB6ED12A06009C78E723CCCE /* Pods-InstaTreat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaTreat.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaTreat/Pods-InstaTreat.release.xcconfig"; sourceTree = "<group>"; };
 		E089D56D977369D0970766F1 /* libPods-InstaTreat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstaTreat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -276,6 +280,8 @@
 				9FCD66D41AB7AF38003CAC02 /* ItemDetailTableViewCell.xib */,
 				9FCD66D71AB7B540003CAC02 /* BakerDetailTableViewCell.swift */,
 				9FCD66D81AB7B540003CAC02 /* BakerDetailTableViewCell.xib */,
+				9FE54FCA1AB902BD007BBE1E /* ItemImagesViewCell.swift */,
+				9FE54FCB1AB902BD007BBE1E /* ItemImagesViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -411,6 +417,7 @@
 				9FCD66DA1AB7B540003CAC02 /* BakerDetailTableViewCell.xib in Resources */,
 				58B9C8581AA80ED500B28BC0 /* LaunchScreen.xib in Resources */,
 				58B9C8551AA80ED500B28BC0 /* Images.xcassets in Resources */,
+				9FE54FCD1AB902BD007BBE1E /* ItemImagesViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +478,7 @@
 				95FECDAF1AB3FD590087CF3E /* HistoryCell.swift in Sources */,
 				584F80A21AB3F99F00AF664D /* BakerSalesDetailViewController.swift in Sources */,
 				9F527B231AB2B0AD008720CA /* AddressViewController.swift in Sources */,
+				9FE54FCC1AB902BD007BBE1E /* ItemImagesViewCell.swift in Sources */,
 				9FCD66D21AB7AE18003CAC02 /* DetailViewController.swift in Sources */,
 				95113CBC1AB90BEA001E7727 /* BakerRepostItemViewController.swift in Sources */,
 				950352AF1AAFDD7900CBFA13 /* BakerPostFinalViewController.swift in Sources */,
