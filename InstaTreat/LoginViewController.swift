@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
             (user, error) in
             
             if error == nil {
-                self.navigationController?.pushViewController(ContainerViewController(), animated: true)
+                self.view.window?.rootViewController = ContainerViewController()
             } else {
                 println(error)
                 println("user login failed")

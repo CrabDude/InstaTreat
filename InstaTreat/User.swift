@@ -46,7 +46,7 @@ class User {
     }
     
     class func logout() {
-        println("onlogout pressed")
+        println("logging user out")
         PFUser.logOut()
         _currentUser = nil
         

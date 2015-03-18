@@ -105,8 +105,6 @@ class BakerSalesViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     @IBAction func logoutTapped(sender: AnyObject) {
-        PFUser.logOut()
-        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as UIViewController
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        UIStoryboard.logout()
     }
 }

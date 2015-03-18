@@ -16,7 +16,7 @@ class ContainerViewController: UIViewController, UIGestureRecognizerDelegate, Si
         case LeftPanelExpanded
     }
     
-    var centerNavigationController: UINavigationController!
+    var centerNavigationController: UIViewController!
     var centerViewController: UIViewController!
     var currentState: SlideOutState = .BothCollapsed {
         didSet {
@@ -31,8 +31,10 @@ class ContainerViewController: UIViewController, UIGestureRecognizerDelegate, Si
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.centerViewController = UIStoryboard.centerViewController()
-        self.centerNavigationController = UINavigationController(rootViewController: centerViewController)
+        UIStoryboard.containerViewController = self
+        self.centerViewController = UIStoryboard.centerViewController
+        self.centerNavigationController = self.centerViewController
+//        self.centerNavigationController = UINavigationController(rootViewController: centerViewController)
         self.view.addSubview(centerNavigationController.view)
         self.addChildViewController(centerNavigationController)
         
@@ -157,6 +159,7 @@ class ContainerViewController: UIViewController, UIGestureRecognizerDelegate, Si
 }
 
 var _centerViewController: UIViewController!
+var _containerViewController: UIViewController!
 var _leftViewController: UIViewController!
 
 extension UIStoryboard {
@@ -166,14 +169,36 @@ extension UIStoryboard {
         return mainStoryboard().instantiateViewControllerWithIdentifier("SidePanelViewController") as? SidePanelViewController
     }
     
-    class func centerViewController() -> UIViewController? {
-        if _centerViewController == nil {
-            if User.currentUser.isBaker {
-                _centerViewController =  AppHelper.storyboard.instantiateViewControllerWithIdentifier("BakerPostViewController") as? UITabBarController
-            } else {
-                _centerViewController = AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamViewController") as? StreamViewController
-            }
+    class var containerViewController: UIViewController {
+        get {
+            return _containerViewController
         }
-        return _centerViewController
+        set(containerViewController) {
+            _containerViewController = containerViewController
+        }
+    }
+    
+    class var centerViewController: UIViewController? {
+        get {
+            if _centerViewController == nil {
+                if User.currentUser.isBaker {
+                    _centerViewController =  AppHelper.storyboard.instantiateViewControllerWithIdentifier("BakerPostViewController") as? UITabBarController
+                } else {
+                    _centerViewController = AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamNavigationController") as? UINavigationController
+                }
+            }
+
+            return _centerViewController
+        }
+        set(centerViewController) {
+            _centerViewController = centerViewController
+        }
+    }
+    
+    class func logout() {
+        User.logout()
+        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as UIViewController
+        self.containerViewController.view.window?.rootViewController = vc
+        self.centerViewController = nil
     }
 }

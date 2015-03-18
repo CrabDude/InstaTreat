@@ -94,7 +94,13 @@
                             <constraint firstAttribute="trailing" secondItem="rNf-se-51l" secondAttribute="trailing" id="q8z-0B-c1w"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="History" id="dVS-4l-823"/>
+                    <navigationItem key="navigationItem" title="History" id="dVS-4l-823">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="UXM-4B-5W8">
+                            <connections>
+                                <action selector="logoutTapped:" destination="OWq-lQ-4IE" id="nQ7-7j-dBX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="historyTableView" destination="rNf-se-51l" id="Jb9-WJ-TcL"/>
                     </connections>
@@ -1038,7 +1044,13 @@
                             <constraint firstItem="5IQ-FU-H6L" firstAttribute="top" secondItem="ywG-fw-yCD" secondAttribute="bottom" constant="8" id="vQu-dp-kYV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Post" id="0yd-tH-fql"/>
+                    <navigationItem key="navigationItem" title="Post" id="0yd-tH-fql">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="Kfk-0H-JW0">
+                            <connections>
+                                <action selector="logoutTapped:" destination="BPH-Qo-ZpT" id="7xf-J9-VkZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="CameraImageView" destination="xVU-Hj-2Q0" id="8t7-ve-6gn"/>
                         <outlet property="titleTextField" destination="ywG-fw-yCD" id="GgW-AZ-okK"/>
@@ -1123,7 +1135,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery Window" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J6f-9L-Bmv">
-                                <rect key="frame" x="96" y="293" width="128" height="20.5"/>
+                                <rect key="frame" x="96" y="293" width="128" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -1302,24 +1314,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UzO-pL-UAi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1688" y="1776"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="lLi-iA-NBm">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lwc-vq-O62" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TpI-cE-f1C">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="QoC-py-1GW" kind="relationship" relationship="rootViewController" id="Xtm-8g-8cQ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fXQ-Bs-Qyv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="320" y="1995"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="on7-ku-hKM">

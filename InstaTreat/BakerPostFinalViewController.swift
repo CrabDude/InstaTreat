@@ -123,7 +123,7 @@ class BakerPostFinalViewController: UIViewController {
                         
                         self.view.window?.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
                         
-                        if let tbc = UIStoryboard.centerViewController() as? UITabBarController {
+                        if let tbc = UIStoryboard.centerViewController as? UITabBarController {
                             tbc.selectedIndex = 1
                         }
                         //Present the Sales view controller

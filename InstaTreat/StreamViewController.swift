@@ -141,10 +141,7 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     @IBAction func onLogoutPressed(sender: UIButton) {
-        PFUser.logOut()
-        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as UIViewController
-        self.navigationController?.pushViewController(vc, animated: true)
-        
+        UIStoryboard.logout()
     }
 
     @IBAction func onMapButtonPressed(sender: UIButton) {
