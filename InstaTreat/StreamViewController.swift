@@ -128,10 +128,6 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("DetailViewController") as DetailViewController
         let item = self.items[indexPath.row]
         vc.item = item
-//        var itemDetailnib = UINib(nibName: "ItemDetailTableViewCell", bundle: nil)
-//        var bakerDetailnib = UINib(nibName: "BakerDetailTableViewCell", bundle: nil)
-//        vc.tableView.registerNib(itemDetailnib, forCellReuseIdentifier: "itemDetailTableViewCell")
-//        vc.tableView.registerNib(bakerDetailnib, forCellReuseIdentifier: "bakerDetailTableViewCell")
 
         self.navigationController?.pushViewController(vc, animated: true)
     }
