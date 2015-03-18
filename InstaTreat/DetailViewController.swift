@@ -48,40 +48,43 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = UITableViewCell()
+//        var cell = UITableViewCell()
+//        var cell:AnyObject!
         if indexPath.row == 0 {
-            var displayImages = []
+            var displayImages: Array<UIImage>!
             for imgUrl in self.item.otherImages {
-                println(imgUrl)
+                var imgView = UIImageView()
+                
+                imgView.setImageWithURL(NSURL(string: imgUrl))
+                println(imgView)
+                displayImages.append(imgView.image!)
             }
             var itemDetailnib = UINib(nibName: "ItemImagesViewCell", bundle: nil)
             self.tableView.registerNib(itemDetailnib, forCellReuseIdentifier: "itemImagesViewCell")
-            cell = tableView.dequeueReusableCellWithIdentifier("itemImagesViewCell") as ItemImagesViewCell
+            var cell = tableView.dequeueReusableCellWithIdentifier("itemImagesViewCell") as ItemImagesViewCell
+            cell.pageImages = displayImages
+            return cell
+            
             
         }
         else if indexPath.row == 1 {
             var itemDetailnib = UINib(nibName: "ItemDetailTableViewCell", bundle: nil)
             self.tableView.registerNib(itemDetailnib, forCellReuseIdentifier: "itemDetailTableViewCell")
-            cell = tableView.dequeueReusableCellWithIdentifier("itemDetailTableViewCell") as ItemDetailTableViewCell
+            var cell = tableView.dequeueReusableCellWithIdentifier("itemDetailTableViewCell") as ItemDetailTableViewCell
+            return cell
         }
         else if indexPath.row == 2 {
             var bakerDetailnib = UINib(nibName: "BakerDetailTableViewCell", bundle: nil)
             self.tableView.registerNib(bakerDetailnib, forCellReuseIdentifier: "bakerDetailTableViewCell")
-            cell = tableView.dequeueReusableCellWithIdentifier("bakerDetailTableViewCell") as BakerDetailTableViewCell
+            var cell = tableView.dequeueReusableCellWithIdentifier("bakerDetailTableViewCell") as BakerDetailTableViewCell
+            return cell
         }
-        return cell
-        
-//        switch indexPath.row {
-//        case 0:
-//            var cell = tableView.dequeueReusableCellWithIdentifier("itemDetailTableViewCell") as ItemDetailTableViewCell
-//            return cell
-//        case 1:
-//            var cell = tableView.dequeueReusableCellWithIdentifier("bakerDetailTableViewCell") as BakerDetailTableViewCell
-//            return cell
-//        default:
-//            var cell = tableView.dequeueReusableCellWithIdentifier("itemDetailTableViewCell") as ItemDetailTableViewCell
-//            return cell
-//        }
+        else {
+            var itemDetailnib = UINib(nibName: "ItemDetailTableViewCell", bundle: nil)
+            self.tableView.registerNib(itemDetailnib, forCellReuseIdentifier: "itemDetailTableViewCell")
+            var cell = tableView.dequeueReusableCellWithIdentifier("itemDetailTableViewCell") as ItemDetailTableViewCell
+            return cell
+        }
     }
 
     /*

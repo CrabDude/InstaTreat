@@ -8,4 +8,5 @@
 #import <PaymentKit/PTKView.h>
 #import <AFNetworking/AFNetworking.h>
 #import <ELCImagePickerController/ELCImagePickerController.h>
+#import <UIImageView+AFNetworking.h>
 //#import <AFNetworking/AFHTTPRequestOperationManager.h>

@@ -14,7 +14,7 @@ class ItemImagesViewCell: UITableViewCell, UIScrollViewDelegate {
 
     @IBOutlet weak var pageControl: UIPageControl!
     
-    var pageImages: [UIImage] = []
+    var pageImages: [UIImage]!
     
     var pageViews: [UIImageView?] = []
     override func awakeFromNib() {
