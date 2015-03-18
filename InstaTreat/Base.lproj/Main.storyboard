@@ -276,7 +276,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LoginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="DSZ-7g-NjL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Onboarding_1" translatesAutoresizingMaskIntoConstraints="NO" id="DSZ-7g-NjL">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3pJ-sK-i5k">
@@ -1607,8 +1607,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LoginBackground" width="320" height="568"/>
         <image name="LoginBrandLogo" width="226" height="75"/>
+        <image name="Onboarding_1" width="1080" height="1920"/>
         <image name="egg-free" width="250" height="250"/>
         <image name="gluten-free" width="224" height="227"/>
         <image name="hamburger" width="23" height="19"/>
