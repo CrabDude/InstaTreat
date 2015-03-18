@@ -68,9 +68,18 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if let image = item.baker.image {
             cell.bakerImageView?.image = image
+            cell.bakerImageView?.layer.borderWidth = 3.0
+            cell.bakerImageView?.layer.borderColor = UIColor.whiteColor().CGColor
+            cell.bakerImageView?.layer.cornerRadius = cell.bakerImageView.frame.size.width / 2
+            cell.bakerImageView?.clipsToBounds = true
+            
         } else {
             item.baker.onImageLoad = {
                 cell.bakerImageView?.image = item.baker.image
+                cell.bakerImageView?.layer.borderWidth = 3.0
+                cell.bakerImageView?.layer.borderColor = UIColor.whiteColor().CGColor
+                cell.bakerImageView?.layer.cornerRadius = cell.bakerImageView.frame.size.width / 2
+                cell.bakerImageView?.clipsToBounds = true
                 return
             }
         }
