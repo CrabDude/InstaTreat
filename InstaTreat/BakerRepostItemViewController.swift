@@ -10,6 +10,7 @@ import UIKit
 
 class BakerRepostItemViewController: UIViewController {
 
+    var item: Item!
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -93,13 +93,21 @@ class BakerHistoryViewController: UIViewController , UITableViewDelegate, UITabl
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.items.count
     }
-
-    @IBAction func onRePostItem(sender: AnyObject) {
-    }
-    
     
     @IBAction func logoutTapped(sender: AnyObject) {
         UIStoryboard.logout()
     }
+    // MARK: - Navigation
 
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        
+        if let dc = segue.destinationViewController as? BakerRepostItemViewController {
+            if let index = self.historyTableView.indexPathForSelectedRow()?.row {
+                dc.item=self.items[index]
+            }
+        }
+    }
 }
