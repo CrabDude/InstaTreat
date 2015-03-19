@@ -107,6 +107,7 @@ class Sale {
     var saleId: AnyObject!
     var isDelivered: Bool!
     var createdAt: NSDate!
+    var address: String?
     var buyer: User!
     var item: Item!
     var pfSale: PFObject!
@@ -116,6 +117,7 @@ class Sale {
         self.item = Item(parseObject: parseObject["item"] as PFObject)
         self.buyer = User(parseObject: parseObject["buyer"] as PFUser)
         self.quantity = parseObject["quantity"] as Int
+        self.address = parseObject["address"] as? String
         self.pfSale = parseObject
     }
     

@@ -63,6 +63,11 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate {
         sale["quantity"] = self.item.quantity
         sale["baker"] = self.item.bakerRef
         sale["isDelivered"] = false
+        let address1 = address["address1"]!
+        let address2 = address["address2"]!
+        let city = address["city"]!
+        let state = address["state"]!
+        sale["address"] = "\(address1) \(address2), \(city), \(state)"
         sale.saveInBackgroundWithBlock {
             (success: Bool, error: NSError!) -> Void in
             if (success) {

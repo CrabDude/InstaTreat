@@ -62,7 +62,8 @@ class BakerSalesDetailViewController: UITableViewController, UIAlertViewDelegate
         let sale = self.sales[indexPath.row]
         
         cell.buyerNameLabel.text = sale.buyer.firstName + " " + sale.buyer.lastName
-        cell.quantityLabel.text = "#: \(String(sale.quantity))"
+        cell.quantityLabel.text = "Quantity: \(String(sale.quantity))"
+        cell.addressLabel.text = sale.address == nil ? "" : "Address: \(sale.address!)"
         cell.confirmButton.addTarget(self, action: "confirmTapped:", forControlEvents: .TouchUpInside)
         
         

@@ -51,11 +51,16 @@ class ItemDetailViewController: UIViewController {
                 self.starRatingView.hidden = false
                 self.starRatingView.rating = Float(item.ratingTotal) / Float(item.ratingCount)
             }
+
             self.bakerImageView?.image = item.baker.image
+            self.bakerImageView?.layer.borderWidth = 2
+            self.bakerImageView?.layer.borderColor = UIColor.whiteColor().CGColor
+            self.bakerImageView?.layer.cornerRadius = self.bakerImageView.frame.size.width / 2
+            self.bakerImageView?.clipsToBounds = true
+            
             if item.images?.count > 0 {
                 self.itemImage?.image = item.images?[0]
             }
-            
             
             self.badge1Image.hidden = true
             self.badge2Image.hidden = true

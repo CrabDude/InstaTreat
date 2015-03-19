@@ -14,6 +14,7 @@ class SalesBuyerCell: UITableViewCell {
     @IBOutlet var buyerNameLabel: UILabel!
     @IBOutlet var buyerImageView: UIImageView!
     @IBOutlet weak var confirmButton: UIButton!
+    @IBOutlet var addressLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
