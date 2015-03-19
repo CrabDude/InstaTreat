@@ -8,10 +8,13 @@
 
 import UIKit
 
-class ItemDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+private var _formatter = NSDateFormatter()
+private var _timezone = NSTimeZone(abbreviation: "PST")
 
-    @IBOutlet weak var distanceLabel: UILabel!
+class ItemDetailViewController: UIViewController {
+
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var bakerNameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var createdAtLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
@@ -23,22 +26,18 @@ class ItemDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var badge3Image: UIImageView!
     @IBOutlet weak var badge4Image: UIImageView!
     @IBOutlet weak var descriptionTextView: UITextView!
-        
-    @IBOutlet weak var tableView: UITableView!
     
     var item: Item?
     
     override func viewDidLoad() {
         if let item = self.item {
             self.titleLabel.text = item.title
-            self.priceLabel.text = String(format: "%.2f", item.price)
+            self.priceLabel.text = "$" + String(format: "%.2f", item.price)
             let dateFormat = NSDateFormatter()
             dateFormat.dateFormat = "EEE, MMM d, h:mm a"
             self.createdAtLabel.text = dateFormat.stringFromDate(item.createdAt)
-            self.quantityLabel.text = String(item.quantity)
+            self.quantityLabel.text = String(item.quantity) + " Remaining"
             self.descriptionTextView.text = item.description
-            //        cell.distanceLabel.text = item.distance
-            
             
             self.starRatingView.displayMode = UInt(EDStarRatingDisplayHalf)
             self.starRatingView.starImage = UIImage(named: "star")
@@ -76,9 +75,22 @@ class ItemDetailViewController: UIViewController, UITableViewDelegate, UITableVi
                 }
                 
             }
+            
+            let distanceBetweenDates = NSDate().timeIntervalSinceDate(item.createdAt)
+            let hoursBetweenDates = Int(distanceBetweenDates / 3600)
+            
+            _formatter.dateFormat = "M/d/Y"
+            _formatter.timeZone = _timezone
+
+            if hoursBetweenDates < 24 {
+                self.createdAtLabel.text = "Baked \(hoursBetweenDates)h Ago"
+            } else {
+                self.createdAtLabel.text = "Baked on " + _formatter.stringFromDate(item.createdAt)
+            }
         }
         
     }
+    
     @IBAction func onBuy(sender: AnyObject) {
         println("on buy presed")
         if PFUser.currentUser()["stripeCustomerId"] != nil {
@@ -92,18 +104,5 @@ class ItemDetailViewController: UIViewController, UITableViewDelegate, UITableVi
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = ItemCell()
-        return cell
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
     }
 }

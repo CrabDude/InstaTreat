@@ -7,13 +7,21 @@
 //
 
 import UIKit
+import QuartzCore
 
+private var _formatter = NSDateFormatter()
+private var _timezone = NSTimeZone(abbreviation: "PST")
 
 class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var items = [Item]()
     var refreshControl:UIRefreshControl!
-    
+    var formatter: NSDateFormatter {
+        _formatter.dateFormat = "M/d/Y"
+        _formatter.timeZone = _timezone
+        return _formatter
+    }
+
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -25,6 +33,8 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
         query.includeKey("baker")
         let pfItems = query.findObjects() as [PFObject]
         self.items = Item.itemsWithPFObjectArray(pfItems)
+        
+        self.tableView.rowHeight = 340
         self.tableView.reloadData()
         
         println("item count: \(self.items.count)")
@@ -49,7 +59,7 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let dateFormat = NSDateFormatter()
         dateFormat.dateFormat = "EEE, MMM d, h:mm a"
         cell.createdAtLabel.text = dateFormat.stringFromDate(item.createdAt)
-        cell.quantityLabel.text = String(item.quantity)
+        cell.quantityLabel.text = String(item.quantity) + " Remaining"
 //        cell.distanceLabel.text = item.distance
         
         
@@ -66,21 +76,33 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //            cell.starRatingView.rating = Float(item.ratingTotal) / Float(item.ratingCount)
 //        }
         
-        if let image = item.baker.image {
+        let setTextShadow = {(view: UIView) -> Void in
+            let layer = view.layer
+            layer.shadowOpacity = 1
+            layer.shadowRadius = 2
+            layer.shadowOffset = CGSizeMake(0, 0)
+        }
+        
+        setTextShadow(cell.titleLabel)
+        setTextShadow(cell.createdAtLabel)
+        setTextShadow(cell.quantityLabel)
+        setTextShadow(cell.priceLabel)
+
+        
+        let setBakerImageValues = {(image: UIImage?) -> Void in
             cell.bakerImageView?.image = image
-            cell.bakerImageView?.layer.borderWidth = 3.0
+            cell.bakerImageView?.layer.borderWidth = 2
             cell.bakerImageView?.layer.borderColor = UIColor.whiteColor().CGColor
             cell.bakerImageView?.layer.cornerRadius = cell.bakerImageView.frame.size.width / 2
             cell.bakerImageView?.clipsToBounds = true
+        }
+
+        if let image = item.baker.image {
+            setBakerImageValues(image)
             
         } else {
             item.baker.onImageLoad = {
-                cell.bakerImageView?.image = item.baker.image
-                cell.bakerImageView?.layer.borderWidth = 3.0
-                cell.bakerImageView?.layer.borderColor = UIColor.whiteColor().CGColor
-                cell.bakerImageView?.layer.cornerRadius = cell.bakerImageView.frame.size.width / 2
-                cell.bakerImageView?.clipsToBounds = true
-                return
+                setBakerImageValues(item.baker.image)
             }
         }
         
@@ -97,36 +119,37 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
         
+        let setBadgeImageValues = {(imageView: UIImageView) -> Void in
+            imageView.layer.cornerRadius = imageView.frame.size.width / 2
+            imageView.clipsToBounds = true
+            imageView.hidden = false
+        }
+        
         cell.badge1Image.hidden = true
         cell.badge2Image.hidden = true
         cell.badge3Image.hidden = true
         cell.badge4Image.hidden = true
         
-        
         for tag in item.tags {
             switch (tag) {
             case "Nut Free":
-                cell.badge1Image?.layer.borderWidth = 3.0
-                cell.badge1Image?.layer.borderColor = UIColor.whiteColor().CGColor
-                cell.badge1Image?.layer.cornerRadius = cell.bakerImageView.frame.size.width / 2
-                cell.badge1Image?.clipsToBounds = true
-                cell.badge1Image.hidden = false
+                setBadgeImageValues(cell.badge1Image)
             case "Gluten Free":
-                cell.badge2Image?.layer.borderWidth = 3.0
-                cell.badge2Image?.layer.borderColor = UIColor.whiteColor().CGColor
-                cell.badge2Image?.layer.cornerRadius = cell.bakerImageView.frame.size.width / 2
-                cell.badge2Image?.clipsToBounds = true
-                cell.badge2Image.hidden = false
+                setBadgeImageValues(cell.badge2Image)
             case "Egg Free":
-                cell.badge3Image?.layer.borderWidth = 3.0
-                cell.badge3Image?.layer.borderColor = UIColor.whiteColor().CGColor
-                cell.badge3Image?.layer.cornerRadius = cell.bakerImageView.frame.size.width / 2
-                cell.badge3Image?.clipsToBounds = true
-                cell.badge3Image.hidden = false
+                setBadgeImageValues(cell.badge3Image)
             default:
                 break
             }
-            
+        }
+        
+        let distanceBetweenDates = NSDate().timeIntervalSinceDate(item.createdAt)
+        let hoursBetweenDates = Int(distanceBetweenDates / 3600)
+        
+        if hoursBetweenDates < 24 {
+            cell.createdAtLabel.text = "\(hoursBetweenDates)h Ago"
+        } else {
+            cell.createdAtLabel.text = self.formatter.stringFromDate(item.createdAt)
         }
         
         cell.buyButton.tag = indexPath.row
@@ -135,28 +158,19 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if let dc = segue.destinationViewController as? DetailViewController {
-//            if let indexPath = self.tableView.indexPathForSelectedRow() {
-//                let item = self.items[indexPath.row]
-//                dc.item = item
-//            }
-//        }
-////        var idx = sender as UIButton
-////        println(idx.tag)
-//    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("DetailViewController") as DetailViewController
-        let item = self.items[indexPath.row]
-        vc.item = item
-//        var itemDetailnib = UINib(nibName: "ItemDetailTableViewCell", bundle: nil)
-//        var bakerDetailnib = UINib(nibName: "BakerDetailTableViewCell", bundle: nil)
-//        vc.tableView.registerNib(itemDetailnib, forCellReuseIdentifier: "itemDetailTableViewCell")
-//        vc.tableView.registerNib(bakerDetailnib, forCellReuseIdentifier: "bakerDetailTableViewCell")
-
-        self.navigationController?.pushViewController(vc, animated: true)
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let dc = segue.destinationViewController as? ItemDetailViewController {
+            println("Segue to ItemDetailViewController")
+            if let indexPath = self.tableView.indexPathForSelectedRow() {
+                let item = self.items[indexPath.row]
+                dc.item = item
+                println(indexPath.row, item)
+            }
+        }
+//        var idx = sender as UIButton
+//        println(idx.tag)
     }
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.items.count
