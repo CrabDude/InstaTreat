@@ -16,7 +16,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
-        
+        self.navigationItem.title = "Login"
         print("printing user")
         println(AppHelper.defaults.stringForKey("currentUser"))
         

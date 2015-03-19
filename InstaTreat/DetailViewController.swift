@@ -24,6 +24,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         println("loading view")
+        self.navigationItem.title = "Item Details"
         self.tableView.rowHeight = 250.0
         
 //        self.tableView.frame.height = CGFloat(350.0)
