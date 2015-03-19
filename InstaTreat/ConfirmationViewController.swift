@@ -22,7 +22,6 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate {
     @IBOutlet weak var address1Label: UILabel!
     @IBOutlet weak var address2Label: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
-    @IBOutlet weak var stateLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     
     var alert = UIAlertController(title: "Thank You!", message: "Your order is on its way", preferredStyle: UIAlertControllerStyle.Alert)
@@ -41,14 +40,13 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate {
         self.itemNameLabel.text = self.item.title
         self.address1Label.text = address["address1"]
         self.address2Label.text = address["address2"]
-        self.cityLabel.text = address["city"]
-        self.stateLabel.text = address["state"]
-        self.totalLabel.text = ""
+        self.cityLabel.text = address["city"]! + ", " + address["state"]!
         println(self.card)
         println(self.item)
         println(self.address)
+        self.itemCost.text =  String(format: "$%.2f", self.item.price)
         self.total = self.deliveryCharge + self.item.price
-        self.totalLabel.text = "$\(self.total)"
+        self.totalLabel.text = String(format: "$%.2f", self.total)
         println(self.total)
         
     }
@@ -100,18 +98,12 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate {
             }
         }
         
-        let okAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-            self.dismiss()
-        }
-        alert.addAction(okAction)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default) {
+            (action) in
+            _ = self.navigationController?.popToRootViewControllerAnimated(true)
+        })
         self.presentViewController(alert, animated: true, completion: nil)
         
-    }
-    
-    func dismiss(){
-        
-        var vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamNavigationController") as UINavigationController
-        self.navigationController?.presentViewController(vc, animated: true, completion: nil)
     }
     
     func chargeCard(id: NSString, amount: Float) {
