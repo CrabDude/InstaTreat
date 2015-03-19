@@ -22,6 +22,7 @@ class BakerSalesDetailViewController: UITableViewController, UIAlertViewDelegate
         var query = PFQuery(className:"Sale")
         query.whereKey("baker", equalTo:User.currentUser.pfUser)
         query.includeKey("buyer")
+        query.includeKey("item")
         query.orderByDescending("createdAt")
         
         query.findObjectsInBackgroundWithBlock {
