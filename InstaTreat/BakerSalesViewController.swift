@@ -70,7 +70,8 @@ class BakerSalesViewController: UIViewController, UITableViewDelegate, UITableVi
         let item = items[indexPath.row]
         cell.titleLabel.text = item.title
         cell.priceLabel.text = String(format: "$%.2f", item.price)
-        cell.quantityLabel.text = String(item.quantity)
+        cell.quantityLabel.text = String(item.soldQuantity)
+        cell.quantityRemaining.text = String(item.quantity-item.soldQuantity)
         let dateFormat = NSDateFormatter()
         dateFormat.dateFormat = "MMM d,h:mm a"
         cell.createdTimeLabel.text = dateFormat.stringFromDate(item.createdAt)

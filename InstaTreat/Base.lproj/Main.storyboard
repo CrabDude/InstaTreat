@@ -1165,6 +1165,7 @@
                                             <outlet property="itemImageView" destination="w6q-la-WEN" id="fND-lb-oly"/>
                                             <outlet property="priceLabel" destination="e8c-U4-epO" id="qVI-i8-w6n"/>
                                             <outlet property="quantityLabel" destination="sRw-ZD-04q" id="4G8-Ry-4eG"/>
+                                            <outlet property="quantityRemaining" destination="mjK-5k-36i" id="3uk-hd-xZB"/>
                                             <outlet property="titleLabel" destination="Wdu-ri-aL3" id="nZJ-g8-Hd4"/>
                                             <segue destination="XDk-pT-f0s" kind="push" id="LLJ-b6-PDw"/>
                                         </connections>

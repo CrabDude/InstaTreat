@@ -12,9 +12,13 @@ class SalesCell: UITableViewCell {
 
     @IBOutlet var priceLabel: UILabel!
     @IBOutlet var quantityLabel: UILabel!
+    
     @IBOutlet var createdTimeLabel: UILabel!
     @IBOutlet var itemImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
+    
+    
+    @IBOutlet var quantityRemaining: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
