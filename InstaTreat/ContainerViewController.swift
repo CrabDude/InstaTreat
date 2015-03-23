@@ -70,7 +70,8 @@ class ContainerViewController: UIViewController, UIGestureRecognizerDelegate, Si
             self.leftViewController = UIStoryboard.leftViewController()
             self.leftViewController!.menuItems = [
                 MenuItem(title: "Payment", image: UIImage(named: "payment")),
-                MenuItem(title: "Profile", image: UIImage(named: "profile"))
+                MenuItem(title: "Profile", image: UIImage(named: "profile")),
+                MenuItem(title: "Logout", image: UIImage(named: "exit"))
             ]
             
             self.addChildSidePanelController(self.leftViewController!)
@@ -150,6 +151,11 @@ class ContainerViewController: UIViewController, UIGestureRecognizerDelegate, Si
         case "Payment":
             let vc = storyboard.instantiateViewControllerWithIdentifier("Payment") as UIViewController // EditPaymentViewController
             self.navigationController?.pushViewController(vc, animated: true)
+        case "Profile":
+            let vc = storyboard.instantiateViewControllerWithIdentifier("Payment") as UIViewController // EditPaymentViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        case "Logout":
+            UIStoryboard.logout()
         default:
             println("none")
         }
@@ -159,7 +165,7 @@ class ContainerViewController: UIViewController, UIGestureRecognizerDelegate, Si
 }
 
 var _centerViewController: UIViewController!
-var _containerViewController: UIViewController!
+var _containerViewController: ContainerViewController!
 var _leftViewController: UIViewController!
 
 extension UIStoryboard {
@@ -169,7 +175,7 @@ extension UIStoryboard {
         return mainStoryboard().instantiateViewControllerWithIdentifier("SidePanelViewController") as? SidePanelViewController
     }
     
-    class var containerViewController: UIViewController {
+    class var containerViewController: ContainerViewController {
         get {
             return _containerViewController
         }
@@ -197,8 +203,18 @@ extension UIStoryboard {
     
     class func logout() {
         User.logout()
-        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as UIViewController
-        self.containerViewController.view.window?.rootViewController = vc
-        self.centerViewController = nil
+        
+        let appDelegate = UIApplication.sharedApplication().delegate
+        // There's really no reason a second ! should be necessary, this is clearly an xcode bug
+        let window = (appDelegate?.window!)!
+        
+        UIView.transitionWithView(window, duration: 0.5, options: UIViewAnimationOptions.TransitionCurlDown, animations: {
+            window.rootViewController = AppHelper.storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as LoginViewController
+        }, completion: nil)
+        
+    }
+    
+    class func toggleLeftPanel() {
+        self.containerViewController.toggleLeftPanel()
     }
 }

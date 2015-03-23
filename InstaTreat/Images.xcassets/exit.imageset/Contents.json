@@ -3,16 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "973-user-toolbar.png"
+      "filename" : "602-exit.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "973-user-toolbar@2x.png"
+      "filename" : "602-exit@2x.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "602-exit@3x.png"
     }
   ],
   "info" : {

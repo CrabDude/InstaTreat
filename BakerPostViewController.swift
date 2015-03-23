@@ -104,7 +104,7 @@ class BakerPostViewController: UIViewController, UINavigationControllerDelegate,
         }
     }
     
-    @IBAction func logoutTapped(sender: AnyObject) {
-        UIStoryboard.logout()
+    @IBAction func onMenuTap(sender: AnyObject) {
+        UIStoryboard.toggleLeftPanel()
     }
 }

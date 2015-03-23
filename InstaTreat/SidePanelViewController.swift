@@ -30,6 +30,14 @@ class SidePanelViewController: UITableViewController, UITableViewDataSource, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        
+        // This is what we have to do avoid status bar overlap (Seriously??)
+        let height = UIApplication.sharedApplication().statusBarFrame.size.height
+        let insets = UIEdgeInsets(top: height, left: 0, bottom: 0, right: 0)
+        self.tableView.contentInset = insets
+        self.tableView.scrollIndicatorInsets = insets
+        
         println("side menu did load")
 //        self.profileImage.layer.cornerRadius = 9.0
 //        self.profileImage.layer.masksToBounds = true

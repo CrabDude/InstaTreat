@@ -95,8 +95,8 @@ class BakerHistoryViewController: UIViewController , UITableViewDelegate, UITabl
         return self.items.count
     }
     
-    @IBAction func logoutTapped(sender: AnyObject) {
-        UIStoryboard.logout()
+    @IBAction func onMenuTap(sender: AnyObject) {
+        UIStoryboard.toggleLeftPanel()
     }
     // MARK: - Navigation
 

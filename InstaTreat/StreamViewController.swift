@@ -178,8 +178,8 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return self.items.count
     }
     
-    @IBAction func onLogoutPressed(sender: UIButton) {
-        UIStoryboard.logout()
+    @IBAction func onMenuTap(sender: UIButton) {
+        UIStoryboard.toggleLeftPanel()
     }
 
     @IBAction func onMapButtonPressed(sender: UIButton) {

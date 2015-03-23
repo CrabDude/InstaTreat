@@ -27,7 +27,13 @@ class LoginViewController: UIViewController {
             (user, error) in
             println(user)
             if error == nil {
-                self.view.window?.rootViewController = ContainerViewController()
+                let appDelegate = UIApplication.sharedApplication().delegate
+                // There's really no reason a second ! should be necessary, this is clearly an xcode bug
+                let window = (appDelegate?.window!)!
+                
+                UIView.transitionWithView(window, duration: 0.5, options: UIViewAnimationOptions.TransitionCurlUp, animations: {
+                    window.rootViewController = ContainerViewController()
+                }, completion: nil)
             } else {
                 println(error)
                 println("user login failed")
