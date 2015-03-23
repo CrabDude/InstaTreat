@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51797218081E0A4DA15F2E27 /* libPods-InstaTreat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05A6DFE2C54BB958A6D29477 /* libPods-InstaTreat.a */; };
 		584F80A21AB3F99F00AF664D /* BakerSalesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584F80A11AB3F99F00AF664D /* BakerSalesDetailViewController.swift */; };
 		584F80A41AB3F9E000AF664D /* SalesBuyerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584F80A31AB3F9E000AF664D /* SalesBuyerCell.swift */; };
 		588991D71AB3ABEC00EA84FD /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588991D61AB3ABEC00EA84FD /* ContainerViewController.swift */; };
@@ -40,6 +41,9 @@
 		9521B2CD1AAE02910076ECB8 /* BakerPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521B2CC1AAE02910076ECB8 /* BakerPostViewController.swift */; };
 		95FECDAD1AB3FD1F0087CF3E /* BakerHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FECDAC1AB3FD1F0087CF3E /* BakerHistoryViewController.swift */; };
 		95FECDAF1AB3FD590087CF3E /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FECDAE1AB3FD590087CF3E /* HistoryCell.swift */; };
+		9F1186181ABFA01F005E4CEE /* GooglePlacesAutocomplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1186171ABFA01F005E4CEE /* GooglePlacesAutocomplete.swift */; };
+		9F11861A1ABFA0CB005E4CEE /* GooglePlacesAutocomplete.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F1186191ABFA0CB005E4CEE /* GooglePlacesAutocomplete.xib */; };
+		9F11861C1ABFA125005E4CEE /* SelectAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F11861B1ABFA125005E4CEE /* SelectAddressViewController.swift */; };
 		9F4F68781AAFC22600434D7B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F68771AAFC22600434D7B /* LoginViewController.swift */; };
 		9F4F687B1AAFCA2800434D7B /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F687A1AAFCA2800434D7B /* AppHelper.swift */; };
 		9F4F687D1AAFD69100434D7B /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F687C1AAFD69100434D7B /* StreamViewController.swift */; };
@@ -57,7 +61,6 @@
 		9FCD66DA1AB7B540003CAC02 /* BakerDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FCD66D81AB7B540003CAC02 /* BakerDetailTableViewCell.xib */; };
 		9FE54FCC1AB902BD007BBE1E /* ItemImagesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE54FCA1AB902BD007BBE1E /* ItemImagesViewCell.swift */; };
 		9FE54FCD1AB902BD007BBE1E /* ItemImagesViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FE54FCB1AB902BD007BBE1E /* ItemImagesViewCell.xib */; };
-		FBD8FC97ECD66F51B0F7ADB4 /* libPods-InstaTreat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E089D56D977369D0970766F1 /* libPods-InstaTreat.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05A6DFE2C54BB958A6D29477 /* libPods-InstaTreat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstaTreat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		584F80A11AB3F99F00AF664D /* BakerSalesDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BakerSalesDetailViewController.swift; sourceTree = "<group>"; };
 		584F80A31AB3F9E000AF664D /* SalesBuyerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalesBuyerCell.swift; sourceTree = "<group>"; };
 		588991D61AB3ABEC00EA84FD /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +114,9 @@
 		9521B2CC1AAE02910076ECB8 /* BakerPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BakerPostViewController.swift; path = ../BakerPostViewController.swift; sourceTree = "<group>"; };
 		95FECDAC1AB3FD1F0087CF3E /* BakerHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BakerHistoryViewController.swift; sourceTree = "<group>"; };
 		95FECDAE1AB3FD590087CF3E /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		9F1186171ABFA01F005E4CEE /* GooglePlacesAutocomplete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlacesAutocomplete.swift; sourceTree = "<group>"; };
+		9F1186191ABFA0CB005E4CEE /* GooglePlacesAutocomplete.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GooglePlacesAutocomplete.xib; sourceTree = "<group>"; };
+		9F11861B1ABFA125005E4CEE /* SelectAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectAddressViewController.swift; sourceTree = "<group>"; };
 		9F4F68771AAFC22600434D7B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9F4F687A1AAFCA2800434D7B /* AppHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
 		9F4F687C1AAFD69100434D7B /* StreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamViewController.swift; sourceTree = "<group>"; };
@@ -128,7 +135,6 @@
 		9FE54FCA1AB902BD007BBE1E /* ItemImagesViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemImagesViewCell.swift; sourceTree = "<group>"; };
 		9FE54FCB1AB902BD007BBE1E /* ItemImagesViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemImagesViewCell.xib; sourceTree = "<group>"; };
 		CB6ED12A06009C78E723CCCE /* Pods-InstaTreat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaTreat.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaTreat/Pods-InstaTreat.release.xcconfig"; sourceTree = "<group>"; };
-		E089D56D977369D0970766F1 /* libPods-InstaTreat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstaTreat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +153,7 @@
 				950352911AAFBE7800CBFA13 /* CoreGraphics.framework in Frameworks */,
 				9503528F1AAFBE6D00CBFA13 /* CFNetwork.framework in Frameworks */,
 				9503528D1AAFBE6400CBFA13 /* AudioToolbox.framework in Frameworks */,
-				FBD8FC97ECD66F51B0F7ADB4 /* libPods-InstaTreat.a in Frameworks */,
+				51797218081E0A4DA15F2E27 /* libPods-InstaTreat.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +270,7 @@
 				588991D61AB3ABEC00EA84FD /* ContainerViewController.swift */,
 				588991DA1AB3AF6900EA84FD /* SidePanelViewController.swift */,
 				9FCD66D11AB7AE18003CAC02 /* DetailViewController.swift */,
+				9F11861B1ABFA125005E4CEE /* SelectAddressViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -299,6 +306,8 @@
 		9F4F68791AAFCA1800434D7B /* helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9F1186171ABFA01F005E4CEE /* GooglePlacesAutocomplete.swift */,
+				9F1186191ABFA0CB005E4CEE /* GooglePlacesAutocomplete.xib */,
 				9F4F687A1AAFCA2800434D7B /* AppHelper.swift */,
 			);
 			name = helpers;
@@ -315,7 +324,7 @@
 		E805B5C5FA78B25F7142CBEE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E089D56D977369D0970766F1 /* libPods-InstaTreat.a */,
+				05A6DFE2C54BB958A6D29477 /* libPods-InstaTreat.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -413,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FCD66D61AB7AF38003CAC02 /* ItemDetailTableViewCell.xib in Resources */,
+				9F11861A1ABFA0CB005E4CEE /* GooglePlacesAutocomplete.xib in Resources */,
 				58B9C8531AA80ED500B28BC0 /* Main.storyboard in Resources */,
 				9FCD66DA1AB7B540003CAC02 /* BakerDetailTableViewCell.xib in Resources */,
 				58B9C8581AA80ED500B28BC0 /* LaunchScreen.xib in Resources */,
@@ -474,10 +484,12 @@
 				58B9C8501AA80ED500B28BC0 /* ViewController.swift in Sources */,
 				9F4F687B1AAFCA2800434D7B /* AppHelper.swift in Sources */,
 				950352EC1AB39CA900CBFA13 /* BakerSalesViewController.swift in Sources */,
+				9F1186181ABFA01F005E4CEE /* GooglePlacesAutocomplete.swift in Sources */,
 				9FCD66D91AB7B540003CAC02 /* BakerDetailTableViewCell.swift in Sources */,
 				95FECDAF1AB3FD590087CF3E /* HistoryCell.swift in Sources */,
 				584F80A21AB3F99F00AF664D /* BakerSalesDetailViewController.swift in Sources */,
 				9F527B231AB2B0AD008720CA /* AddressViewController.swift in Sources */,
+				9F11861C1ABFA125005E4CEE /* SelectAddressViewController.swift in Sources */,
 				9FE54FCC1AB902BD007BBE1E /* ItemImagesViewCell.swift in Sources */,
 				9FCD66D21AB7AE18003CAC02 /* DetailViewController.swift in Sources */,
 				95113CBC1AB90BEA001E7727 /* BakerRepostItemViewController.swift in Sources */,

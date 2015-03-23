@@ -101,7 +101,18 @@ class ItemDetailViewController: UIViewController {
         if PFUser.currentUser()["stripeCustomerId"] != nil {
             let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("AddressViewController") as AddressViewController
             vc.item = self.item
-            self.navigationController?.pushViewController(vc, animated: true)
+            
+            let gpaViewController = GooglePlacesAutocomplete(
+                apiKey: "AIzaSyAgbg4DuvV80k6fhUiKzCqddOu8sk29Ess",
+                placeType: .Address
+            )
+            
+            gpaViewController.placeDelegate = self // Conforms to GooglePlacesAutocompleteDelegate
+            
+            presentViewController(gpaViewController, animated: true, completion: nil)
+            
+//            self.performSegueWithIdentifier("selectAddressSegue", sender: self)
+//            self.navigationController?.pushViewController(vc, animated: true)
         }
         else {
             let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("SaveCardViewController") as SaveCardViewController
@@ -110,4 +121,24 @@ class ItemDetailViewController: UIViewController {
         }
         
     }
+    
+    
 }
+
+extension ItemDetailViewController: GooglePlacesAutocompleteDelegate {
+    func placeSelected(place: Place) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("ConfirmationViewController") as ConfirmationViewController
+        vc.item = self.item
+        vc.address = ["address1":"blah", "address2":"blah", "city":"blah", "state": "blah"]
+        vc.addressString = place.description
+        self.navigationController?.pushViewController(vc, animated: true)
+        println(place.description)
+    }
+    
+    func placeViewClosed() {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+}
+

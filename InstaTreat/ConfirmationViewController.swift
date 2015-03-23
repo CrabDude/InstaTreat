@@ -14,14 +14,17 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate {
     
     var card:STPCard!
     var item:Item!
+    var addressString: String!
     var address: Dictionary<String, String>!
     let deliveryCharge = Float(5)
     var total: Float!
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var itemCost: UILabel!
-    @IBOutlet weak var address1Label: UILabel!
-    @IBOutlet weak var address2Label: UILabel!
-    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    
+//    @IBOutlet weak var address1Label: UILabel!
+//    @IBOutlet weak var address2Label: UILabel!
+//    @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     
     var alert = UIAlertController(title: "Thank You!", message: "Your order is on its way", preferredStyle: UIAlertControllerStyle.Alert)
@@ -38,9 +41,10 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate {
         super.viewDidLoad()
         println("confirmation view")
         self.itemNameLabel.text = self.item.title
-        self.address1Label.text = address["address1"]
-        self.address2Label.text = address["address2"]
-        self.cityLabel.text = address["city"]! + ", " + address["state"]!
+        self.addressLabel.text = self.addressString
+//        self.address1Label.text = address["address1"]
+//        self.address2Label.text = address["address2"]
+//        self.cityLabel.text = address["city"]! + ", " + address["state"]!
         println(self.card)
         println(self.item)
         println(self.address)
@@ -67,7 +71,7 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate {
         let address2 = address["address2"]!
         let city = address["city"]!
         let state = address["state"]!
-        sale["address"] = "\(address1) \(address2), \(city), \(state)"
+        sale["address"] = self.addressString
         sale.saveInBackgroundWithBlock {
             (success: Bool, error: NSError!) -> Void in
             if (success) {
