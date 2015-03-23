@@ -23,6 +23,9 @@ class SalesCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.itemImageView.layer.cornerRadius = 8.0
+        self.itemImageView.clipsToBounds = true
+
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

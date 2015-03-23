@@ -16,7 +16,7 @@ class BakerSalesDetailViewController: UITableViewController, UIAlertViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.tableView.rowHeight = 110
+        self.tableView.rowHeight = 100
         self.tableView.allowsSelection = false
         
         var query = PFQuery(className:"Sale")

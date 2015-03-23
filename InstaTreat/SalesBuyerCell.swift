@@ -19,5 +19,8 @@ class SalesBuyerCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.buyerImageView.layer.cornerRadius = 8.0
+        self.buyerImageView.clipsToBounds = true
+
     }
 }

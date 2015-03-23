@@ -73,9 +73,9 @@ class BakerPostDetailsViewController: UIViewController, UITextViewDelegate {
         {
             self.item.description = self.descriptionTextView.text
         }
-        if let number: NSString = self.PriceLabel.text {
-            self.item.price = number.floatValue
-        }
+        let price : NSString = self.PriceLabel.text.stringByReplacingOccurrencesOfString("$", withString: "", options: .allZeros, range: nil)
+            self.item.price = price.floatValue
+
         if let number = self.quantityLabel.text?.toInt() {
             self.item.quantity = number
         }
