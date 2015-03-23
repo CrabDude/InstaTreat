@@ -755,12 +755,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="121 E Tasman Dr" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSi-RD-3tM">
-                                <rect key="frame" x="16" y="233" width="288" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="94e-2p-zGb">
                                 <rect key="frame" x="0.0" y="237" width="320" height="20"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -830,6 +824,7 @@
                     <navigationItem key="navigationItem" id="Lds-G9-Pnt"/>
                     <connections>
                         <outlet property="addressLabel" destination="sZU-sC-7Qi" id="BDc-bo-Vkt"/>
+                        <outlet property="deliveryLabel" destination="ZtY-zb-KIc" id="x3W-e1-WbY"/>
                         <outlet property="itemCost" destination="psw-JL-vQd" id="Tsr-De-eKE"/>
                         <outlet property="itemNameLabel" destination="Rv4-Ir-2eo" id="VV2-b7-MzY"/>
                         <outlet property="totalLabel" destination="9l0-jv-Vnc" id="qh0-ol-Wu6"/>

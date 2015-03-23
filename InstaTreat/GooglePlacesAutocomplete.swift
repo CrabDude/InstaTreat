@@ -156,7 +156,6 @@ extension GooglePlacesAutocompleteContainer: UITableViewDataSource, UITableViewD
 
   public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     delegate?.placeSelected?(self.places[indexPath.row])
-    println(self.places[indexPath.row])
     
   }
 }
@@ -210,8 +209,6 @@ extension GooglePlacesAutocompleteContainer: UISearchBarDelegate {
       error: &serializationError
     ) as NSDictionary
     
-    println(json)
-    println(response.statusCode)
 
     if let error = serializationError {
       println("GooglePlacesAutocomplete Error: \(error.localizedDescription)")

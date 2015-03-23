@@ -28,10 +28,13 @@ class SelectAddressViewController: UIViewController {
 extension SelectAddressViewController: GooglePlacesAutocompleteDelegate {
     func placeSelected(place: Place) {
         self.dismissViewControllerAnimated(true, completion: nil)
+        
+        
         println(place.description)
     }
     
     func placeViewClosed() {
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
 }

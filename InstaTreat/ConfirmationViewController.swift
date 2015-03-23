@@ -16,8 +16,11 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate {
     var item:Item!
     var addressString: String!
     var address: Dictionary<String, String>!
-    let deliveryCharge = Float(5)
+    var deliveryCharge: Float!
+    var deliveryTime: NSDate!
     var total: Float!
+    
+    @IBOutlet weak var deliveryLabel: UILabel!
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var itemCost: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
@@ -42,12 +45,7 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate {
         println("confirmation view")
         self.itemNameLabel.text = self.item.title
         self.addressLabel.text = self.addressString
-//        self.address1Label.text = address["address1"]
-//        self.address2Label.text = address["address2"]
-//        self.cityLabel.text = address["city"]! + ", " + address["state"]!
-        println(self.card)
-        println(self.item)
-        println(self.address)
+        self.deliveryLabel.text = "$\(self.deliveryCharge)"
         self.itemCost.text =  String(format: "$%.2f", self.item.price)
         self.total = self.deliveryCharge + self.item.price
         self.totalLabel.text = String(format: "$%.2f", self.total)

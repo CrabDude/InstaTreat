@@ -111,8 +111,6 @@ class ItemDetailViewController: UIViewController {
             
             presentViewController(gpaViewController, animated: true, completion: nil)
             
-//            self.performSegueWithIdentifier("selectAddressSegue", sender: self)
-//            self.navigationController?.pushViewController(vc, animated: true)
         }
         else {
             let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("SaveCardViewController") as SaveCardViewController
@@ -128,17 +126,57 @@ class ItemDetailViewController: UIViewController {
 extension ItemDetailViewController: GooglePlacesAutocompleteDelegate {
     func placeSelected(place: Place) {
         self.dismissViewControllerAnimated(true, completion: nil)
-        
-        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("ConfirmationViewController") as ConfirmationViewController
-        vc.item = self.item
-        vc.address = ["address1":"blah", "address2":"blah", "city":"blah", "state": "blah"]
-        vc.addressString = place.description
-        self.navigationController?.pushViewController(vc, animated: true)
-        println(place.description)
+        var dropOffAddress = place.description
+        self.getDeliveryQuoteAndPush(dropOffAddress)
     }
     
     func placeViewClosed() {
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    func getDeliveryQuoteAndPush(dropOffAddress: NSString!) {
+        
+        var pickupAddress = self.item?.baker.address
+        
+        let manager = AFHTTPRequestOperationManager()
+        var p: NSDictionary!
+        var deliveryQuote: NSDictionary!
+        var testApiKey = "6fa2afca-e07b-48f1-b7f9-1bc063e198e9"
+        
+        manager.requestSerializer = AFHTTPRequestSerializer()
+        manager.requestSerializer.setAuthorizationHeaderFieldWithUsername(testApiKey, password: "")
+        p = ["pickup_address": pickupAddress!, "dropoff_address": dropOffAddress] as NSDictionary
+        
+        manager.POST("https://api.postmates.com/v1/customers/cus_KF37niwIy5dqak/delivery_quotes", parameters: p, success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+            var postMatesResponse = responseObject as NSDictionary
+            
+            var fee = postMatesResponse["fee"] as Float
+            
+            let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("ConfirmationViewController") as ConfirmationViewController
+            vc.item = self.item
+            vc.address = ["address1":"blah", "address2":"blah", "city":"blah", "state": "blah"]
+            vc.addressString = dropOffAddress
+            vc.deliveryCharge = fee/100.0
+            var deliveryTime = postMatesResponse["dropoff_eta"]! as NSString
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss.SSSSxxx"
+            let date = dateFormatter.dateFromString(deliveryTime)
+            println(date)
+//            vc.deliveryTime = postMatesResponse["dropoff_eta"] as NSDate
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+
+            
+            
+            },
+            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+                println("Error: " + error.localizedDescription)
+                
+        })
+//        return deliveryQuote
+        
+        
+    }
+
 }
 

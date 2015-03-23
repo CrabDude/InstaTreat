@@ -11,6 +11,7 @@ import QuartzCore
 
 private var _formatter = NSDateFormatter()
 private var _timezone = NSTimeZone(abbreviation: "PST")
+var sItem: Item!
 
 class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -198,11 +199,20 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func buy(sender: UIButton){
         println("on buy presed")
         var selectedItem = self.items[sender.tag]
-        
+        sItem = self.items[sender.tag]
         if PFUser.currentUser()["stripeCustomerId"] != nil {
             let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("AddressViewController") as AddressViewController
             vc.item = selectedItem
-            self.navigationController?.pushViewController(vc, animated: true)
+            
+            let gpaViewController = GooglePlacesAutocomplete(
+                apiKey: "AIzaSyAgbg4DuvV80k6fhUiKzCqddOu8sk29Ess",
+                placeType: .Address
+            )
+            
+            gpaViewController.placeDelegate = self // Conforms to GooglePlacesAutocompleteDelegate
+            
+            presentViewController(gpaViewController, animated: true, completion: nil)
+            
         }
         else {
             let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("SaveCardViewController") as SaveCardViewController
@@ -210,13 +220,57 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
-//        let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("SaveCardViewController") as SaveCardViewController
-//        println("item in streamview")
-//        println(selectedItem)
-//        vc.item = selectedItem
-//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
+}
+
+extension StreamViewController: GooglePlacesAutocompleteDelegate {
+    func placeSelected(place: Place) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+        var dropOffAddress = place.description
+        self.getDeliveryQuoteAndPush(dropOffAddress)
+    }
+    
+    func placeViewClosed() {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func getDeliveryQuoteAndPush(dropOffAddress: NSString!) {
+        var pickupAddress = sItem.baker.address
+        
+        let manager = AFHTTPRequestOperationManager()
+        var p: NSDictionary!
+        var deliveryQuote: NSDictionary!
+        var testApiKey = "6fa2afca-e07b-48f1-b7f9-1bc063e198e9"
+        
+        manager.requestSerializer = AFHTTPRequestSerializer()
+        manager.requestSerializer.setAuthorizationHeaderFieldWithUsername(testApiKey, password: "")
+        p = ["pickup_address": pickupAddress!, "dropoff_address": dropOffAddress] as NSDictionary
+        
+        manager.POST("https://api.postmates.com/v1/customers/cus_KF37niwIy5dqak/delivery_quotes", parameters: p, success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+            var postMatesResponse = responseObject as NSDictionary
+            
+            var fee = postMatesResponse["fee"] as Float
+            
+            let vc = AppHelper.storyboard.instantiateViewControllerWithIdentifier("ConfirmationViewController") as ConfirmationViewController
+            vc.item = sItem
+            vc.address = ["address1":"blah", "address2":"blah", "city":"blah", "state": "blah"]
+            vc.addressString = dropOffAddress
+            vc.deliveryCharge = fee/100.0
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+            
+            
+            },
+            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+                println("Error: " + error.localizedDescription)
+                
+        })
+        //        return deliveryQuote
+        
+        
+    }
     
 }
