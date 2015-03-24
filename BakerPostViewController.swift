@@ -38,7 +38,7 @@ class BakerPostViewController: UIViewController, UINavigationControllerDelegate,
     
 
     @IBAction func AddPhotoPressed(sender: AnyObject) {
-        
+        self.item.images?.removeAll(keepCapacity: false)
         var imagePicker = ELCImagePickerController()
         imagePicker.maximumImagesCount = 5
         imagePicker.imagePickerDelegate = self
