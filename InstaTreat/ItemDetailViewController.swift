@@ -38,19 +38,20 @@ class ItemDetailViewController: UIViewController {
             self.createdAtLabel.text = dateFormat.stringFromDate(item.createdAt)
             self.quantityLabel.text = String(item.quantity) + " Remaining"
             self.descriptionTextView.text = item.description
+            self.navigationItem.title = "Details"
             
-            self.starRatingView.displayMode = UInt(EDStarRatingDisplayHalf)
-            self.starRatingView.starImage = UIImage(named: "star")
-            self.starRatingView.starHighlightedImage = UIImage(named: "star-highlighted")
-            self.starRatingView.maxRating = 5
-            self.starRatingView.horizontalMargin = 12
-            self.starRatingView.editable = false
-            if item.ratingCount == 0 {
-                self.starRatingView.hidden = true
-            } else {
-                self.starRatingView.hidden = false
-                self.starRatingView.rating = Float(item.ratingTotal) / Float(item.ratingCount)
-            }
+//            self.starRatingView.displayMode = UInt(EDStarRatingDisplayHalf)
+//            self.starRatingView.starImage = UIImage(named: "star")
+//            self.starRatingView.starHighlightedImage = UIImage(named: "star-highlighted")
+//            self.starRatingView.maxRating = 5
+//            self.starRatingView.horizontalMargin = 12
+//            self.starRatingView.editable = false
+//            if item.ratingCount == 0 {
+//                self.starRatingView.hidden = true
+//            } else {
+//                self.starRatingView.hidden = false
+//                self.starRatingView.rating = Float(item.ratingTotal) / Float(item.ratingCount)
+//            }
 
             self.bakerImageView?.image = item.baker.image
             self.bakerImageView?.layer.borderWidth = 2
