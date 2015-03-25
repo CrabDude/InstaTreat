@@ -364,7 +364,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" rowHeight="300" id="sbe-Xl-tP5" customClass="ItemCell" customModule="InstaTreat" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="itemCell" rowHeight="300" id="sbe-Xl-tP5" customClass="ItemCell" customModule="InstaTreat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sbe-Xl-tP5" id="NSo-qb-8CC">
@@ -378,15 +378,15 @@
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gluten-free" translatesAutoresizingMaskIntoConstraints="NO" id="FVx-80-75a" userLabel="Badge 2">
-                                                    <rect key="frame" x="212" y="214" width="30" height="30"/>
+                                                    <rect key="frame" x="212" y="209" width="30" height="30"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="egg-free" translatesAutoresizingMaskIntoConstraints="NO" id="Za3-xs-uIa" userLabel="Badge 3">
-                                                    <rect key="frame" x="247" y="214" width="30" height="30"/>
+                                                    <rect key="frame" x="247" y="209" width="30" height="30"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sale" translatesAutoresizingMaskIntoConstraints="NO" id="ecj-na-8XF" userLabel="Badge 4">
-                                                    <rect key="frame" x="282" y="214" width="30" height="30"/>
+                                                    <rect key="frame" x="282" y="209" width="30" height="30"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="Ys4-tU-bzB"/>
@@ -394,7 +394,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="1h Ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcM-T7-86e">
-                                                    <rect key="frame" x="63" y="242" width="112" height="21"/>
+                                                    <rect key="frame" x="63" y="242" width="107" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -431,11 +431,11 @@
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nut-free" translatesAutoresizingMaskIntoConstraints="NO" id="2Wg-25-c1h" userLabel="Badge 1">
-                                                    <rect key="frame" x="177" y="214" width="30" height="30"/>
+                                                    <rect key="frame" x="177" y="209" width="30" height="30"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73F-iH-ZqF">
-                                                    <rect key="frame" x="180" y="249" width="140" height="50"/>
+                                                    <rect key="frame" x="175" y="244" width="140" height="50"/>
                                                     <color key="backgroundColor" red="0.8784313725490196" green="0.56862745098039214" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" none="YES" button="YES"/>
@@ -451,7 +451,7 @@
                                                     </state>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="3 Remaining" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCz-Md-bdN">
-                                                    <rect key="frame" x="63" y="271" width="112" height="21"/>
+                                                    <rect key="frame" x="63" y="271" width="107" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -480,8 +480,8 @@
                                                 <constraint firstItem="73F-iH-ZqF" firstAttribute="leading" secondItem="wCz-Md-bdN" secondAttribute="trailing" constant="5" id="WLh-k4-GkI"/>
                                                 <constraint firstItem="FVx-80-75a" firstAttribute="width" secondItem="ecj-na-8XF" secondAttribute="width" id="X7w-eg-yFc"/>
                                                 <constraint firstItem="v5Y-GW-qv2" firstAttribute="top" secondItem="60h-pf-0ao" secondAttribute="bottom" constant="8" id="Zqk-qu-Nxg"/>
-                                                <constraint firstAttribute="trailing" secondItem="73F-iH-ZqF" secondAttribute="trailing" id="dZP-D7-JCC"/>
-                                                <constraint firstAttribute="bottom" secondItem="73F-iH-ZqF" secondAttribute="bottom" id="fbg-uP-Y4Z"/>
+                                                <constraint firstAttribute="trailing" secondItem="73F-iH-ZqF" secondAttribute="trailing" constant="5" id="dZP-D7-JCC"/>
+                                                <constraint firstAttribute="bottom" secondItem="73F-iH-ZqF" secondAttribute="bottom" constant="5" id="fbg-uP-Y4Z"/>
                                                 <constraint firstItem="v5Y-GW-qv2" firstAttribute="leading" secondItem="NSo-qb-8CC" secondAttribute="leading" constant="8" id="ff6-8G-600"/>
                                                 <constraint firstItem="Za3-xs-uIa" firstAttribute="leading" secondItem="FVx-80-75a" secondAttribute="trailing" constant="5" id="gtp-bZ-cVW"/>
                                                 <constraint firstItem="2Wg-25-c1h" firstAttribute="height" secondItem="ecj-na-8XF" secondAttribute="height" id="hkL-IG-vSJ"/>
@@ -534,18 +534,6 @@
                                 </state>
                                 <connections>
                                     <action selector="onMenuTap:" destination="2Cw-lP-gV0" eventType="touchUpInside" id="ZqP-nw-BF0"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="DZa-fS-APc">
-                            <button key="customView" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Cka-cJ-yhd">
-                                <rect key="frame" x="249" y="10" width="18" height="23"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="locationButton">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onMapButtonPressed:" destination="2Cw-lP-gV0" eventType="touchUpInside" id="WK8-xr-X5W"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -1960,7 +1948,6 @@ Delivered</string>
         <image name="gluten-free" width="224" height="227"/>
         <image name="hamburger" width="23" height="19"/>
         <image name="history" width="25" height="25"/>
-        <image name="locationButton" width="18" height="23"/>
         <image name="nut-free" width="200" height="200"/>
         <image name="orangeButton" width="250" height="44"/>
         <image name="orangeButton_pressed" width="250" height="44"/>

@@ -65,6 +65,13 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
         dateFormat.dateFormat = "EEE, MMM d, h:mm a"
         cell.createdAtLabel.text = dateFormat.stringFromDate(item.createdAt)
         cell.quantityLabel.text = String(item.quantity) + " Remaining"
+        
+        
+        cell.buyButton.layer.borderWidth = 1
+        cell.buyButton.layer.borderColor = UIColor.whiteColor().CGColor
+        cell.buyButton.layer.cornerRadius = cell.buyButton.frame.size.height / 4
+        cell.buyButton.clipsToBounds = true
+        
 //        cell.distanceLabel.text = item.distance
         
         
