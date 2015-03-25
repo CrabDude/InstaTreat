@@ -288,11 +288,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Onboarding_1" translatesAutoresizingMaskIntoConstraints="NO" id="DSZ-7g-NjL">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXP-QB-rit">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXP-QB-rit">
                                 <rect key="frame" x="25" y="498" width="270" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="XgE-0q-J2z"/>
-                                </constraints>
                                 <state key="normal" title="Login" backgroundImage="orangeButton_pressed">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -304,7 +301,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LoginBrandLogo" translatesAutoresizingMaskIntoConstraints="NO" id="V5w-U7-FTZ">
                                 <rect key="frame" x="17" y="28" width="286" height="128"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DFb-iC-F5V">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DFb-iC-F5V">
                                 <rect key="frame" x="25" y="448" width="270" height="45"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -316,7 +313,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3pJ-sK-i5k">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3pJ-sK-i5k">
                                 <rect key="frame" x="25" y="395" width="270" height="45"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -325,19 +322,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="DFb-iC-F5V" secondAttribute="trailing" constant="25" id="EQd-cY-Lxt"/>
-                            <constraint firstItem="DFb-iC-F5V" firstAttribute="top" secondItem="3pJ-sK-i5k" secondAttribute="bottom" constant="20" id="FjX-Z4-h7i"/>
+                            <constraint firstAttribute="trailing" secondItem="DFb-iC-F5V" secondAttribute="trailing" constant="25" id="GwF-xb-9rk"/>
                             <constraint firstAttribute="trailing" secondItem="DSZ-7g-NjL" secondAttribute="trailing" id="HX0-0v-blU"/>
-                            <constraint firstItem="3pJ-sK-i5k" firstAttribute="leading" secondItem="DTJ-Da-KRi" secondAttribute="leading" constant="25" id="MvS-qG-02m"/>
                             <constraint firstItem="DSZ-7g-NjL" firstAttribute="leading" secondItem="DTJ-Da-KRi" secondAttribute="leading" id="RRI-xh-ryO"/>
-                            <constraint firstItem="NXP-QB-rit" firstAttribute="leading" secondItem="DTJ-Da-KRi" secondAttribute="leading" constant="25" id="U2f-f0-Oxp"/>
                             <constraint firstItem="DSZ-7g-NjL" firstAttribute="top" secondItem="DTJ-Da-KRi" secondAttribute="top" id="XAv-5A-P1T"/>
-                            <constraint firstItem="DFb-iC-F5V" firstAttribute="leading" secondItem="DTJ-Da-KRi" secondAttribute="leading" constant="25" id="bAY-eI-qB1"/>
-                            <constraint firstItem="NXP-QB-rit" firstAttribute="top" secondItem="DFb-iC-F5V" secondAttribute="bottom" constant="20" id="dsu-p4-2WU"/>
-                            <constraint firstAttribute="trailing" secondItem="3pJ-sK-i5k" secondAttribute="trailing" constant="25" id="mzr-DH-yNB"/>
-                            <constraint firstItem="gQE-wF-Vx3" firstAttribute="top" secondItem="NXP-QB-rit" secondAttribute="bottom" constant="25" id="tXL-dS-SC4"/>
-                            <constraint firstAttribute="trailing" secondItem="NXP-QB-rit" secondAttribute="trailing" constant="25" id="vwF-aG-04q"/>
+                            <constraint firstItem="3pJ-sK-i5k" firstAttribute="leading" secondItem="DTJ-Da-KRi" secondAttribute="leading" constant="25" id="a0s-GR-M8g"/>
+                            <constraint firstItem="DFb-iC-F5V" firstAttribute="top" secondItem="3pJ-sK-i5k" secondAttribute="bottom" constant="8" id="jlF-mM-Q29"/>
+                            <constraint firstAttribute="trailing" secondItem="3pJ-sK-i5k" secondAttribute="trailing" constant="25" id="pur-jd-vlU"/>
+                            <constraint firstItem="DFb-iC-F5V" firstAttribute="top" secondItem="3pJ-sK-i5k" secondAttribute="bottom" constant="8" id="qFn-5j-fcp"/>
                             <constraint firstItem="gQE-wF-Vx3" firstAttribute="top" secondItem="DSZ-7g-NjL" secondAttribute="bottom" id="xE2-da-z9e"/>
+                            <constraint firstItem="DFb-iC-F5V" firstAttribute="leading" secondItem="DTJ-Da-KRi" secondAttribute="leading" constant="25" id="xMg-3z-cZF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gdL-5p-p9e"/>
