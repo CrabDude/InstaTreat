@@ -37,7 +37,7 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let pfItems = query.findObjects() as [PFObject]
         self.items = Item.itemsWithPFObjectArray(pfItems)
         
-        self.tableView.rowHeight = 340
+        self.tableView.rowHeight = 300
         self.tableView.reloadData()
         
         println("item count: \(self.items.count)")
@@ -59,7 +59,8 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let item = items[indexPath.row]
         cell.titleLabel.text = item.title
-        cell.priceLabel.text = String(format: "$%.2f", item.price)
+        let buttonText = "Buy: " + String(format: "$%.2f", item.price)
+        cell.buyButton.setTitle(buttonText, forState: UIControlState.Normal)
         let dateFormat = NSDateFormatter()
         dateFormat.dateFormat = "EEE, MMM d, h:mm a"
         cell.createdAtLabel.text = dateFormat.stringFromDate(item.createdAt)
@@ -90,7 +91,6 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
         setTextShadow(cell.titleLabel)
         setTextShadow(cell.createdAtLabel)
         setTextShadow(cell.quantityLabel)
-        setTextShadow(cell.priceLabel)
 
         
         let setBakerImageValues = {(image: UIImage?) -> Void in
