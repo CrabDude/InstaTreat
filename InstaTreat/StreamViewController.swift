@@ -46,6 +46,7 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func refresh(sender:AnyObject){
         var query = PFQuery(className: "Item")
         query.includeKey("baker")
+        query.orderByDescending("createdAt")
         let pfItems = query.findObjects() as [PFObject]
         self.items = Item.itemsWithPFObjectArray(pfItems)
         self.tableView.reloadData()
