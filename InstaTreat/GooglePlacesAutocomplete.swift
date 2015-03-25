@@ -71,7 +71,7 @@ public class GooglePlacesAutocomplete: UINavigationController {
     closeButton.style = UIBarButtonItemStyle.Done
 
     gpaViewController.navigationItem.leftBarButtonItem = closeButton
-    gpaViewController.navigationItem.title = "Enter Address"
+    gpaViewController.navigationItem.title = "Enter Delivery Address"
   }
 
   func close() {

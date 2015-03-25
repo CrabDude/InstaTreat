@@ -17,7 +17,7 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate {
     var addressString: String!
     var address: Dictionary<String, String>!
     var deliveryCharge: Float!
-    var deliveryTime: NSDate!
+    var deliveryTime: String!
     var total: Float!
     
     @IBOutlet weak var deliveryLabel: UILabel!
@@ -42,6 +42,7 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        println(self.deliveryTime)
         println("confirmation view")
         self.itemNameLabel.text = self.item.title
         self.addressLabel.text = self.addressString

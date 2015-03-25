@@ -157,11 +157,8 @@ extension ItemDetailViewController: GooglePlacesAutocompleteDelegate {
             vc.address = ["address1":"blah", "address2":"blah", "city":"blah", "state": "blah"]
             vc.addressString = dropOffAddress
             vc.deliveryCharge = fee/100.0
-            var deliveryTime = postMatesResponse["dropoff_eta"]! as NSString
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss.SSSSxxx"
-            let date = dateFormatter.dateFromString(deliveryTime)
-            println(date)
+            var deliveryTime = postMatesResponse["dropoff_eta"]! as String
+            vc.deliveryTime = deliveryTime
 //            vc.deliveryTime = postMatesResponse["dropoff_eta"] as NSDate
             
             self.navigationController?.pushViewController(vc, animated: true)
