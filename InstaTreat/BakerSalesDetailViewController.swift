@@ -11,6 +11,7 @@ import UIKit
 class BakerSalesDetailViewController: UITableViewController, UIAlertViewDelegate {
 
     var sales = [Sale]()
+    var item: Item!
     var alert = UIAlertController(title: "Thank You!", message: "The buyer will be notified.", preferredStyle: UIAlertControllerStyle.Alert)
 
     override func viewDidLoad() {
@@ -21,6 +22,7 @@ class BakerSalesDetailViewController: UITableViewController, UIAlertViewDelegate
         
         var query = PFQuery(className:"Sale")
         query.whereKey("baker", equalTo:User.currentUser.pfUser)
+        query.whereKey("item", equalTo:self.item.parseRef)
         query.includeKey("buyer")
         query.includeKey("item")
         query.orderByDescending("createdAt")

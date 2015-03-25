@@ -92,15 +92,15 @@ class BakerSalesViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //        if let dc = segue.destinationViewController as? ItemDetailViewController {
-        //            if let indexPath = self.tableView.indexPathForSelectedRow() {
-        //                let item = self.items[indexPath.row]
-        //                dc.item = item
-        //            }
-        //        }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let dc = segue.destinationViewController as? BakerSalesDetailViewController {
+            println("Segue to BakerSalesDetailViewController")
+            if let indexPath = self.salesTableView.indexPathForSelectedRow() {
+                dc.item = self.items[indexPath.row]
+            }
+        }
     }
-    
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.items.count
     }

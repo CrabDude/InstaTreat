@@ -10,6 +10,7 @@
 		51797218081E0A4DA15F2E27 /* libPods-InstaTreat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05A6DFE2C54BB958A6D29477 /* libPods-InstaTreat.a */; };
 		584F80A21AB3F99F00AF664D /* BakerSalesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584F80A11AB3F99F00AF664D /* BakerSalesDetailViewController.swift */; };
 		584F80A41AB3F9E000AF664D /* SalesBuyerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584F80A31AB3F9E000AF664D /* SalesBuyerCell.swift */; };
+		587D15671ABF9EBE00BF6512 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587D15661ABF9EBE00BF6512 /* ProfileEditViewController.swift */; };
 		588991D71AB3ABEC00EA84FD /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588991D61AB3ABEC00EA84FD /* ContainerViewController.swift */; };
 		588991D91AB3AC6600EA84FD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588991D81AB3AC6600EA84FD /* User.swift */; };
 		588991DB1AB3AF6900EA84FD /* SidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588991DA1AB3AF6900EA84FD /* SidePanelViewController.swift */; };
@@ -77,6 +78,7 @@
 		05A6DFE2C54BB958A6D29477 /* libPods-InstaTreat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstaTreat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		584F80A11AB3F99F00AF664D /* BakerSalesDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BakerSalesDetailViewController.swift; sourceTree = "<group>"; };
 		584F80A31AB3F9E000AF664D /* SalesBuyerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalesBuyerCell.swift; sourceTree = "<group>"; };
+		587D15661ABF9EBE00BF6512 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		588991D61AB3ABEC00EA84FD /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		588991D81AB3AC6600EA84FD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		588991DA1AB3AF6900EA84FD /* SidePanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidePanelViewController.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				588991DA1AB3AF6900EA84FD /* SidePanelViewController.swift */,
 				9FCD66D11AB7AE18003CAC02 /* DetailViewController.swift */,
 				9F11861B1ABFA125005E4CEE /* SelectAddressViewController.swift */,
+				587D15661ABF9EBE00BF6512 /* ProfileEditViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 				584F80A21AB3F99F00AF664D /* BakerSalesDetailViewController.swift in Sources */,
 				9F527B231AB2B0AD008720CA /* AddressViewController.swift in Sources */,
 				9F11861C1ABFA125005E4CEE /* SelectAddressViewController.swift in Sources */,
+				587D15671ABF9EBE00BF6512 /* ProfileEditViewController.swift in Sources */,
 				9FE54FCC1AB902BD007BBE1E /* ItemImagesViewCell.swift in Sources */,
 				9FCD66D21AB7AE18003CAC02 /* DetailViewController.swift in Sources */,
 				95113CBC1AB90BEA001E7727 /* BakerRepostItemViewController.swift in Sources */,

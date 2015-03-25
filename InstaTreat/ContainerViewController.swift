@@ -69,8 +69,8 @@ class ContainerViewController: UIViewController, UIGestureRecognizerDelegate, Si
         if (self.leftViewController == nil) {
             self.leftViewController = UIStoryboard.leftViewController()
             self.leftViewController!.menuItems = [
-                MenuItem(title: "Payment", image: UIImage(named: "payment")),
                 MenuItem(title: "Profile", image: UIImage(named: "profile")),
+                MenuItem(title: "Payment", image: UIImage(named: "payment")),
                 MenuItem(title: "Logout", image: UIImage(named: "exit"))
             ]
             
@@ -147,13 +147,27 @@ class ContainerViewController: UIViewController, UIGestureRecognizerDelegate, Si
     
     func menuItemSelected(menuItem: MenuItem) {
         let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        println("Menu item tapped: \(menuItem.title)")
+        
+        func presentViewControllerWithIdentifier(viewControllerIdentifier: String) {
+            let vc = storyboard.instantiateViewControllerWithIdentifier(viewControllerIdentifier) as UIViewController
+            var nc: UINavigationController?
+            
+            if let tabBarController = self.centerViewController as? UITabBarController {
+                nc = tabBarController.selectedViewController as? UINavigationController
+            } else {
+                nc = self.centerViewController as? UINavigationController
+                println(self.centerViewController)
+            }
+            println(nc)
+            nc?.pushViewController(vc, animated: true)
+        }
+
         switch menuItem.title  {
         case "Payment":
-            let vc = storyboard.instantiateViewControllerWithIdentifier("Payment") as UIViewController // EditPaymentViewController
-            self.navigationController?.pushViewController(vc, animated: true)
+            presentViewControllerWithIdentifier("Payment")
         case "Profile":
-            let vc = storyboard.instantiateViewControllerWithIdentifier("Payment") as UIViewController // EditPaymentViewController
-            self.navigationController?.pushViewController(vc, animated: true)
+            presentViewControllerWithIdentifier("ProfileEdit")
         case "Logout":
             UIStoryboard.logout()
         default:
@@ -187,13 +201,15 @@ extension UIStoryboard {
     class var centerViewController: UIViewController? {
         get {
             if _centerViewController == nil {
+                println("here", User.currentUser.isBaker)
                 if User.currentUser.isBaker {
                     _centerViewController =  AppHelper.storyboard.instantiateViewControllerWithIdentifier("BakerPostViewController") as? UITabBarController
                 } else {
                     _centerViewController = AppHelper.storyboard.instantiateViewControllerWithIdentifier("StreamNavigationController") as? UINavigationController
                 }
             }
-
+        
+            println(_centerViewController)
             return _centerViewController
         }
         set(centerViewController) {
@@ -210,7 +226,12 @@ extension UIStoryboard {
         
         UIView.transitionWithView(window, duration: 0.5, options: UIViewAnimationOptions.TransitionCurlDown, animations: {
             window.rootViewController = AppHelper.storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as LoginViewController
-        }, completion: nil)
+        }) {
+            (success) in
+            _centerViewController = nil
+            _containerViewController = nil
+            _leftViewController = nil
+        }
         
     }
     
