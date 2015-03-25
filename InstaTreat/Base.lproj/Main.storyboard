@@ -762,12 +762,6 @@
                                     <constraint firstAttribute="height" constant="20" id="JIi-JJ-Lp8"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="$10.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9l0-jv-Vnc">
-                                <rect key="frame" x="-15" y="450" width="231" height="49"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="41"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4v-V2-PvW">
                                 <rect key="frame" x="0.0" y="523" width="320" height="45"/>
                                 <color key="backgroundColor" red="0.87843137250000003" green="0.56862745100000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -782,54 +776,80 @@
                                     <action selector="onBuy:" destination="w2d-SY-pj5" eventType="touchUpInside" id="Hbb-G7-AYN"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="121 E Tasman Dr" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZU-sC-7Qi">
-                                <rect key="frame" x="16" y="273" width="297" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="121 E Tasman Dr" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZU-sC-7Qi">
+                                <rect key="frame" x="12" y="302" width="297" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.90196078430000004" green="0.42745098040000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="San Jose, CA" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTp-2r-HkO">
+                                <rect key="frame" x="12" y="331" width="297" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.90196078430000004" green="0.42745098040000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4g-O9-Ghx">
+                                <rect key="frame" x="142" y="413" width="37" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="San Jose, CA" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTp-2r-HkO">
-                                <rect key="frame" x="16" y="302" width="297" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Your Delivery Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ZS-qd-IS7">
+                                <rect key="frame" x="76" y="273" width="168" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4g-O9-Ghx">
-                                <rect key="frame" x="142" y="414" width="37" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="$10.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9l0-jv-Vnc">
+                                <rect key="frame" x="45" y="442" width="231" height="49"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="41"/>
+                                <color key="textColor" red="0.90196078430000004" green="0.42745098040000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="K4v-V2-PvW" firstAttribute="top" secondItem="9l0-jv-Vnc" secondAttribute="bottom" constant="32" id="0oy-j6-6rx"/>
+                            <constraint firstItem="9l0-jv-Vnc" firstAttribute="top" secondItem="o4g-O9-Ghx" secondAttribute="bottom" constant="8" id="2q2-iM-hMD"/>
+                            <constraint firstAttribute="trailing" secondItem="9l0-jv-Vnc" secondAttribute="trailing" constant="44" id="3Yf-RW-dYH"/>
                             <constraint firstAttribute="trailing" secondItem="psw-JL-vQd" secondAttribute="trailing" constant="16" id="54G-9H-chU"/>
-                            <constraint firstItem="9l0-jv-Vnc" firstAttribute="centerY" secondItem="o4g-O9-Ghx" secondAttribute="centerY" id="6nt-rr-Vgn"/>
-                            <constraint firstItem="9l0-jv-Vnc" firstAttribute="leading" secondItem="o4g-O9-Ghx" secondAttribute="trailing" constant="20" id="73u-ZO-KH5"/>
+                            <constraint firstItem="sZU-sC-7Qi" firstAttribute="leading" secondItem="8Ky-M4-unU" secondAttribute="leading" constant="12" id="5aT-Gg-Clf"/>
                             <constraint firstItem="K4v-V2-PvW" firstAttribute="leading" secondItem="8Ky-M4-unU" secondAttribute="leading" id="8GN-gg-KcV"/>
                             <constraint firstItem="Rv4-Ir-2eo" firstAttribute="top" secondItem="mms-cm-0qS" secondAttribute="bottom" constant="50" id="Ays-iM-bc8"/>
+                            <constraint firstItem="9l0-jv-Vnc" firstAttribute="leading" secondItem="8Ky-M4-unU" secondAttribute="leading" constant="45" id="BcK-6B-ki1"/>
                             <constraint firstItem="94e-2p-zGb" firstAttribute="top" secondItem="kam-gK-1Ti" secondAttribute="bottom" constant="20" id="Bks-Mm-p3F"/>
+                            <constraint firstItem="oTp-2r-HkO" firstAttribute="top" secondItem="sZU-sC-7Qi" secondAttribute="bottom" constant="8" id="EKn-MH-Xfy"/>
                             <constraint firstItem="kam-gK-1Ti" firstAttribute="top" secondItem="Rv4-Ir-2eo" secondAttribute="bottom" constant="20" id="HHM-wY-9Na"/>
+                            <constraint firstItem="9l0-jv-Vnc" firstAttribute="top" secondItem="o4g-O9-Ghx" secondAttribute="bottom" constant="8" id="KHa-J8-IXU"/>
                             <constraint firstItem="kam-gK-1Ti" firstAttribute="leading" secondItem="8Ky-M4-unU" secondAttribute="leading" constant="16" id="Kg2-HB-Wan"/>
+                            <constraint firstItem="8ZS-qd-IS7" firstAttribute="leading" secondItem="8Ky-M4-unU" secondAttribute="leading" constant="76" id="LRl-RQ-aka"/>
+                            <constraint firstItem="8ZS-qd-IS7" firstAttribute="top" secondItem="94e-2p-zGb" secondAttribute="bottom" constant="16" id="PZx-Gt-Kh5"/>
                             <constraint firstItem="Rv4-Ir-2eo" firstAttribute="leading" secondItem="8Ky-M4-unU" secondAttribute="leading" constant="16" id="Q1C-yb-BJo"/>
                             <constraint firstItem="94e-2p-zGb" firstAttribute="leading" secondItem="8Ky-M4-unU" secondAttribute="leading" id="TbO-Pa-CRf"/>
-                            <constraint firstAttribute="trailing" secondItem="9l0-jv-Vnc" secondAttribute="trailing" constant="16" id="V7V-gI-xcd"/>
+                            <constraint firstItem="sZU-sC-7Qi" firstAttribute="top" secondItem="8ZS-qd-IS7" secondAttribute="bottom" constant="8" id="UeM-Pm-BvC"/>
+                            <constraint firstAttribute="trailing" secondItem="8ZS-qd-IS7" secondAttribute="trailing" constant="76" id="Uwq-xD-oNF"/>
                             <constraint firstItem="ZtY-zb-KIc" firstAttribute="centerY" secondItem="kam-gK-1Ti" secondAttribute="centerY" id="WbV-u7-MRe"/>
                             <constraint firstAttribute="bottom" secondItem="K4v-V2-PvW" secondAttribute="bottom" id="YcW-Xr-rqR"/>
                             <constraint firstItem="mms-cm-0qS" firstAttribute="top" secondItem="fko-7W-yZg" secondAttribute="bottom" constant="20" id="hCm-eW-ELC"/>
                             <constraint firstItem="ZtY-zb-KIc" firstAttribute="leading" secondItem="kam-gK-1Ti" secondAttribute="trailing" constant="20" id="hNs-3J-ioS"/>
                             <constraint firstAttribute="trailing" secondItem="K4v-V2-PvW" secondAttribute="trailing" id="hys-xh-MGZ"/>
+                            <constraint firstItem="oTp-2r-HkO" firstAttribute="leading" secondItem="8Ky-M4-unU" secondAttribute="leading" constant="12" id="iFK-rU-8yA"/>
                             <constraint firstItem="psw-JL-vQd" firstAttribute="leading" secondItem="Rv4-Ir-2eo" secondAttribute="trailing" constant="20" id="oVA-F3-w7u"/>
                             <constraint firstItem="Rv4-Ir-2eo" firstAttribute="centerY" secondItem="psw-JL-vQd" secondAttribute="centerY" id="owu-ws-gSr"/>
+                            <constraint firstItem="o4g-O9-Ghx" firstAttribute="leading" secondItem="8Ky-M4-unU" secondAttribute="leading" constant="142" id="rvk-cD-dMl"/>
+                            <constraint firstItem="sZU-sC-7Qi" firstAttribute="top" secondItem="8ZS-qd-IS7" secondAttribute="bottom" constant="8" id="rzw-Lx-xMM"/>
                             <constraint firstAttribute="trailing" secondItem="94e-2p-zGb" secondAttribute="trailing" id="s5j-mr-GId"/>
-                            <constraint firstItem="o4g-O9-Ghx" firstAttribute="leading" secondItem="8Ky-M4-unU" secondAttribute="leading" constant="16" id="uyR-cB-eL0"/>
+                            <constraint firstAttribute="trailing" secondItem="sZU-sC-7Qi" secondAttribute="trailing" constant="11" id="vaS-uW-KeB"/>
                             <constraint firstAttribute="trailing" secondItem="ZtY-zb-KIc" secondAttribute="trailing" constant="16" id="xRp-RJ-wQe"/>
+                            <constraint firstAttribute="trailing" secondItem="oTp-2r-HkO" secondAttribute="trailing" constant="11" id="ycd-tg-Orx"/>
+                            <constraint firstItem="oTp-2r-HkO" firstAttribute="top" secondItem="sZU-sC-7Qi" secondAttribute="bottom" constant="8" id="zhZ-cO-Glh"/>
                             <constraint firstAttribute="centerX" secondItem="mms-cm-0qS" secondAttribute="centerX" id="zpn-7S-S9y"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Lds-G9-Pnt"/>
                     <connections>
                         <outlet property="addressLabel" destination="sZU-sC-7Qi" id="BDc-bo-Vkt"/>
+                        <outlet property="cityStateLabel" destination="oTp-2r-HkO" id="vK7-AE-R3m"/>
                         <outlet property="deliveryLabel" destination="ZtY-zb-KIc" id="x3W-e1-WbY"/>
                         <outlet property="itemCost" destination="psw-JL-vQd" id="Tsr-De-eKE"/>
                         <outlet property="itemNameLabel" destination="Rv4-Ir-2eo" id="VV2-b7-MzY"/>
@@ -922,7 +942,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ApM-tj-99P">
                                 <rect key="frame" x="272" y="272" width="40" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.90196078430000004" green="0.42745098040000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Fh-xz-oqC" customClass="EDStarRating">

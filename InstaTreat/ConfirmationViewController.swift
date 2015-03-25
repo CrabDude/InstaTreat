@@ -24,6 +24,7 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate {
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var itemCost: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var cityStateLabel: UILabel!
     
 //    @IBOutlet weak var address1Label: UILabel!
 //    @IBOutlet weak var address2Label: UILabel!
@@ -42,10 +43,14 @@ class ConfirmationViewController: UIViewController, UIAlertViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Order Confirmation"
         println(self.deliveryTime)
         println("confirmation view")
+        var addrArray = self.addressString.componentsSeparatedByString(",")
+        println(addrArray)
+        self.cityStateLabel.text = "\(addrArray[1]), \(addrArray[2])"
         self.itemNameLabel.text = self.item.title
-        self.addressLabel.text = self.addressString
+        self.addressLabel.text = addrArray[0]
         self.deliveryLabel.text = "$\(self.deliveryCharge)"
         self.itemCost.text =  String(format: "$%.2f", self.item.price)
         self.total = self.deliveryCharge + self.item.price
