@@ -69,7 +69,7 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         cell.buyButton.layer.borderWidth = 1
         cell.buyButton.layer.borderColor = UIColor.whiteColor().CGColor
-        cell.buyButton.layer.cornerRadius = cell.buyButton.frame.size.height / 4
+        cell.buyButton.layer.cornerRadius = cell.buyButton.frame.size.height / 3
         cell.buyButton.clipsToBounds = true
         
 //        cell.distanceLabel.text = item.distance

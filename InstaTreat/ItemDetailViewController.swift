@@ -11,16 +11,18 @@ import UIKit
 private var _formatter = NSDateFormatter()
 private var _timezone = NSTimeZone(abbreviation: "PST")
 
-class ItemDetailViewController: UIViewController {
+class ItemDetailViewController: UIViewController, UIScrollViewDelegate {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bakerNameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var createdAtLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var bakerImageView: UIImageView!
-    @IBOutlet weak var starRatingView: EDStarRating!
-    @IBOutlet weak var itemImage: UIImageView!
+//    @IBOutlet weak var starRatingView: EDStarRating!
+    @IBOutlet weak var itemImageScrollView: UIScrollView!
     @IBOutlet weak var badge1Image: UIImageView!
     @IBOutlet weak var badge2Image: UIImageView!
     @IBOutlet weak var badge3Image: UIImageView!
@@ -28,8 +30,12 @@ class ItemDetailViewController: UIViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     
     var item: Item?
+    var imageUrls = [String]()
+    var pageImageCount = 0
     
     override func viewDidLoad() {
+        self.scrollView.delegate = self
+        
         if let item = self.item {
             self.titleLabel.text = item.title
             self.priceLabel.text = "$" + String(format: "%.2f", item.price)
@@ -59,9 +65,9 @@ class ItemDetailViewController: UIViewController {
             self.bakerImageView?.layer.cornerRadius = self.bakerImageView.frame.size.width / 2
             self.bakerImageView?.clipsToBounds = true
             
-            if item.images?.count > 0 {
-                self.itemImage?.image = item.images?[0]
-            }
+//            if item.images?.count > 0 {
+//                self.itemImage?.image = item.images?[0]
+//            }
             
             self.badge1Image.hidden = true
             self.badge2Image.hidden = true
@@ -93,6 +99,8 @@ class ItemDetailViewController: UIViewController {
             } else {
                 self.createdAtLabel.text = "Baked on " + _formatter.stringFromDate(item.createdAt)
             }
+            
+            self.configureScrollView(item)
         }
         
     }
@@ -121,7 +129,42 @@ class ItemDetailViewController: UIViewController {
         
     }
     
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let oldPage = self.pageControl.currentPage
+        // Set current page based on scroll distance
+        self.pageControl.currentPage = Int(round(scrollView.contentOffset.x / scrollView.frame.width))
+    }
     
+    func configureScrollView(item: Item) {
+        for subview in self.scrollView.subviews {
+            subview.removeFromSuperview()
+        }
+        pageImageCount = item.otherImages.count
+
+        pageControl.hidden = pageImageCount <= 1
+        pageControl.currentPage = 0
+        pageControl.numberOfPages = pageImageCount
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            // This has to be done asynchronously because the frame size changes for some reason?
+            let pagesScrollViewSize = self.scrollView.frame.size
+            self.scrollView.contentSize = CGSize(width: pagesScrollViewSize.width * CGFloat(self.pageImageCount),
+                height: pagesScrollViewSize.height)
+        }
+
+        for (index, url) in enumerate(item.otherImages) {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+                let image = UIImage(data: NSData(contentsOfURL: NSURL(string: url)!)!)
+                dispatch_async(dispatch_get_main_queue()) {
+                    let newPageView = UIImageView(image: image!)
+                    newPageView.contentMode = .ScaleAspectFill
+                    let width = self.scrollView.frame.size.width
+                    newPageView.frame = CGRectMake(CGFloat(index) * width, 0, width, self.scrollView.frame.height)
+                    self.scrollView.addSubview(newPageView)
+                }
+            }
+        }
+    }
 }
 
 extension ItemDetailViewController: GooglePlacesAutocompleteDelegate {
