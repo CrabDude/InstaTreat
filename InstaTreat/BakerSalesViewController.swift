@@ -92,6 +92,10 @@ class BakerSalesViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        salesTableView.deselectRowAtIndexPath(indexPath, animated: false)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let dc = segue.destinationViewController as? BakerSalesDetailViewController {
             println("Segue to BakerSalesDetailViewController")

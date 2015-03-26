@@ -187,6 +187,10 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return self.items.count
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+    }
+    
     @IBAction func onMenuTap(sender: UIButton) {
         UIStoryboard.toggleLeftPanel()
     }
@@ -196,6 +200,7 @@ class StreamViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
+    
     
 //    @IBAction func onBuy(sender: UIButton) {
 //        println("on buy presed")
